@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_4.html -->
+<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_6.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos_files/css2" rel="stylesheet">
-<script src="./Sollertia — Sistema de Atendimentos_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.plugin.autotable.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos_files/supabase.js.download"></script>
+<link href="./index_files/css2" rel="stylesheet">
+<script src="./index_files/chart.umd.min.js.download"></script>
+<script src="./index_files/xlsx.full.min.js.download"></script>
+<script src="./index_files/jspdf.umd.min.js.download"></script>
+<script src="./index_files/jspdf.plugin.autotable.min.js.download"></script>
+<script src="./index_files/supabase.js.download"></script>
 <style>
 
 /* ═══════════════════════════════════════════════
@@ -2277,20 +2277,6 @@ var nfeMesMetrica='qty'; // empty = todos
 const SUPA_URL = 'https://stfnafccdboxhkvqasva.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0Zm5hZmNjZGJveGhrdnFhc3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NDU2NjQsImV4cCI6MjA5MjUyMTY2NH0.iFQCYJkpTcS_QDzCm8cCY6tr2HK6k2uHbzZwa-ANbpg';
 let sb;
-try {
-  const _supa = window.supabase || (window.supabase = {});
-  const _createClient = (window.supabase && window.supabase.createClient)
-    ? window.supabase.createClient
-    : null;
-  if (!_createClient) throw new Error('Supabase não carregou. Verifique sua conexão com a internet.');
-  sb = _createClient(SUPA_URL, SUPA_KEY);
-} catch(e) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const el = document.getElementById('tbody');
-    if(el) el.innerHTML = '<tr><td colspan="11" style="text-align:center;padding:2rem;color:#C0392B;font-family:Raleway,sans-serif;font-size:13px;">⚠ ' + e.message + '</td></tr>';
-    alert('Erro ao conectar: ' + e.message);
-  });
-}
 
 /* helpers de UI */
 function showLoading(msg='Carregando...'){
@@ -3166,9 +3152,13 @@ if(_navDate) _navDate.textContent=_dateStr;
 // ─── INIT ─────────────────────────────────────────────────────────
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
+  if(!window.supabase || !window.supabase.createClient){
+    alert('Erro: biblioteca Supabase não carregou. Verifique sua conexão com a internet.');
+    return;
+  }
+  sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
   const tbody = document.getElementById('tbody');
   if(tbody) tbody.innerHTML = '<tr><td colspan="11" style="text-align:center;padding:2rem;color:#8FA3C8;font-family:Raleway,sans-serif;font-size:13px;">Conectando ao banco de dados...</td></tr>';
-  if(!sb){ alert('Biblioteca Supabase não carregou. Verifique sua conexão com a internet.'); return; }
   await loadData();
   rebuildClientSelect();
   const fdate = document.getElementById('f-date');
