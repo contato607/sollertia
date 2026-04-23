@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_6.html -->
+<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_7.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 <script src="./index_files/xlsx.full.min.js.download"></script>
 <script src="./index_files/jspdf.umd.min.js.download"></script>
 <script src="./index_files/jspdf.plugin.autotable.min.js.download"></script>
-<script src="./index_files/supabase.js.download"></script>
+
 <style>
 
 /* ═══════════════════════════════════════════════
@@ -2272,11 +2272,38 @@ var nfeMesSelectedClients=new Set();
 var nfeMesMetrica='qty'; // empty = todos
 
 /* ═══════════════════════════════════
-   SUPABASE CONFIG
+   SUPABASE CONFIG — REST API direto
 ═══════════════════════════════════ */
 const SUPA_URL = 'https://stfnafccdboxhkvqasva.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN0Zm5hZmNjZGJveGhrdnFhc3ZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5NDU2NjQsImV4cCI6MjA5MjUyMTY2NH0.iFQCYJkpTcS_QDzCm8cCY6tr2HK6k2uHbzZwa-ANbpg';
-let sb;
+
+const HEADERS = {
+  'Content-Type': 'application/json',
+  'apikey': SUPA_KEY,
+  'Authorization': 'Bearer ' + SUPA_KEY,
+  'Prefer': 'return=minimal',
+};
+
+async function sbGet(table, params=''){
+  const r = await fetch(SUPA_URL+'/rest/v1/'+table+'?'+params, {headers: HEADERS});
+  if(!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+async function sbUpsert(table, data){
+  const r = await fetch(SUPA_URL+'/rest/v1/'+table, {
+    method: 'POST',
+    headers: {...HEADERS, 'Prefer': 'resolution=merge-duplicates,return=minimal'},
+    body: JSON.stringify(data),
+  });
+  if(!r.ok) throw new Error(await r.text());
+}
+async function sbDelete(table, id){
+  const r = await fetch(SUPA_URL+'/rest/v1/'+table+'?id=eq.'+id, {
+    method: 'DELETE',
+    headers: HEADERS,
+  });
+  if(!r.ok) throw new Error(await r.text());
+}
 
 /* helpers de UI */
 function showLoading(msg='Carregando...'){
@@ -2300,7 +2327,6 @@ function showToast(msg,type='ok'){
    SUPABASE DATA LAYER
 ═══════════════════════════════════ */
 
-/* record DB → JS */
 function dbToRecord(r){
   return {
     id: r.id,
@@ -2317,7 +2343,6 @@ function dbToRecord(r){
     nfeType: r.nfe_type,
   };
 }
-/* record JS → DB */
 function recordToDB(r){
   return {
     id: r.id,
@@ -2334,7 +2359,6 @@ function recordToDB(r){
     nfe_type: r.nfeType||null,
   };
 }
-/* client DB → JS */
 function dbToClient(c){
   return {id:c.id, name:c.name, doc:c.doc||'', tipo:c.tipo||''};
 }
@@ -2342,14 +2366,12 @@ function dbToClient(c){
 async function loadData(){
   showLoading();
   try{
-    const [cr, cc] = await Promise.all([
-      sb.from('records').select('*').order('created_at',{ascending:false}),
-      sb.from('clients').select('*').order('name'),
+    const [recs, clis] = await Promise.all([
+      sbGet('records', 'order=created_at.desc'),
+      sbGet('clients', 'order=name.asc'),
     ]);
-    if(cr.error) throw cr.error;
-    if(cc.error) throw cc.error;
-    records  = cr.data.map(dbToRecord);
-    clients  = cc.data.map(dbToClient);
+    records = recs.map(dbToRecord);
+    clients = clis.map(dbToClient);
   } catch(e){
     showToast('Erro ao carregar dados: '+e.message,'err');
     records=[];clients=[];
@@ -2359,8 +2381,7 @@ async function loadData(){
 async function saveRecord(rec){
   showLoading();
   try{
-    const {error}=await sb.from('records').upsert(recordToDB(rec));
-    if(error) throw error;
+    await sbUpsert('records', recordToDB(rec));
     showToast('Atendimento salvo!');
   } catch(e){ showToast('Erro ao salvar: '+e.message,'err'); throw e; }
   finally{ hideLoading(); }
@@ -2369,8 +2390,7 @@ async function saveRecord(rec){
 async function deleteRecord(id){
   showLoading();
   try{
-    const {error}=await sb.from('records').delete().eq('id',id);
-    if(error) throw error;
+    await sbDelete('records', id);
     showToast('Registro excluído.');
   } catch(e){ showToast('Erro ao excluir: '+e.message,'err'); throw e; }
   finally{ hideLoading(); }
@@ -2379,8 +2399,7 @@ async function deleteRecord(id){
 async function saveClientDB(client){
   showLoading();
   try{
-    const {error}=await sb.from('clients').upsert({id:client.id,name:client.name,doc:client.doc||'',tipo:client.tipo||''});
-    if(error) throw error;
+    await sbUpsert('clients', {id:client.id,name:client.name,doc:client.doc||'',tipo:client.tipo||''});
   } catch(e){ showToast('Erro ao salvar cliente: '+e.message,'err'); throw e; }
   finally{ hideLoading(); }
 }
@@ -2388,14 +2407,12 @@ async function saveClientDB(client){
 async function deleteClientDB(id){
   showLoading();
   try{
-    const {error}=await sb.from('clients').delete().eq('id',id);
-    if(error) throw error;
+    await sbDelete('clients', id);
     showToast('Cliente excluído.');
   } catch(e){ showToast('Erro ao excluir cliente: '+e.message,'err'); throw e; }
   finally{ hideLoading(); }
 }
 
-/* saveData mantida como no-op para compatibilidade com código legado que ainda a chama */
 function saveData(){}
 
 function fmtMoney(el){
@@ -3151,12 +3168,7 @@ if(_navDate) _navDate.textContent=_dateStr;
 
 // ─── INIT ─────────────────────────────────────────────────────────
 // ── INIT ──────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', async () => {
-  if(!window.supabase || !window.supabase.createClient){
-    alert('Erro: biblioteca Supabase não carregou. Verifique sua conexão com a internet.');
-    return;
-  }
-  sb = window.supabase.createClient(SUPA_URL, SUPA_KEY);
+window.addEventListener('load', async () => {
   const tbody = document.getElementById('tbody');
   if(tbody) tbody.innerHTML = '<tr><td colspan="11" style="text-align:center;padding:2rem;color:#8FA3C8;font-family:Raleway,sans-serif;font-size:13px;">Conectando ao banco de dados...</td></tr>';
   await loadData();
