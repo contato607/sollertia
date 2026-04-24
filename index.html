@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_11.html -->
+<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_12.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos teste_files/css2" rel="stylesheet">
-<script src="./Sollertia — Sistema de Atendimentos teste_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste_files/jspdf.plugin.autotable.min.js.download"></script>
+<link href="./Sollertia — Sistema de Atendimentos uio_files/css2" rel="stylesheet">
+<script src="./Sollertia — Sistema de Atendimentos uio_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos uio_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos uio_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos uio_files/jspdf.plugin.autotable.min.js.download"></script>
 
 <style>
 
@@ -518,6 +518,22 @@ body {
 .tab.active { color: var(--navy); border-bottom-color: var(--navy); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
+/* Dashboard mantido no DOM para Chart.js medir canvas */
+#tab-dashboard {
+  display: block !important;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+#tab-dashboard.active {
+  position: relative;
+  visibility: visible;
+  pointer-events: auto;
+  height: auto;
+  overflow: visible;
+}
 #tab-dashboard canvas { display: block; width: 100% !important; }
 .dash-chart-area { position: relative; height: 260px; min-height: 200px; }
 
@@ -1830,15 +1846,15 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 <!-- CARD PRINCIPAL -->
 <div class="card">
   <div class="tabs">
-    <button class="tab" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
+    <button class="tab active" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
     <button class="tab" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
     <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
     <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
-    <button class="tab active" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
+    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
   </div>
 
   <!-- NOVO ATENDIMENTO -->
-  <div class="tab-panel" id="tab-novo">
+  <div class="tab-panel active" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
   <div id="edit-bar" style="display:none" class="edit-bar">
     ✏️ <span>Editando registro</span>
@@ -2172,7 +2188,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
 
   <!-- DASHBOARD -->
-  <div class="tab-panel active" id="tab-dashboard">
+  <div class="tab-panel" id="tab-dashboard">
     <!-- Filtros do dashboard -->
     <div class="dash-filter-bar">
       <span class="dash-filter-label">Período</span>
@@ -2233,12 +2249,12 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <div class="dash-chart-area"><canvas id="dc-linha" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-linha" width="375" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 300px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-pizza" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-pizza" width="375" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 300px;"></canvas></div>
       </div>
     </div>
 
@@ -2247,7 +2263,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Atendente</div>
         <div class="dash-chart-sub">R$ gerado por colaborador</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-atend" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-fat-atend" width="375" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 300px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Top Clientes</div>
@@ -2273,7 +2289,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-sub">Meta: abaixo de 10%</div>
         <div class="dash-gauge-wrap">
           <div style="position:relative;width:200px;height:110px;margin:0 auto">
-            <canvas id="dc-gauge" width="250" height="137" style="height: 110px; display: block; box-sizing: border-box; width: 200px;"></canvas>
+            <canvas id="dc-gauge" width="250" height="137" style="display: block; box-sizing: border-box; height: 110px; width: 200px;"></canvas>
             <div class="dash-gauge-center">
               <div class="dash-gauge-num" id="dc-gauge-num">0%</div>
               <div class="dash-gauge-lbl">retrabalho</div>
@@ -2295,7 +2311,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-mes" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-fat-mes" width="375" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 300px;"></canvas></div>
       </div>
     </div>
 
@@ -2371,7 +2387,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div class="dash-chart-area" style="height:280px"><canvas id="dc-nfe-tipo-cliente" width="1268" height="350" style="display: block; box-sizing: border-box; height: 280px; width: 1014px;"></canvas></div>
+      <div class="dash-chart-area" style="height:280px"><canvas id="dc-nfe-tipo-cliente" width="809" height="350" style="display: block; box-sizing: border-box; height: 280px; width: 647px;"></canvas></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend">
       <div class="nfe-mes-legend-item">
@@ -2381,13 +2397,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     </div>
     <!-- Gráfico menor: Total acumulado por cliente (mantido) -->
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
-      <div><canvas id="dc-nfe-cliente" height="0" style="height: 0px; display: block; box-sizing: border-box; width: 0px;" width="0"></canvas></div>
+      <div><canvas id="dc-nfe-cliente" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
     </div>
     <div class="dash-row-2" style="margin-bottom:14px">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-nfe-tipo-pizza" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-nfe-tipo-pizza" width="375" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 300px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -2670,13 +2686,7 @@ function switchTab(tab){
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
   tabs.forEach(t=>document.getElementById('tab-'+t).classList.toggle('active',t===tab));
   if(tab==='relatorio')renderRelatorio();
-  if(tab==='dashboard'){
-    // Garante que os canvas têm altura antes de renderizar
-    document.querySelectorAll('#tab-dashboard canvas').forEach(c=>{
-      if(!c.style.height) c.style.height = c.closest('.dash-chart-area') ? '' : '200px';
-    });
-    setTimeout(()=>renderDashboard(), 80);
-  }
+  if(tab==='dashboard') setTimeout(()=>renderDashboard(), 150);
 }
 
 function toggleNfe(){
@@ -3358,6 +3368,7 @@ window.addEventListener('load', async () => {
   if(fdate) fdate.value = new Date().toISOString().split('T')[0];
   render();
   renderClients();
+  renderDashboard(); // pré-renderiza enquanto canvas está acessível
 });
 
 
