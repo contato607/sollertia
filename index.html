@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_7.html -->
+<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_8.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./index_files/css2" rel="stylesheet">
-<script src="./index_files/chart.umd.min.js.download"></script>
-<script src="./index_files/xlsx.full.min.js.download"></script>
-<script src="./index_files/jspdf.umd.min.js.download"></script>
-<script src="./index_files/jspdf.plugin.autotable.min.js.download"></script>
+<link href="./Sollertia — Sistema de Atendimentos_files/css2" rel="stylesheet">
+<script src="./Sollertia — Sistema de Atendimentos_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.plugin.autotable.min.js.download"></script>
 
 <style>
 
@@ -1818,7 +1818,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
   <div style="flex:1"></div>
   <div style="width:16px"></div>
-  <span class="nav-date" id="nav-date">qui., 23 de abr.</span>
+  <span class="nav-date" id="nav-date">sex., 24 de abr.</span>
 </div>
 
 <!-- SISTEMA VIEW -->
@@ -1837,7 +1837,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="client-field">
       <label id="label-cliente">Cliente *</label>
       <div class="client-input-wrap">
-        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option></select>
+        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option></select>
         <button class="btn-new-client" onclick="toggleAddClient()">+ Novo</button>
       </div>
       <div id="add-client-inline" style="display:none" class="add-client-inline">
@@ -1936,11 +1936,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel active" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">0</div></div>
-    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">0</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">1</div></div>
+    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">1</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">0</div></div>
-    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">—</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">1</div></div>
+    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$100,00</div></div>
     <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">0</div></div></div>
     <div class="filters-wrap">
       <div class="filter-label">Filtros</div>
@@ -1977,10 +1977,25 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <th>Data</th><th>Cliente</th><th>Serviço</th><th>Atendente</th>
           <th>Tipo</th><th>Tempo</th><th>Valor</th><th>Tipo Serviço</th><th>Retrab.</th><th>Notas</th><th></th>
         </tr></thead>
-        <tbody id="tbody"></tbody>
+        <tbody id="tbody"><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">24/04/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 2</td>
+      <td class="td-desc">teste 4</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Carlos H.</td>
+      <td><span class="badge badge-avul">Avulso</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">R$ 100,00</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">5 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777029134161&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777029134161&#39;)">✕</button>
+      </div></td>
+    </tr></tbody>
       </table>
     </div>
-    <div id="empty" class="empty" style="display: block;">Nenhum atendimento encontrado.</div>
+    <div id="empty" class="empty" style="display:none">Nenhum atendimento encontrado.</div>
   </div>
 
   <!-- CLIENTES -->
@@ -1988,8 +2003,80 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div style="margin-bottom:14px">
       <input type="text" id="search-client" placeholder="Buscar cliente..." oninput="renderClients()" style="width:100%;border:1.5px solid var(--border);background:var(--white);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;font-family:&#39;Open Sans&#39;,sans-serif;color:var(--text-dark);transition:var(--transition);outline:none;">
     </div>
-    <div class="client-list" id="client-list"></div>
-    <div id="empty-clients" class="empty" style="display: block;">Nenhum cliente cadastrado.</div>
+    <div class="client-list" id="client-list"><div>
+      <div class="client-item" id="ci-1776976066704">
+        <div class="client-avatar" style="background:#E1F5EE;color:#085041">T</div>
+        <div style="flex:1">
+          <div class="client-name">teste</div>
+          <div class="client-meta"> 0 atend. </div>
+        </div>
+        <span class="badge badge-avul" style="flex-shrink:0">Avulso</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1776976066704&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1776976066704&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1776976066704" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1776976066704" value="teste" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1776976066704" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1776976066704">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista">Mensalista</option>
+              <option value="Avulso" selected="">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1776976066704&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1776976066704&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777029060053">
+        <div class="client-avatar" style="background:#E1F5EE;color:#085041">T2</div>
+        <div style="flex:1">
+          <div class="client-name">teste 2</div>
+          <div class="client-meta"> 1 atend. &nbsp;·&nbsp; R$100,00</div>
+        </div>
+        <span class="badge badge-avul" style="flex-shrink:0">Avulso</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777029060053&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777029060053&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777029060053" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777029060053" value="teste 2" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777029060053" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777029060053">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista">Mensalista</option>
+              <option value="Avulso" selected="">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777029060053&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777029060053&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div></div>
+    <div id="empty-clients" class="empty" style="display:none">Nenhum cliente cadastrado.</div>
   </div>
 
   <!-- RELATÓRIO -->
@@ -2495,7 +2582,7 @@ function switchTab(tab){
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
   tabs.forEach(t=>document.getElementById('tab-'+t).classList.toggle('active',t===tab));
   if(tab==='relatorio')renderRelatorio();
-  if(tab==='dashboard')renderDashboard();
+  if(tab==='dashboard')setTimeout(()=>renderDashboard(), 50);
 }
 
 function toggleNfe(){
@@ -3243,6 +3330,10 @@ function renderDashboard(){
   renderDashGauge(data);
   renderDashFatMes(data);
   renderDashNfe(data);
+  // Force Chart.js to recalculate sizes after container becomes visible
+  setTimeout(() => {
+    Object.values(dashCharts).forEach(c => { try{ c.resize(); } catch(e){} });
+  }, 100);
 }
 
 function renderDashKPIs(data){
