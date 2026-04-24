@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_14.html -->
+<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_15.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos10_files/css2" rel="stylesheet">
-<script src="./Sollertia — Sistema de Atendimentos10_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos10_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos10_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos10_files/jspdf.plugin.autotable.min.js.download"></script>
+<link href="./Sollertia — Sistema de Atendimentos9_files/css2" rel="stylesheet">
+<script src="./Sollertia — Sistema de Atendimentos9_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos9_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos9_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos9_files/jspdf.plugin.autotable.min.js.download"></script>
 
 <style>
 
@@ -2234,12 +2234,64 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <div class="dash-chart-area"><canvas id="dc-linha" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="dash-chart-area" id="dc-linha" style="display:flex;align-items:center;padding:8px 0"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    <defs><lineargradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"></stop>
+      <stop offset="100%" stop-color="#1B3464" stop-opacity="0"></stop>
+    </lineargradient></defs>
+    <line x1="30" y1="150" x2="490" y2="150" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="115" x2="490" y2="115" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="80" x2="490" y2="80" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="45" x2="490" y2="45" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line>
+    <polygon points="30,150 30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,10 197.27272727272728,150 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150 490,150" fill="url(#lg)"></polygon>
+    <polyline points="30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,10 197.27272727272728,150 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150" fill="none" stroke="#1B3464" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></polyline>
+    <circle cx="30" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="30" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
+      
+    <circle cx="71.81818181818181" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="71.81818181818181" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Fev</text>
+      
+    <circle cx="113.63636363636364" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="113.63636363636364" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mar</text>
+      
+    <circle cx="155.45454545454547" cy="10" r="3" fill="#1B3464"></circle>
+      <text x="155.45454545454547" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
+      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">1</text>
+    <circle cx="197.27272727272728" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
+      
+    <circle cx="239.0909090909091" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="239.0909090909091" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
+      
+    <circle cx="280.90909090909093" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="280.90909090909093" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jul</text>
+      
+    <circle cx="322.72727272727275" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="322.72727272727275" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Ago</text>
+      
+    <circle cx="364.54545454545456" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="364.54545454545456" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Set</text>
+      
+    <circle cx="406.3636363636364" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="406.3636363636364" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Out</text>
+      
+    <circle cx="448.1818181818182" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="448.1818181818182" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Nov</text>
+      
+    <circle cx="490" cy="150" r="3" fill="#1B3464"></circle>
+      <text x="490" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
+      
+    
+  </svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-pizza" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm" id="dc-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    <path d="M100,48 L100,20 A70,70 0 1,1 99.99999999999999,20 L99.99999999999999,48 A42,42 0 1,0 100,48 Z" fill="#1B3464"></path>
+    <circle cx="100" cy="90" r="28" fill="white"></circle>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">1</text>
+    <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
+      <tspan fill="#1B3464">■ </tspan>Emissão de notas (1)
+    </text>
+  </svg></div>
       </div>
     </div>
 
@@ -2248,7 +2300,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Atendente</div>
         <div class="dash-chart-sub">R$ gerado por colaborador</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-atend" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="dash-chart-area" id="dc-fat-atend" style="padding:12px 8px;overflow-y:auto">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right">Carlos H.</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
+        <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px;transition:width .4s ease"></div>
+      </div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 100,00</div>
+    </div></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Top Clientes</div>
@@ -2274,7 +2333,10 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-sub">Meta: abaixo de 10%</div>
         <div class="dash-gauge-wrap">
           <div style="position:relative;width:200px;height:110px;margin:0 auto">
-            <canvas id="dc-gauge" height="0" width="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;"></canvas>
+            <canvas id="dc-gauge" width="200" height="110"><svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:110px">
+    <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="#F0F4FA" stroke-width="16" stroke-linecap="round"></path>
+    <path d="M20,100 A80,80 0 0,1 20,99.99999999999999" fill="none" stroke="#1E6B3C" stroke-width="16" stroke-linecap="round"></path>
+  </svg></canvas>
             <div class="dash-gauge-center">
               <div class="dash-gauge-num" id="dc-gauge-num">0%</div>
               <div class="dash-gauge-lbl">retrabalho</div>
@@ -2296,7 +2358,31 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-mes" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="dash-chart-area" id="dc-fat-mes" style="display:flex;align-items:center;padding:8px 0"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="58.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
+      <rect x="83.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="96.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Fev</text>
+      <rect x="120.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="133.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mar</text>
+      <rect x="158.125" y="10" width="26.25" height="145" rx="3" fill="#C9A84C"></rect>
+      <text x="171.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
+      <text x="171.25" y="6" text-anchor="middle" font-size="8" fill="#7a5200" font-family="Open Sans,sans-serif">R$0k</text><rect x="195.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="208.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
+      <rect x="233.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="246.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
+      <rect x="270.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="283.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jul</text>
+      <rect x="308.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="321.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Ago</text>
+      <rect x="345.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="358.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Set</text>
+      <rect x="383.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="396.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Out</text>
+      <rect x="420.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="433.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Nov</text>
+      <rect x="458.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="471.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
+      </svg></div>
       </div>
     </div>
 
@@ -2372,23 +2458,26 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div class="dash-chart-area" style="height:280px"><canvas id="dc-nfe-tipo-cliente" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="dash-chart-area" id="dc-nfe-tipo-cliente" style="height:280px;padding:8px 0;display:flex;align-items:center"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="367" height="180" rx="2" fill="#1B3464"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
-      <div id="dc-nfe-mes-legend" class="nfe-mes-legend">
-      <div class="nfe-mes-legend-item">
-        <span class="nfe-mes-legend-dot" style="background:#1B3464"></span>
-        <span>teste 2</span>
-      </div></div>
+      <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
     <!-- Gráfico menor: Total acumulado por cliente (mantido) -->
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
-      <div><canvas id="dc-nfe-cliente" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div id="dc-nfe-cliente" style="padding:10px 0">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">5 notas</div>
+    </div></div>
     </div>
     <div class="dash-row-2" style="margin-bottom:14px">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-nfe-tipo-pizza" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,37 L80,15 A60,60 0 1,1 79.99999999999999,15 L80,37 A38,38 0 1,0 80,37 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">5</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (5)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -3427,13 +3516,7 @@ function renderDashboard(){
   renderDashGauge(data);
   renderDashFatMes(data);
   renderDashNfe(data);
-  // Force Chart.js to recalculate sizes after container becomes visible
-  setTimeout(() => {
-    Object.values(dashCharts).forEach(c => { try{ c.resize(); } catch(e){} });
-  }, 200);
-  setTimeout(() => {
-    Object.values(dashCharts).forEach(c => { try{ c.resize(); } catch(e){} });
-  }, 600);
+
 }
 
 function renderDashKPIs(data){
@@ -3465,52 +3548,75 @@ function renderDashLinha(data){
     if(r.date){ const m = parseInt(r.date.split('-')[1])-1; byMes[m]++; }
   });
   const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-  destroyDashChart('dc-linha');
-  const ctx = document.getElementById('dc-linha').getContext('2d');
-  const grad = ctx.createLinearGradient(0,0,0,200);
-  grad.addColorStop(0,'rgba(27,52,100,0.18)'); grad.addColorStop(1,'rgba(27,52,100,0)');
-  dashCharts['dc-linha'] = new Chart(ctx, {
-    type: 'line',
-    data: { labels: meses, datasets: [{ data: byMes, borderColor:'#1B3464', backgroundColor: grad,
-      fill:true, tension:0.4, pointBackgroundColor:'#1B3464', pointRadius:3, borderWidth:2 }]},
-    options: { responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{backgroundColor:'#1B3464',padding:8} },
-      scales:{ x:{grid:{display:false},ticks:{color:'#8FA3C8',font:{size:10}}},
-               y:{grid:{color:'#F0F4FA'},ticks:{color:'#8FA3C8',font:{size:10},stepSize:1}} }}
-  });
+  const max = Math.max(...byMes, 1);
+  const W=500, H=180, PL=30, PR=10, PT=10, PB=30;
+  const cW=W-PL-PR, cH=H-PT-PB;
+  const pts = byMes.map((v,i)=>({ x: PL + i*(cW/11), y: PT + cH - (v/max)*cH }));
+  const polyline = pts.map(p=>`${p.x},${p.y}`).join(' ');
+  const area = `${PL},${PT+cH} ` + polyline + ` ${PL+cW},${PT+cH}`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#1B3464" stop-opacity="0"/>
+    </linearGradient></defs>
+    ${[0,1,2,3,4].map(i=>`<line x1="${PL}" y1="${PT+cH-i*(cH/4)}" x2="${W-PR}" y2="${PT+cH-i*(cH/4)}" stroke="#F0F4FA" stroke-width="1"/>`).join('')}
+    <polygon points="${area}" fill="url(#lg)"/>
+    <polyline points="${polyline}" fill="none" stroke="#1B3464" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p,i)=>`<circle cx="${p.x}" cy="${p.y}" r="3" fill="#1B3464"/>
+      <text x="${p.x}" y="${H-8}" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">${meses[i]}</text>
+      ${byMes[i]>0?`<text x="${p.x}" y="${p.y-7}" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">${byMes[i]}</text>`:''}
+    `).join('')}
+  </svg>`;
+  const el = document.getElementById('dc-linha');
+  el.innerHTML = svg;
 }
 
 function renderDashPizza(data){
   const cnt = {};
   data.forEach(r => cnt[r.cat] = (cnt[r.cat]||0) + 1);
-  destroyDashChart('dc-pizza');
-  dashCharts['dc-pizza'] = new Chart(document.getElementById('dc-pizza').getContext('2d'), {
-    type: 'doughnut',
-    data: { labels: Object.keys(cnt), datasets: [{ data: Object.values(cnt),
-      backgroundColor: ['#1B3464','#C9A84C'], borderWidth:3, borderColor:'#fff', hoverOffset:5 }]},
-    options: { responsive:true, maintainAspectRatio:false, cutout:'65%',
-      plugins:{ legend:{ position:'bottom', labels:{ color:'#566A8F', font:{size:11}, boxWidth:10 }},
-        tooltip:{ backgroundColor:'#1B3464', padding:8 }}}
+  const entries = Object.entries(cnt);
+  const total = entries.reduce((s,[,v])=>s+v,0)||1;
+  const colors = ['#1B3464','#C9A84C','#27AE60','#E74C3C','#8E44AD'];
+  const R=70, r=42, cx=100, cy=90;
+  let angle = -Math.PI/2;
+  const slices = entries.map(([label,val],i)=>{
+    const sweep = (val/total)*2*Math.PI;
+    const x1=cx+R*Math.cos(angle), y1=cy+R*Math.sin(angle);
+    angle+=sweep;
+    const x2=cx+R*Math.cos(angle), y2=cy+R*Math.sin(angle);
+    const ix1=cx+r*Math.cos(angle-sweep), iy1=cy+r*Math.sin(angle-sweep);
+    const ix2=cx+r*Math.cos(angle), iy2=cy+r*Math.sin(angle);
+    const large=sweep>Math.PI?1:0;
+    return `<path d="M${ix1},${iy1} L${x1},${y1} A${R},${R} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${r},${r} 0 ${large},0 ${ix1},${iy1} Z" fill="${colors[i%colors.length]}"/>`;
   });
+  const legend = entries.map(([label,val],i)=>
+    `<text x="185" y="${20+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
+      <tspan fill="${colors[i%colors.length]}">■ </tspan>${label} (${val})
+    </text>`).join('');
+  const svg = `<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    ${slices.join('')}
+    <circle cx="${cx}" cy="${cy}" r="28" fill="white"/>
+    <text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${total}</text>
+    ${legend}
+  </svg>`;
+  const el = document.getElementById('dc-pizza');
+  el.innerHTML = svg;
 }
 
 function renderDashFatAtend(data){
   const fat = {};
-  data.forEach(r => fat[r.atendente] = (fat[r.atendente]||0) + (r.valor||0));
+  data.forEach(r => fat[r.atendente||'—'] = (fat[r.atendente||'—']||0) + (r.valor||0));
   const sorted = Object.entries(fat).sort((a,b) => b[1]-a[1]);
-  destroyDashChart('dc-fat-atend');
-  dashCharts['dc-fat-atend'] = new Chart(document.getElementById('dc-fat-atend').getContext('2d'), {
-    type: 'bar',
-    data: { labels: sorted.map(x=>x[0]), datasets:[{ data: sorted.map(x=>x[1]),
-      backgroundColor: sorted.map((_,i) => i===0 ? '#C9A84C' : '#1B3464BB'),
-      borderRadius:5, borderSkipped:false }]},
-    options: { responsive:true, maintainAspectRatio:false, indexAxis:'y',
-      plugins:{ legend:{display:false}, tooltip:{ backgroundColor:'#1B3464', padding:8,
-        callbacks:{ label: c => 'R$ '+c.parsed.x.toLocaleString('pt-BR',{minimumFractionDigits:2}) }}},
-      scales:{ x:{ grid:{color:'#F0F4FA'}, ticks:{color:'#8FA3C8',font:{size:10},
-          callback: v => 'R$'+Math.round(v/1000)+'k' }},
-        y:{ grid:{display:false}, ticks:{color:'#566A8F',font:{size:11,weight:'600'}} }}}
-  });
+  const max = sorted[0]?sorted[0][1]:1;
+  const el = document.getElementById('dc-fat-atend');
+  el.innerHTML = sorted.map(([name,val],i)=>`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:'Open Sans',sans-serif;text-align:right">${name}</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
+        <div style="height:100%;width:${Math.round(val/max*100)}%;background:${i===0?'#C9A84C':'#1B3464'};border-radius:4px;transition:width .4s ease"></div>
+      </div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:'Raleway',sans-serif">R$ ${val.toLocaleString('pt-BR',{minimumFractionDigits:2})}</div>
+    </div>`).join('');
 }
 
 function renderDashTopClientes(data){
@@ -3542,34 +3648,36 @@ function renderDashGauge(data){
   if(pct <= 10){ statusEl.textContent='✓ Dentro da meta'; statusEl.style.cssText='background:#E8F5EE;color:#1E6B3C'; }
   else if(pct <= 20){ statusEl.textContent='⚠ Atenção'; statusEl.style.cssText='background:#FEF9EC;color:#7D5A00'; }
   else { statusEl.textContent='✕ Acima do limite'; statusEl.style.cssText='background:#FDEDED;color:#C0392B'; }
-  destroyDashChart('dc-gauge');
-  dashCharts['dc-gauge'] = new Chart(document.getElementById('dc-gauge').getContext('2d'), {
-    type: 'doughnut',
-    data: { datasets:[{ data:[pct, 100-pct], backgroundColor:[color,'#F0F4FA'], borderWidth:0 }]},
-    options: { responsive:false, maintainAspectRatio:false, cutout:'74%',
-      rotation:-90, circumference:180,
-      plugins:{ legend:{display:false}, tooltip:{enabled:false} }}
-  });
+  const gEl = document.getElementById('dc-gauge');
+  const sweep = pct/100*180;
+  const toRad = d => (d-180)*Math.PI/180;
+  const ex = 100+80*Math.cos(toRad(sweep)), ey = 100+80*Math.sin(toRad(sweep));
+  const large = sweep>90?1:0;
+  gEl.innerHTML = `<svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:110px">
+    <path d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="#F0F4FA" stroke-width="16" stroke-linecap="round"/>
+    <path d="M20,100 A80,80 0 ${large},1 ${ex},${ey}" fill="none" stroke="${color}" stroke-width="16" stroke-linecap="round"/>
+  </svg>`;
 }
 
 function renderDashFatMes(data){
   const byMes = Array(12).fill(0);
   data.forEach(r => { if(r.date){ const m=parseInt(r.date.split('-')[1])-1; byMes[m]+=(r.valor||0); }});
   const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-  destroyDashChart('dc-fat-mes');
-  dashCharts['dc-fat-mes'] = new Chart(document.getElementById('dc-fat-mes').getContext('2d'), {
-    type: 'bar',
-    data: { labels: meses, datasets:[{ data: byMes,
-      backgroundColor: byMes.map(v => v>0 ? '#C9A84C99' : '#F0F4FA'),
-      borderColor: byMes.map(v => v>0 ? '#C9A84C' : 'transparent'),
-      borderWidth:1, borderRadius:4, borderSkipped:false }]},
-    options: { responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{display:false}, tooltip:{ backgroundColor:'#1B3464', padding:8,
-        callbacks:{ label: c => 'R$ '+c.parsed.y.toLocaleString('pt-BR',{minimumFractionDigits:2}) }}},
-      scales:{ x:{grid:{display:false},ticks:{color:'#8FA3C8',font:{size:10}}},
-               y:{grid:{color:'#F0F4FA'},ticks:{color:'#8FA3C8',font:{size:10},
-                  callback:v=>'R$'+Math.round(v/1000)+'k'}} }}
-  });
+  const max = Math.max(...byMes, 1);
+  const W=500, H=180, PL=40, PR=10, PT=10, PB=25;
+  const cW=W-PL-PR, cH=H-PT-PB;
+  const bw = cW/12*0.7, gap = cW/12;
+  const bars = byMes.map((v,i)=>{
+    const bh = (v/max)*cH;
+    const x = PL + i*gap + gap*0.15;
+    const y = PT + cH - bh;
+    return `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="3" fill="${v>0?'#C9A84C':'#F0F4FA'}"/>
+      <text x="${x+bw/2}" y="${H-6}" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">${meses[i]}</text>
+      ${v>0?`<text x="${x+bw/2}" y="${y-4}" text-anchor="middle" font-size="8" fill="#7a5200" font-family="Open Sans,sans-serif">R$${Math.round(v/1000)}k</text>`:''}`;
+  }).join('');
+  const gridLines = [0,0.25,0.5,0.75,1].map(p=>`<line x1="${PL}" y1="${PT+cH-p*cH}" x2="${W-PR}" y2="${PT+cH-p*cH}" stroke="#F0F4FA" stroke-width="1"/>`).join('');
+  const el = document.getElementById('dc-fat-mes');
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${gridLines}${bars}</svg>`;
 }
 
 
@@ -3624,24 +3732,16 @@ function renderDashNfe(data){
   const labelsLong = clientesSorted.map(([n]) => n);
 
   // Gráfico 1: Total de notas por cliente (barras horizontais)
-  destroyDashChart('dc-nfe-cliente');
-  dashCharts['dc-nfe-cliente'] = new Chart(
-    document.getElementById('dc-nfe-cliente').getContext('2d'), {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [{ label:'Notas', data: clientesSorted.map(([,v])=>v.total),
-        backgroundColor: clientesSorted.map((_,i)=> i===0?'#C9A84C':'#1B3464BB'),
-        borderRadius:5, borderSkipped:false }]
-    },
-    options: { responsive:true, maintainAspectRatio:false, indexAxis:'y',
-      plugins:{ legend:{display:false},
-        tooltip:{ backgroundColor:'#1B3464', padding:8,
-          callbacks:{ title: (items) => labelsLong[items[0].dataIndex],
-                      label: c => c.parsed.x + ' nota' + (c.parsed.x!==1?'s':'') }}},
-      scales:{ x:{ grid:{color:'#F0F4FA'}, ticks:{color:'#8FA3C8',font:{size:10},stepSize:1}},
-               y:{ grid:{display:false}, ticks:{color:'#566A8F',font:{size:11,weight:'600'}} }}}
-  });
+  const nfeClienteEl = document.getElementById('dc-nfe-cliente');
+  const nfeMax = clientesSorted[0] ? clientesSorted[0][1].total : 1;
+  nfeClienteEl.innerHTML = clientesSorted.map(([name,v],i)=>`
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:'Open Sans',sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${labelsLong[i]}</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:${Math.round(v.total/nfeMax*100)}%;background:${i===0?'#C9A84C':'#1B3464'};border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:'Raleway',sans-serif">${v.total} nota${v.total!==1?'s':''}</div>
+    </div>`).join('');
 
   // Gráfico 2: Notas por Cliente por Mês (novo)
   window._lastNfeData = nfeData;
@@ -3651,21 +3751,25 @@ function renderDashNfe(data){
   // Gráfico 3: Pizza por tipo de nota (geral)
   const pizzaTipos = Object.entries(tipoCount).sort((a,b)=>b[1]-a[1]);
   const pizzaCores = { 'Produto':'#1B3464', 'Serviço':'#C9A84C', 'Siare':'#27AE60', 'Não informado':'#8FA3C8' };
-  destroyDashChart('dc-nfe-tipo-pizza');
-  dashCharts['dc-nfe-tipo-pizza'] = new Chart(
-    document.getElementById('dc-nfe-tipo-pizza').getContext('2d'), {
-    type: 'doughnut',
-    data: {
-      labels: pizzaTipos.map(([t])=>t),
-      datasets:[{ data: pizzaTipos.map(([,v])=>v),
-        backgroundColor: pizzaTipos.map(([t])=>pizzaCores[t]||'#8FA3C8'),
-        borderWidth:3, borderColor:'#fff', hoverOffset:5 }]
-    },
-    options: { responsive:true, maintainAspectRatio:false, cutout:'62%',
-      plugins:{ legend:{ position:'bottom', labels:{color:'#566A8F',font:{size:11},boxWidth:10,padding:12}},
-        tooltip:{ backgroundColor:'#1B3464', padding:8,
-          callbacks:{ label: c => c.label+': '+c.parsed+' nota'+(c.parsed!==1?'s':'')+' ('+Math.round(c.parsed/totalNotas*100)+'%)' }}}}
+  // SVG donut para tipos de nota
+  const nfePizzaEl = document.getElementById('dc-nfe-tipo-pizza');
+  const nfePTotal = pizzaTipos.reduce((s,[,v])=>s+v,0)||1;
+  const nfePR=60,nfePr=38,nfePcx=80,nfePcy=75;
+  let nfePAngle=-Math.PI/2;
+  const nfePSlices=pizzaTipos.map(([tipo,val])=>{
+    const color=pizzaCores[tipo]||'#8FA3C8';
+    const sweep=(val/nfePTotal)*2*Math.PI;
+    const x1=nfePcx+nfePR*Math.cos(nfePAngle),y1=nfePcy+nfePR*Math.sin(nfePAngle);
+    nfePAngle+=sweep;
+    const x2=nfePcx+nfePR*Math.cos(nfePAngle),y2=nfePcy+nfePR*Math.sin(nfePAngle);
+    const ix1=nfePcx+nfePr*Math.cos(nfePAngle-sweep),iy1=nfePcy+nfePr*Math.sin(nfePAngle-sweep);
+    const ix2=nfePcx+nfePr*Math.cos(nfePAngle),iy2=nfePcy+nfePr*Math.sin(nfePAngle);
+    const large=sweep>Math.PI?1:0;
+    return {path:`<path d="M${ix1},${iy1} L${x1},${y1} A${nfePR},${nfePR} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${nfePr},${nfePr} 0 ${large},0 ${ix1},${iy1} Z" fill="${color}"/>`,color,tipo,val};
   });
+  const nfePLegend=nfePSlices.map((s,i)=>`<text x="155" y="${18+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="${s.color}">■ </tspan>${s.tipo} (${s.val})</text>`).join('');
+  if(nfePizzaEl) nfePizzaEl.innerHTML=`<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${nfePSlices.map(s=>s.path).join('')}<circle cx="${nfePcx}" cy="${nfePcy}" r="25" fill="white"/><text x="${nfePcx}" y="${nfePcy+5}" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${nfePTotal}</text>${nfePLegend}</svg>`;
+
 
   // Ranking detalhado
   const max = clientesSorted[0][1].total;
@@ -3888,130 +3992,51 @@ document.addEventListener('click', function(e){
 });
 
 function renderNfeMesChart(nfeData){
-  if(!nfeData || !nfeData.length){ destroyDashChart('dc-nfe-tipo-cliente'); return; }
-
-  const MESES_NOMES = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-
-  // Filtrar clientes selecionados
-  const filtered = nfeMesSelectedClients.size > 0
-    ? nfeData.filter(r => nfeMesSelectedClients.has(r.clientId))
-    : nfeData;
-
-  // Coletar todos os meses YYYY-MM únicos e ordenar
-  const mesesSet = new Set();
-  filtered.forEach(r => { if(r.date) mesesSet.add(r.date.slice(0,7)); });
-  const meses = [...mesesSet].sort();
-
-  if(!meses.length){ destroyDashChart('dc-nfe-tipo-cliente'); return; }
-
-  // Labels do eixo X: "Jan/25"
-  const axisLabels = meses.map(m => {
-    const [y, mo] = m.split('-');
-    return MESES_NOMES[parseInt(mo)-1] + '/' + y.slice(2);
-  });
-
-  // Clientes únicos nos dados filtrados (ordenados por total de notas desc)
-  const clienteTotals = {};
-  filtered.forEach(r => {
-    clienteTotals[r.clientId] = (clienteTotals[r.clientId]||0) + (parseInt(r.nfeQty)||0);
-  });
-  const clienteIds = Object.entries(clienteTotals)
-    .sort((a,b) => b[1]-a[1])
-    .map(([id]) => id);
-
-  // Construir datasets: um por cliente
-  const datasets = clienteIds.map((id, i) => {
-    const color = NFE_PALETTE[i % NFE_PALETTE.length];
-    const name  = clientName(id);
-    const data  = meses.map(mes => {
-      const recs = filtered.filter(r => r.clientId === id && r.date && r.date.slice(0,7) === mes);
-      if(nfeMesMetrica === 'qty') return recs.reduce((s,r) => s+(parseInt(r.nfeQty)||0), 0);
-      return recs.reduce((s,r) => s+(r.valor||0), 0);
+  if(!nfeData || !nfeData.length){ document.getElementById('dc-nfe-tipo-cliente').innerHTML=''; return; }
+  const MESES_NOMES=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const filtered=nfeMesSelectedClients.size>0?nfeData.filter(r=>nfeMesSelectedClients.has(r.clientId)):nfeData;
+  const mesesSet=new Set();
+  filtered.forEach(r=>{if(r.date)mesesSet.add(r.date.slice(0,7));});
+  const meses=[...mesesSet].sort();
+  if(!meses.length){document.getElementById('dc-nfe-tipo-cliente').innerHTML='';return;}
+  const isVal=nfeMesMetrica==='val';
+  const sub=document.getElementById('dc-nfe-mes-sub');
+  if(sub)sub.textContent=isVal?'Faturamento mensal por cliente (R$)':'Quantidade de notas mensais por cliente';
+  const clienteTotals={};
+  filtered.forEach(r=>{clienteTotals[r.clientId]=(clienteTotals[r.clientId]||0)+(parseInt(r.nfeQty)||0);});
+  const clienteIds=Object.entries(clienteTotals).sort((a,b)=>b[1]-a[1]).map(([id])=>id);
+  // Calcular dados por mês e cliente
+  const allVals=[];
+  const datasets=clienteIds.map((id,i)=>{
+    const color=NFE_PALETTE[i%NFE_PALETTE.length];
+    const data=meses.map(mes=>{
+      const recs=filtered.filter(r=>r.clientId===id&&r.date&&r.date.slice(0,7)===mes);
+      return isVal?recs.reduce((s,r)=>s+(r.valor||0),0):recs.reduce((s,r)=>s+(parseInt(r.nfeQty)||0),0);
     });
-    return {
-      label: name,
-      data,
-      backgroundColor: color + 'CC',
-      borderColor: color,
-      borderWidth: 1.5,
-      borderRadius: 3,
-      borderSkipped: false,
-      _clientId: id,
-      _color: color,
-    };
+    data.forEach(v=>allVals.push(v));
+    return {id,color,name:clientName(id),data};
   });
-
-  // Atualizar subtítulo
-  const isVal = nfeMesMetrica === 'val';
-  const sub = document.getElementById('dc-nfe-mes-sub');
-  if(sub) sub.textContent = isVal
-    ? 'Faturamento mensal por cliente (R$)'
-    : 'Quantidade de notas mensais por cliente';
-
-  destroyDashChart('dc-nfe-tipo-cliente');
-  dashCharts['dc-nfe-tipo-cliente'] = new Chart(
-    document.getElementById('dc-nfe-tipo-cliente').getContext('2d'), {
-    type: 'bar',
-    data: { labels: axisLabels, datasets },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode:'index', intersect:false },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          backgroundColor: '#1B3464',
-          padding: 12,
-          callbacks: {
-            title: items => {
-              const mesKey = meses[items[0].dataIndex];
-              const [y, mo] = mesKey.split('-');
-              return MESES_NOMES[parseInt(mo)-1] + ' / 20' + y.slice(2);
-            },
-            label: c => {
-              const v = c.parsed.y;
-              if(v === 0) return null;
-              return isVal
-                ? ' ' + c.dataset.label + ': R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2})
-                : ' ' + c.dataset.label + ': ' + v + ' nota' + (v!==1?'s':'');
-            },
-            footer: items => {
-              const total = items.reduce((s,i) => s+i.parsed.y, 0);
-              if(total===0) return '';
-              return isVal
-                ? 'Total: R$ '+total.toLocaleString('pt-BR',{minimumFractionDigits:2})
-                : 'Total: '+total+' nota'+(total!==1?'s':'');
-            }
-          }
-        }
-      },
-      scales: {
-        x: {
-          grid: { display:false },
-          ticks: { color:'#566A8F', font:{size:11, weight:'600'} }
-        },
-        y: {
-          grid: { color:'#F0F4FA' },
-          ticks: {
-            color:'#8FA3C8', font:{size:10},
-            callback: isVal
-              ? v => 'R$'+Math.round(v/1000)+'k'
-              : v => Number.isInteger(v) ? v : ''
-          }
-        }
-      }
-    }
-  });
-
-  // Renderizar legenda customizada
-  const legendEl = document.getElementById('dc-nfe-mes-legend');
-  if(legendEl){
-    legendEl.innerHTML = datasets.map(ds => `
-      <div class="nfe-mes-legend-item">
-        <span class="nfe-mes-legend-dot" style="background:${ds._color}"></span>
-        <span>${ds.label}</span>
-      </div>`).join('');
-  }
+  const maxVal=Math.max(...allVals,1);
+  const el=document.getElementById('dc-nfe-tipo-cliente');
+  const W=500,H=220,PL=30,PR=10,PT=10,PB=30;
+  const cW=W-PL-PR,cH=H-PT-PB;
+  const mW=cW/meses.length;
+  const grpW=mW*0.8/Math.max(clienteIds.length,1);
+  const bars=meses.map((mes,mi)=>{
+    const [y,mo]=mes.split('-');
+    const label=MESES_NOMES[parseInt(mo)-1]+'/'+y.slice(2);
+    const barGroup=datasets.map((ds,di)=>{
+      const v=ds.data[mi];
+      const bh=(v/maxVal)*cH;
+      const x=PL+mi*mW+mW*0.1+di*grpW;
+      const yp=PT+cH-bh;
+      return v>0?`<rect x="${x}" y="${yp}" width="${grpW-1}" height="${bh}" rx="2" fill="${ds.color}"/>`:'';
+    }).join('');
+    return `${barGroup}<text x="${PL+mi*mW+mW/2}" y="${H-6}" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">${label}</text>`;
+  }).join('');
+  const legend=datasets.slice(0,6).map((ds,i)=>`<text x="${10+i*80}" y="${H+15}" font-size="9" fill="${ds.color}" font-family="Open Sans,sans-serif">■ ${ds.name.slice(0,10)}</text>`).join('');
+  const gridLines=[0,0.25,0.5,0.75,1].map(p=>`<line x1="${PL}" y1="${PT+cH-p*cH}" x2="${W-PR}" y2="${PT+cH-p*cH}" stroke="#F0F4FA" stroke-width="1"/>`).join('');
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H+20}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${gridLines}${bars}${legend}</svg>`;
 }
 
 </script>
