@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_8.html -->
+<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_9.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1825,8 +1825,18 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 <div class="app-view active" id="view-sistema">
 <div class="page" id="sys-page">
 
-<!-- FORMULÁRIO -->
+<!-- CARD PRINCIPAL -->
 <div class="card">
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
+    <button class="tab" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
+    <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
+    <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
+    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
+  </div>
+
+  <!-- NOVO ATENDIMENTO -->
+  <div class="tab-panel active" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
   <div id="edit-bar" style="display:none" class="edit-bar">
     ✏️ <span>Editando registro</span>
@@ -1924,17 +1934,10 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <button class="btn-register" onclick="save()" id="btn-save">+ Registrar Atendimento</button>
 </div>
 
-<!-- LISTA -->
-<div class="card">
-  <div class="tabs">
-    <button class="tab active" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
-    <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
-    <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
-    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
   </div>
 
   <!-- ATENDIMENTOS -->
-  <div class="tab-panel active" id="tab-atendimentos">
+  <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
     <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">1</div></div>
     <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">1</div></div>
@@ -2338,7 +2341,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
 </div>
 
-</div>
+
 
 <script>
 
@@ -2578,7 +2581,7 @@ async function delClient(id){
 }
 
 function switchTab(tab){
-  const tabs=['atendimentos','clientes','relatorio','dashboard'];
+  const tabs=['novo','atendimentos','clientes','relatorio','dashboard'];
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
   tabs.forEach(t=>document.getElementById('tab-'+t).classList.toggle('active',t===tab));
   if(tab==='relatorio')renderRelatorio();
@@ -3187,7 +3190,7 @@ async function save(){
   try{
     await saveRecord({id,...rec});
     if(editId){Object.assign(records.find(x=>x.id===editId),{id,...rec});cancelEdit();}
-    else{records.unshift({id,...rec});resetForm();}
+    else{records.unshift({id,...rec});resetForm();switchTab('atendimentos');}
     render();renderClients();
   }catch(e){}
 }
