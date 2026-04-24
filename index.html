@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0058)file:///C:/Users/junio/Downloads/sollertia_completo_9.html -->
+<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_10.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -518,6 +518,8 @@ body {
 .tab.active { color: var(--navy); border-bottom-color: var(--navy); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
+#tab-dashboard canvas { display: block; width: 100% !important; }
+.dash-chart-area { position: relative; height: 260px; min-height: 200px; }
 
 /* ─── STATS ──────────────────────────────────── */
 .stats {
@@ -1828,15 +1830,15 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 <!-- CARD PRINCIPAL -->
 <div class="card">
   <div class="tabs">
-    <button class="tab active" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
+    <button class="tab" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
     <button class="tab" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
     <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
     <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
-    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
+    <button class="tab active" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
   </div>
 
   <!-- NOVO ATENDIMENTO -->
-  <div class="tab-panel active" id="tab-novo">
+  <div class="tab-panel" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
   <div id="edit-bar" style="display:none" class="edit-bar">
     ✏️ <span>Editando registro</span>
@@ -2170,7 +2172,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
 
   <!-- DASHBOARD -->
-  <div class="tab-panel" id="tab-dashboard">
+  <div class="tab-panel active" id="tab-dashboard">
     <!-- Filtros do dashboard -->
     <div class="dash-filter-bar">
       <span class="dash-filter-label">Período</span>
@@ -2196,23 +2198,47 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info"></span>
+      <span id="dash-period-label" class="dash-period-info">1 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
-    <div class="dash-kpi-row" id="dash-kpis"></div>
+    <div class="dash-kpi-row" id="dash-kpis">
+    <div class="dash-kpi ">
+      <span class="dash-kpi-icon">📋</span>
+      <div class="dash-kpi-label">Atendimentos</div>
+      <div class="dash-kpi-val">1</div>
+      <div class="dash-kpi-sub">1 clientes</div>
+    </div>
+    <div class="dash-kpi dash-kpi--gold">
+      <span class="dash-kpi-icon">💰</span>
+      <div class="dash-kpi-label">Faturamento</div>
+      <div class="dash-kpi-val">R$&nbsp;100,00</div>
+      <div class="dash-kpi-sub">no período</div>
+    </div>
+    <div class="dash-kpi dash-kpi--gold">
+      <span class="dash-kpi-icon">🎫</span>
+      <div class="dash-kpi-label">Ticket Médio</div>
+      <div class="dash-kpi-val">R$&nbsp;100</div>
+      <div class="dash-kpi-sub">por atendimento</div>
+    </div>
+    <div class="dash-kpi dash-kpi--green">
+      <span class="dash-kpi-icon">✅</span>
+      <div class="dash-kpi-label">Retrabalho</div>
+      <div class="dash-kpi-val">0%</div>
+      <div class="dash-kpi-sub">0 ocorrências</div>
+    </div></div>
 
     <!-- Linha: Atend. por mês + Distribuição serviço -->
     <div class="dash-row-2">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <div class="dash-chart-area"><canvas id="dc-linha"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-linha" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-pizza"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-pizza" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
       </div>
     </div>
 
@@ -2221,12 +2247,22 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Atendente</div>
         <div class="dash-chart-sub">R$ gerado por colaborador</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-atend"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-fat-atend" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Top Clientes</div>
         <div class="dash-chart-sub">Por volume de atendimentos</div>
-        <div id="dc-top-clientes" class="dash-top-list"></div>
+        <div id="dc-top-clientes" class="dash-top-list">
+    <div class="dash-top-item">
+      <div class="dash-top-rank dash-top-rank--1">1</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">teste 2</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div></div>
       </div>
     </div>
 
@@ -2237,7 +2273,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-sub">Meta: abaixo de 10%</div>
         <div class="dash-gauge-wrap">
           <div style="position:relative;width:200px;height:110px;margin:0 auto">
-            <canvas id="dc-gauge" width="200" height="110"></canvas>
+            <canvas id="dc-gauge" width="250" height="137" style="height: 110px; display: block; box-sizing: border-box; width: 200px;"></canvas>
             <div class="dash-gauge-center">
               <div class="dash-gauge-num" id="dc-gauge-num">0%</div>
               <div class="dash-gauge-lbl">retrabalho</div>
@@ -2249,17 +2285,17 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">0</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">1</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
-          <div id="dc-gauge-status" class="dash-gauge-status"></div>
+          <div id="dc-gauge-status" class="dash-gauge-status" style="background: rgb(232, 245, 238); color: rgb(30, 107, 60);">✓ Dentro da meta</div>
         </div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <div class="dash-chart-area"><canvas id="dc-fat-mes"></canvas></div>
+        <div class="dash-chart-area"><canvas id="dc-fat-mes" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
       </div>
     </div>
 
@@ -2272,7 +2308,31 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     </div>
     <div class="dash-nfe-top">
       <!-- KPIs de notas -->
-      <div class="dash-nfe-kpis" id="dc-nfe-kpis"></div>
+      <div class="dash-nfe-kpis" id="dc-nfe-kpis">
+    <div class="dash-kpi ">
+      <span class="dash-kpi-icon">📄</span>
+      <div class="dash-kpi-label">Total de Notas</div>
+      <div class="dash-kpi-val">5</div>
+      <div class="dash-kpi-sub">1 atendimentos</div>
+    </div>
+    <div class="dash-kpi dash-kpi--gold">
+      <span class="dash-kpi-icon">🏭</span>
+      <div class="dash-kpi-label">Nota de Produto</div>
+      <div class="dash-kpi-val">5</div>
+      <div class="dash-kpi-sub">NF-e</div>
+    </div>
+    <div class="dash-kpi dash-kpi">
+      <span class="dash-kpi-icon">🛠</span>
+      <div class="dash-kpi-label">Nota de Serviço</div>
+      <div class="dash-kpi-val">0</div>
+      <div class="dash-kpi-sub">NFS-e</div>
+    </div>
+    <div class="dash-kpi dash-kpi--green">
+      <span class="dash-kpi-icon">🔀</span>
+      <div class="dash-kpi-label">Siare</div>
+      <div class="dash-kpi-val">0</div>
+      <div class="dash-kpi-sub">Misto</div>
+    </div></div>
     </div>
     <!-- Card principal: Notas por Cliente por Mês -->
     <div class="dash-chart-card" style="margin-bottom:14px">
@@ -2280,7 +2340,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="nfe-mes-header">
         <div>
           <div class="dash-chart-title">Notas por Cliente por Mês</div>
-          <div class="dash-chart-sub" id="dc-nfe-mes-sub">Evolução mensal de notas fiscais por cliente</div>
+          <div class="dash-chart-sub" id="dc-nfe-mes-sub">Quantidade de notas mensais por cliente</div>
         </div>
         <div class="nfe-mes-controls">
           <!-- Toggle Quantidade / Valor -->
@@ -2300,30 +2360,55 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
                 <button onclick="selectAllNfeMes()">Todos</button>
                 <button onclick="clearNfeMes()">Limpar</button>
               </div>
-              <div class="nfe-mes-list" id="nfe-mes-list"></div>
+              <div class="nfe-mes-list" id="nfe-mes-list"><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777029060053" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#1B3464"></span>
+      <span class="nfe-mes-opt-name">teste 2</span>
+      <span class="nfe-mes-opt-count">5 notas</span>
+    </label></div>
             </div>
           </div>
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div class="dash-chart-area" style="height:280px"><canvas id="dc-nfe-tipo-cliente"></canvas></div>
+      <div class="dash-chart-area" style="height:280px"><canvas id="dc-nfe-tipo-cliente" width="1268" height="350" style="display: block; box-sizing: border-box; height: 280px; width: 1014px;"></canvas></div>
       <!-- Legenda de clientes gerada dinamicamente -->
-      <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
+      <div id="dc-nfe-mes-legend" class="nfe-mes-legend">
+      <div class="nfe-mes-legend-item">
+        <span class="nfe-mes-legend-dot" style="background:#1B3464"></span>
+        <span>teste 2</span>
+      </div></div>
     </div>
     <!-- Gráfico menor: Total acumulado por cliente (mantido) -->
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
-      <div><canvas id="dc-nfe-cliente"></canvas></div>
+      <div><canvas id="dc-nfe-cliente" height="0" style="height: 0px; display: block; box-sizing: border-box; width: 0px;" width="0"></canvas></div>
     </div>
     <div class="dash-row-2" style="margin-bottom:14px">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-nfe-tipo-pizza"></canvas></div>
+        <div class="dash-chart-area dash-chart-area--sm"><canvas id="dc-nfe-tipo-pizza" width="604" height="250" style="display: block; box-sizing: border-box; height: 200px; width: 483px;"></canvas></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
         <div class="dash-chart-sub">Clientes com mais notas emitidas</div>
-        <div id="dc-nfe-ranking" class="dash-top-list" style="margin-top:4px"></div>
+        <div id="dc-nfe-ranking" class="dash-top-list" style="margin-top:4px">
+    <div class="dash-top-item">
+      <div class="dash-top-rank dash-top-rank--1">1</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">teste 2</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#EEF4FC;
+              color:#1B3464">
+              Produto: 5
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">5<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div></div>
       </div>
     </div>
 
@@ -2585,7 +2670,13 @@ function switchTab(tab){
   document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===tab));
   tabs.forEach(t=>document.getElementById('tab-'+t).classList.toggle('active',t===tab));
   if(tab==='relatorio')renderRelatorio();
-  if(tab==='dashboard')setTimeout(()=>renderDashboard(), 50);
+  if(tab==='dashboard'){
+    // Garante que os canvas têm altura antes de renderizar
+    document.querySelectorAll('#tab-dashboard canvas').forEach(c=>{
+      if(!c.style.height) c.style.height = c.closest('.dash-chart-area') ? '' : '200px';
+    });
+    setTimeout(()=>renderDashboard(), 80);
+  }
 }
 
 function toggleNfe(){
@@ -3336,7 +3427,10 @@ function renderDashboard(){
   // Force Chart.js to recalculate sizes after container becomes visible
   setTimeout(() => {
     Object.values(dashCharts).forEach(c => { try{ c.resize(); } catch(e){} });
-  }, 100);
+  }, 200);
+  setTimeout(() => {
+    Object.values(dashCharts).forEach(c => { try{ c.resize(); } catch(e){} });
+  }, 600);
 }
 
 function renderDashKPIs(data){
