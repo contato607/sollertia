@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_3.html -->
+<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_4.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2351,7 +2351,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
         <div class="dash-chart-area dash-chart-area--sm" id="dc-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-    <path d="M100,48 L100,20 A70,70 0 1,1 99.99999999999999,20 L99.99999999999999,48 A42,42 0 1,0 100,48 Z" fill="#1B3464"></path>
+    <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
     <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
@@ -3754,17 +3754,29 @@ function renderDashPizza(data){
   const total = entries.reduce((s,[,v])=>s+v,0)||1;
   const colors = ['#1B3464','#C9A84C','#27AE60','#E74C3C','#8E44AD'];
   const R=70, r=42, cx=100, cy=90;
-  let angle = -Math.PI/2;
-  const slices = entries.map(([label,val],i)=>{
-    const sweep = (val/total)*2*Math.PI;
-    const x1=cx+R*Math.cos(angle), y1=cy+R*Math.sin(angle);
-    angle+=sweep;
-    const x2=cx+R*Math.cos(angle), y2=cy+R*Math.sin(angle);
-    const ix1=cx+r*Math.cos(angle-sweep), iy1=cy+r*Math.sin(angle-sweep);
-    const ix2=cx+r*Math.cos(angle), iy2=cy+r*Math.sin(angle);
-    const large=sweep>Math.PI?1:0;
-    return `<path d="M${ix1},${iy1} L${x1},${y1} A${R},${R} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${r},${r} 0 ${large},0 ${ix1},${iy1} Z" fill="${colors[i%colors.length]}"/>`;
-  });
+  let slices;
+
+  if(entries.length === 1){
+    // Caso especial: apenas uma categoria — desenha dois semicírculos (SVG não suporta arco de 360°)
+    const color = colors[0];
+    slices = [
+      `<path d="M${cx},${cy-R} A${R},${R} 0 0,1 ${cx},${cy+R} L${cx},${cy+r} A${r},${r} 0 0,0 ${cx},${cy-r} Z" fill="${color}"/>`,
+      `<path d="M${cx},${cy+R} A${R},${R} 0 0,1 ${cx},${cy-R} L${cx},${cy-r} A${r},${r} 0 0,0 ${cx},${cy+r} Z" fill="${color}"/>`
+    ];
+  } else {
+    let angle = -Math.PI/2;
+    slices = entries.map(([label,val],i)=>{
+      const sweep = (val/total)*2*Math.PI;
+      const x1=cx+R*Math.cos(angle), y1=cy+R*Math.sin(angle);
+      angle+=sweep;
+      const x2=cx+R*Math.cos(angle), y2=cy+R*Math.sin(angle);
+      const ix1=cx+r*Math.cos(angle-sweep), iy1=cy+r*Math.sin(angle-sweep);
+      const ix2=cx+r*Math.cos(angle), iy2=cy+r*Math.sin(angle);
+      const large=sweep>Math.PI?1:0;
+      return `<path d="M${ix1.toFixed(2)},${iy1.toFixed(2)} L${x1.toFixed(2)},${y1.toFixed(2)} A${R},${R} 0 ${large},1 ${x2.toFixed(2)},${y2.toFixed(2)} L${ix2.toFixed(2)},${iy2.toFixed(2)} A${r},${r} 0 ${large},0 ${ix1.toFixed(2)},${iy1.toFixed(2)} Z" fill="${colors[i%colors.length]}"/>`;
+    });
+  }
+
   const legend = entries.map(([label,val],i)=>
     `<text x="185" y="${20+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
       <tspan fill="${colors[i%colors.length]}">■ </tspan>${label} (${val})
