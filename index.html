@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/junio/Downloads/sollertia_completo_15.html -->
+<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_1.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos9_files/css2" rel="stylesheet">
-<script src="./Sollertia — Sistema de Atendimentos9_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos9_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos9_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos9_files/jspdf.plugin.autotable.min.js.download"></script>
+<link href="./Sollertia — Sistema de Atendimentos_files/css2" rel="stylesheet">
+<script src="./Sollertia — Sistema de Atendimentos_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos_files/jspdf.plugin.autotable.min.js.download"></script>
 
 <style>
 
@@ -1821,7 +1821,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
   <div style="flex:1"></div>
   <div style="width:16px"></div>
-  <span class="nav-date" id="nav-date">sex., 24 de abr.</span>
+  <span class="nav-date" id="nav-date">seg., 27 de abr.</span>
 </div>
 
 <!-- SISTEMA VIEW -->
@@ -1850,7 +1850,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="client-field">
       <label id="label-cliente">Cliente *</label>
       <div class="client-input-wrap">
-        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option></select>
+        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option><option value="1777034638458">teste 3</option></select>
         <button class="btn-new-client" onclick="toggleAddClient()">+ Novo</button>
       </div>
       <div id="add-client-inline" style="display:none" class="add-client-inline">
@@ -1942,10 +1942,10 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">1</div></div>
-    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">1</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">2</div></div>
+    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">2</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">1</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">2</div></div>
     <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$100,00</div></div>
     <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">0</div></div></div>
     <div class="filters-wrap">
@@ -1984,6 +1984,21 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <th>Tipo</th><th>Tempo</th><th>Valor</th><th>Tipo Serviço</th><th>Retrab.</th><th>Notas</th><th></th>
         </tr></thead>
         <tbody id="tbody"><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">24/04/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 3</td>
+      <td class="td-desc">dgdggggd</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Carlos H.</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">5 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777034666622&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777034666622&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">24/04/2026</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 2</td>
       <td class="td-desc">teste 4</td>
@@ -2079,6 +2094,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="eci-actions">
           <button class="btn-save-client" onclick="saveEditClient(&#39;1777029060053&#39;)">✔ Salvar alterações</button>
           <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777029060053&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777034638458">
+        <div class="client-avatar" style="background:#FAEEDA;color:#633806">T3</div>
+        <div style="flex:1">
+          <div class="client-name">teste 3</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777034638458&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777034638458&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777034638458" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777034638458" value="teste 3" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777034638458" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777034638458">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777034638458&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777034638458&#39;)">Cancelar</button>
         </div>
       </div>
     </div></div>
@@ -2199,7 +2250,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info">1 atend. · Este mês</span>
+      <span id="dash-period-label" class="dash-period-info">2 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
@@ -2207,8 +2258,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📋</span>
       <div class="dash-kpi-label">Atendimentos</div>
-      <div class="dash-kpi-val">1</div>
-      <div class="dash-kpi-sub">1 clientes</div>
+      <div class="dash-kpi-val">2</div>
+      <div class="dash-kpi-sub">2 clientes</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">💰</span>
@@ -2219,7 +2270,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🎫</span>
       <div class="dash-kpi-label">Ticket Médio</div>
-      <div class="dash-kpi-val">R$&nbsp;100</div>
+      <div class="dash-kpi-val">R$&nbsp;50</div>
       <div class="dash-kpi-sub">por atendimento</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
@@ -2253,7 +2304,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       
     <circle cx="155.45454545454547" cy="10" r="3" fill="#1B3464"></circle>
       <text x="155.45454545454547" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
-      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">1</text>
+      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">2</text>
     <circle cx="197.27272727272728" cy="150" r="3" fill="#1B3464"></circle>
       <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
       
@@ -2287,9 +2338,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-area dash-chart-area--sm" id="dc-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
     <path d="M100,48 L100,20 A70,70 0 1,1 99.99999999999999,20 L99.99999999999999,48 A42,42 0 1,0 100,48 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
-    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">1</text>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">2</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#1B3464">■ </tspan>Emissão de notas (1)
+      <tspan fill="#1B3464">■ </tspan>Emissão de notas (2)
     </text>
   </svg></div>
       </div>
@@ -2316,9 +2367,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste 2</div>
+        <div class="dash-top-name">teste 3</div>
         <div class="dash-top-track">
           <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">2</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">teste 2</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -2348,7 +2409,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">1</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">2</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
@@ -2399,13 +2460,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📄</span>
       <div class="dash-kpi-label">Total de Notas</div>
-      <div class="dash-kpi-val">5</div>
-      <div class="dash-kpi-sub">1 atendimentos</div>
+      <div class="dash-kpi-val">10</div>
+      <div class="dash-kpi-sub">2 atendimentos</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🏭</span>
       <div class="dash-kpi-label">Nota de Produto</div>
-      <div class="dash-kpi-val">5</div>
+      <div class="dash-kpi-val">10</div>
       <div class="dash-kpi-sub">NF-e</div>
     </div>
     <div class="dash-kpi dash-kpi">
@@ -2448,8 +2509,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
                 <button onclick="clearNfeMes()">Limpar</button>
               </div>
               <div class="nfe-mes-list" id="nfe-mes-list"><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777029060053" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
+      <input type="checkbox" value="1777034638458" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
       <span class="nfe-mes-opt-dot" style="background:#1B3464"></span>
+      <span class="nfe-mes-opt-name">teste 3</span>
+      <span class="nfe-mes-opt-count">5 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777029060053" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
       <span class="nfe-mes-opt-name">teste 2</span>
       <span class="nfe-mes-opt-count">5 notas</span>
     </label></div>
@@ -2458,7 +2524,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div class="dash-chart-area" id="dc-nfe-tipo-cliente" style="height:280px;padding:8px 0;display:flex;align-items:center"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="367" height="180" rx="2" fill="#1B3464"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
+      <div class="dash-chart-area" id="dc-nfe-tipo-cliente" style="height:280px;padding:8px 0;display:flex;align-items:center"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="10" width="183" height="180" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
@@ -2466,9 +2532,16 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
       <div id="dc-nfe-cliente" style="padding:10px 0">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">5 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:100%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">5 notas</div>
     </div></div>
@@ -2477,7 +2550,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,37 L80,15 A60,60 0 1,1 79.99999999999999,15 L80,37 A38,38 0 1,0 80,37 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">5</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (5)</text></svg></div>
+        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,37 L80,15 A60,60 0 1,1 79.99999999999999,15 L80,37 A38,38 0 1,0 80,37 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">10</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (10)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -2485,6 +2558,22 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div id="dc-nfe-ranking" class="dash-top-list" style="margin-top:4px">
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">teste 3</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#EEF4FC;
+              color:#1B3464">
+              Produto: 5
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">5<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">2</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 2</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
@@ -2586,6 +2675,39 @@ function showToast(msg,type='ok'){
   t.style.cssText=`position:fixed;bottom:24px;right:24px;background:${bg};color:#fff;padding:10px 18px;border-radius:8px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.2);animation:fadeInUp .2s ease`;
   document.head.insertAdjacentHTML('beforeend','<style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style>');
   t.textContent=msg;document.body.append(t);setTimeout(()=>t.remove(),3000);
+}
+
+/* ═══════════════════════════════════
+   SUPABASE KEEP-ALIVE
+   Envia um ping leve ao banco a cada
+   48 horas para evitar pausa por
+   inatividade no plano gratuito.
+═══════════════════════════════════ */
+const KEEPALIVE_KEY  = 'solla_keepalive_ts';
+const KEEPALIVE_INTERVAL_MS = 48 * 60 * 60 * 1000; // 48 horas
+
+async function supabaseKeepAlive() {
+  try {
+    // Faz um SELECT mínimo (1 linha) — suficiente para sinalizar atividade
+    await fetch(SUPA_URL + '/rest/v1/atendimentos?select=id&limit=1', {
+      headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY }
+    });
+    localStorage.setItem(KEEPALIVE_KEY, Date.now().toString());
+    console.info('[Sollertia] Keep-alive enviado ao Supabase — ' + new Date().toLocaleString('pt-BR'));
+  } catch(e) {
+    console.warn('[Sollertia] Keep-alive falhou:', e.message);
+  }
+}
+
+function initKeepAlive() {
+  const last = parseInt(localStorage.getItem(KEEPALIVE_KEY) || '0', 10);
+  const agora = Date.now();
+  // Dispara imediatamente se nunca rodou ou se já passou o intervalo
+  if (agora - last >= KEEPALIVE_INTERVAL_MS) {
+    supabaseKeepAlive();
+  }
+  // Agenda para rodar a cada 48h enquanto a aba estiver aberta
+  setInterval(supabaseKeepAlive, KEEPALIVE_INTERVAL_MS);
 }
 
 /* ═══════════════════════════════════
@@ -3443,6 +3565,7 @@ window.addEventListener('load', async () => {
   render();
   renderClients();
   renderDashboard(); // pré-renderiza enquanto canvas está acessível
+  initKeepAlive();   // ativa o keep-alive para evitar pausa do Supabase
 });
 
 
