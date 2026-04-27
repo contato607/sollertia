@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_6.html -->
+<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_7.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -4333,6 +4333,9 @@ const DASH_PASSWORD = 'sollertia2025';
 // ──────────────────────────────────────────────────────────────────────
 
 const DASH_SESSION_KEY = 'solla_dash_auth';
+
+// Limpa autenticação ao carregar a página — sempre pede senha ao abrir o sistema
+sessionStorage.removeItem(DASH_SESSION_KEY);
 
 function isDashUnlocked(){
   return sessionStorage.getItem(DASH_SESSION_KEY) === '1';
