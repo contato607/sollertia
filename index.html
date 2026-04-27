@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_4.html -->
+<!-- saved from url=(0075)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_5.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1942,11 +1942,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">3</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">4</div></div>
     <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">3</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">3</div></div>
-    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$100,00</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">4</div></div>
+    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$150,00</div></div>
     <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">1</div></div></div>
     <div class="filters-wrap">
       <div class="filter-label">Filtros</div>
@@ -1984,6 +1984,21 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <th>Tipo</th><th>Tempo</th><th>Valor</th><th>Tipo Serviço</th><th>Retrab.</th><th>Notas</th><th></th>
         </tr></thead>
         <tbody id="tbody"><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">27/04/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">teste</td>
+      <td class="td-desc">hjjjj</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Carlos H.</td>
+      <td><span class="badge badge-avul">Avulso</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">R$ 50,00</td>
+      <td><span class="badge badge-depto" style="background:#EEF4FC;color:#1B3464">Atualização de guias</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td>—</td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777294386836&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777294386836&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">27/04/2026</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">teste</td>
       <td class="td-desc">sdfsdgsdgsed</td>
@@ -2044,7 +2059,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="client-avatar" style="background:#E1F5EE;color:#085041">T</div>
         <div style="flex:1">
           <div class="client-name">teste</div>
-          <div class="client-meta"> 1 atend. </div>
+          <div class="client-meta"> 2 atend. &nbsp;·&nbsp; R$50,00</div>
         </div>
         <span class="badge badge-avul" style="flex-shrink:0">Avulso</span>
         <button class="btn-edit-client" onclick="toggleEditClient(&#39;1776976066704&#39;)">✏️ Editar</button>
@@ -2265,7 +2280,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info">3 atend. · Este mês</span>
+      <span id="dash-period-label" class="dash-period-info">4 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
@@ -2273,25 +2288,25 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📋</span>
       <div class="dash-kpi-label">Atendimentos</div>
-      <div class="dash-kpi-val">3</div>
+      <div class="dash-kpi-val">4</div>
       <div class="dash-kpi-sub">3 clientes</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">💰</span>
       <div class="dash-kpi-label">Faturamento</div>
-      <div class="dash-kpi-val">R$&nbsp;100,00</div>
+      <div class="dash-kpi-val">R$&nbsp;150,00</div>
       <div class="dash-kpi-sub">no período</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🎫</span>
       <div class="dash-kpi-label">Ticket Médio</div>
-      <div class="dash-kpi-val">R$&nbsp;33</div>
+      <div class="dash-kpi-val">R$&nbsp;38</div>
       <div class="dash-kpi-sub">por atendimento</div>
     </div>
     <div class="dash-kpi dash-kpi--red">
       <span class="dash-kpi-icon">⚠️</span>
       <div class="dash-kpi-label">Retrabalho</div>
-      <div class="dash-kpi-val">33%</div>
+      <div class="dash-kpi-val">25%</div>
       <div class="dash-kpi-sub">1 ocorrências</div>
     </div></div>
 
@@ -2319,7 +2334,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       
     <circle cx="155.45454545454547" cy="10" r="3" fill="#1B3464"></circle>
       <text x="155.45454545454547" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
-      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">3</text>
+      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">4</text>
     <circle cx="197.27272727272728" cy="150" r="3" fill="#1B3464"></circle>
       <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
       
@@ -2351,11 +2366,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
         <div class="dash-chart-area dash-chart-area--sm" id="dc-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-    <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
+    <path d="M100.00,48.00 L100.00,20.00 A70,70 0 0,1 170.00,90.00 L142.00,90.00 A42,42 0 0,0 100.00,48.00 Z" fill="#1B3464"></path><path d="M142.00,90.00 L170.00,90.00 A70,70 0 1,1 100.00,20.00 L100.00,48.00 A42,42 0 1,0 142.00,90.00 Z" fill="#C9A84C"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
-    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">4</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#1B3464">■ </tspan>Emissão de notas (3)
+      <tspan fill="#1B3464">■ </tspan>Atualização de guias (1)
+    </text><text x="185" y="38" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
+      <tspan fill="#C9A84C">■ </tspan>Emissão de notas (3)
     </text>
   </svg></div>
       </div>
@@ -2372,7 +2389,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px;transition:width .4s ease"></div>
       </div>
-      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 100,00</div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 150,00</div>
     </div></div>
       </div>
       <div class="dash-chart-card">
@@ -2387,14 +2404,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
         </div>
       </div>
-      <div class="dash-top-count">1</div>
+      <div class="dash-top-count">2</div>
     </div>
     <div class="dash-top-item">
       <div class="dash-top-rank ">2</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 3</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -2404,7 +2421,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 2</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -2423,9 +2440,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
             <!-- trilha cinza -->
             <path d="M 20,100 A 80,80 0 0,1 180,100" fill="none" stroke="#F0F4FA" stroke-width="16" stroke-linecap="round"></path>
             <!-- arco colorido — preenchido pelo JS -->
-            <path id="dc-gauge-arc" d="M 20,100 A 80,80 0 0,1 59.277,31.141" fill="none" stroke="#C0392B" stroke-width="16" stroke-linecap="round"></path>
+            <path id="dc-gauge-arc" d="M 20,100 A 80,80 0 0,1 43.431,43.431" fill="none" stroke="#C0392B" stroke-width="16" stroke-linecap="round"></path>
             <!-- percentual centralizado -->
-            <text id="dc-gauge-num" x="100" y="95" text-anchor="middle" font-family="Raleway,sans-serif" font-size="22" font-weight="800" fill="#C0392B">33%</text>
+            <text id="dc-gauge-num" x="100" y="95" text-anchor="middle" font-family="Raleway,sans-serif" font-size="22" font-weight="800" fill="#C0392B">25%</text>
             <text x="100" y="112" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="9" fill="#566A8F" letter-spacing="0.06em">RETRABALHO</text>
           </svg>
           <div class="dash-gauge-counts">
@@ -2434,7 +2451,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">2</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">3</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
@@ -2587,7 +2604,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,37 L80,15 A60,60 0 1,1 79.99999999999999,15 L80,37 A38,38 0 1,0 80,37 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">12</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (12)</text></svg></div>
+        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,15 A60,60 0 0,1 80,135 L80,113 A38,38 0 0,0 80,37 Z" fill="#1B3464"></path><path d="M80,135 A60,60 0 0,1 80,15 L80,37 A38,38 0 0,0 80,113 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">12</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (12)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -3963,18 +3980,32 @@ function renderDashNfe(data){
   const nfePizzaEl = document.getElementById('dc-nfe-tipo-pizza');
   const nfePTotal = pizzaTipos.reduce((s,[,v])=>s+v,0)||1;
   const nfePR=60,nfePr=38,nfePcx=80,nfePcy=75;
-  let nfePAngle=-Math.PI/2;
-  const nfePSlices=pizzaTipos.map(([tipo,val])=>{
-    const color=pizzaCores[tipo]||'#8FA3C8';
-    const sweep=(val/nfePTotal)*2*Math.PI;
-    const x1=nfePcx+nfePR*Math.cos(nfePAngle),y1=nfePcy+nfePR*Math.sin(nfePAngle);
-    nfePAngle+=sweep;
-    const x2=nfePcx+nfePR*Math.cos(nfePAngle),y2=nfePcy+nfePR*Math.sin(nfePAngle);
-    const ix1=nfePcx+nfePr*Math.cos(nfePAngle-sweep),iy1=nfePcy+nfePr*Math.sin(nfePAngle-sweep);
-    const ix2=nfePcx+nfePr*Math.cos(nfePAngle),iy2=nfePcy+nfePr*Math.sin(nfePAngle);
-    const large=sweep>Math.PI?1:0;
-    return {path:`<path d="M${ix1},${iy1} L${x1},${y1} A${nfePR},${nfePR} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${nfePr},${nfePr} 0 ${large},0 ${ix1},${iy1} Z" fill="${color}"/>`,color,tipo,val};
-  });
+
+  // Função auxiliar: gera paths do donut tratando o caso de categoria única (360° falha no SVG)
+  function buildDonutSlices(entries, total, R, r, cx, cy, colorFn) {
+    if(entries.length === 1) {
+      const color = colorFn(entries[0][0]);
+      return [{
+        path: `<path d="M${cx},${cy-R} A${R},${R} 0 0,1 ${cx},${cy+R} L${cx},${cy+r} A${r},${r} 0 0,0 ${cx},${cy-r} Z" fill="${color}"/>` +
+              `<path d="M${cx},${cy+R} A${R},${R} 0 0,1 ${cx},${cy-R} L${cx},${cy-r} A${r},${r} 0 0,0 ${cx},${cy+r} Z" fill="${color}"/>`,
+        color, tipo: entries[0][0], val: entries[0][1]
+      }];
+    }
+    let angle = -Math.PI/2;
+    return entries.map(([tipo, val]) => {
+      const color = colorFn(tipo);
+      const sweep = (val/total)*2*Math.PI;
+      const x1=(cx+R*Math.cos(angle)).toFixed(2), y1=(cy+R*Math.sin(angle)).toFixed(2);
+      angle += sweep;
+      const x2=(cx+R*Math.cos(angle)).toFixed(2), y2=(cy+R*Math.sin(angle)).toFixed(2);
+      const ix1=(cx+r*Math.cos(angle-sweep)).toFixed(2), iy1=(cy+r*Math.sin(angle-sweep)).toFixed(2);
+      const ix2=(cx+r*Math.cos(angle)).toFixed(2), iy2=(cy+r*Math.sin(angle)).toFixed(2);
+      const large = sweep>Math.PI?1:0;
+      return {path:`<path d="M${ix1},${iy1} L${x1},${y1} A${R},${R} 0 ${large},1 ${x2},${y2} L${ix2},${iy2} A${r},${r} 0 ${large},0 ${ix1},${iy1} Z" fill="${color}"/>`, color, tipo, val};
+    });
+  }
+
+  const nfePSlices = buildDonutSlices(pizzaTipos, nfePTotal, nfePR, nfePr, nfePcx, nfePcy, t => pizzaCores[t]||'#8FA3C8');
   const nfePLegend=nfePSlices.map((s,i)=>`<text x="155" y="${18+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="${s.color}">■ </tspan>${s.tipo} (${s.val})</text>`).join('');
   if(nfePizzaEl) nfePizzaEl.innerHTML=`<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${nfePSlices.map(s=>s.path).join('')}<circle cx="${nfePcx}" cy="${nfePcy}" r="25" fill="white"/><text x="${nfePcx}" y="${nfePcy+5}" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${nfePTotal}</text>${nfePLegend}</svg>`;
 
