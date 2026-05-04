@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_13.html -->
+<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_14.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos ultimooo_files/css2" rel="stylesheet">
+<link href="./Sollertia — Sistema de Atendimentos testttttt_files/css2" rel="stylesheet">
 <!-- libs carregadas no fim do body para garantir disponibilidade -->
 
 <style>
@@ -2228,15 +2228,15 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 <!-- CARD PRINCIPAL -->
 <div class="card">
   <div class="tabs">
-    <button class="tab" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
+    <button class="tab active" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
     <button class="tab" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
     <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
     <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
-    <button class="tab active" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
+    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
   </div>
 
   <!-- NOVO ATENDIMENTO -->
-  <div class="tab-panel" id="tab-novo">
+  <div class="tab-panel active" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
   <div id="edit-bar" style="display:none" class="edit-bar">
     ✏️ <span>Editando registro</span>
@@ -2247,7 +2247,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="client-field">
       <label id="label-cliente">Cliente *</label>
       <div class="client-input-wrap">
-        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option><option value="1777034638458">teste 3</option></select>
+        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1777912835014">DAVI( FRA)</option><option value="1777912664935">DYOGE</option><option value="1777911258076">LEONARDO LF</option><option value="1777913055394">MAYCON-LUCIMAR</option><option value="1777913666545">PIERRE( FP)</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option><option value="1777034638458">teste 3</option><option value="1777913015815">TULIO( FARM)</option><option value="1777912801711">VALOR</option></select>
         <button class="btn-new-client" onclick="toggleAddClient()">+ Novo</button>
       </div>
       <div id="add-client-inline" style="display:none" class="add-client-inline">
@@ -2282,7 +2282,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     </div>
   </div>
 
-  <div class="nfe-block" id="nfe-block" style="display: none;">
+  <div class="nfe-block" id="nfe-block" style="display: block;">
     <div class="nfe-label">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="12" height="14" rx="2" stroke="#1B3464" stroke-width="1.3"></rect><path d="M5 5h6M5 8h6M5 11h3" stroke="#1B3464" stroke-width="1.3" stroke-linecap="round"></path></svg>
       Dados da Emissão de Notas
@@ -2294,6 +2294,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <option value="">Selecione...</option>
           <option value="Produto">Produto (NF-e)</option>
           <option value="Serviço">Serviço (NFS-e)</option>
+          <option value="Cupom Fiscal">Cupom Fiscal (NFC-e)</option>
           <option value="Siare">Siare</option>
         </select>
       </div>
@@ -2339,10 +2340,10 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">6</div></div>
-    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">3</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">13</div></div>
+    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">10</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">2</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">9</div></div>
     <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$170,00</div></div>
     <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">1</div></div></div>
     <div class="filters-wrap">
@@ -2381,6 +2382,111 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <th>Tipo</th><th>Tempo</th><th>Valor</th><th>Tipo Serviço</th><th>Retrab.</th><th>Notas</th><th></th>
         </tr></thead>
         <tbody id="tbody"><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">PIERRE( FP)</td>
+      <td class="td-desc">EMISSÃO DE NOTAS</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913691883&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777913691883&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">MAYCON-LUCIMAR</td>
+      <td class="td-desc">EMISSAO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Felipe</td>
+      <td>—</td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913277689&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777913277689&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">TULIO( FARM)</td>
+      <td class="td-desc">EMISSÃO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913066695&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777913066695&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">DAVI( FRA)</td>
+      <td class="td-desc">EMISSÃO DE NOTAS</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912874899&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777912874899&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">VALOR</td>
+      <td class="td-desc">EMISSÃO DE NOTAS</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">3 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912806966&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777912806966&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">DYOGE</td>
+      <td class="td-desc">EMISSÃO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912713538&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777912713538&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">LEONARDO LF</td>
+      <td class="td-desc">EMISSÃO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777911806225&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777911806225&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 3</td>
       <td class="td-desc">hfhfhh</td>
@@ -2482,6 +2588,186 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <input type="text" id="search-client" placeholder="Buscar cliente..." oninput="renderClients()" style="width:100%;border:1.5px solid var(--border);background:var(--white);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;font-family:&#39;Open Sans&#39;,sans-serif;color:var(--text-dark);transition:var(--transition);outline:none;">
     </div>
     <div class="client-list" id="client-list"><div>
+      <div class="client-item" id="ci-1777912835014">
+        <div class="client-avatar" style="background:#FAEEDA;color:#633806">DF</div>
+        <div style="flex:1">
+          <div class="client-name">DAVI( FRA)</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777912835014&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777912835014&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777912835014" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777912835014" value="DAVI( FRA)" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777912835014" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777912835014">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777912835014&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777912835014&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777912664935">
+        <div class="client-avatar" style="background:#E1F5EE;color:#085041">D</div>
+        <div style="flex:1">
+          <div class="client-name">DYOGE</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777912664935&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777912664935&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777912664935" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777912664935" value="DYOGE" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777912664935" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777912664935">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777912664935&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777912664935&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777911258076">
+        <div class="client-avatar" style="background:#E1F5EE;color:#085041">LL</div>
+        <div style="flex:1">
+          <div class="client-name">LEONARDO LF</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777911258076&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777911258076&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777911258076" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777911258076" value="LEONARDO LF" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777911258076" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777911258076">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777911258076&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777911258076&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777913055394">
+        <div class="client-avatar" style="background:#EEF4FC;color:#1B3464">M</div>
+        <div style="flex:1">
+          <div class="client-name">MAYCON-LUCIMAR</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777913055394&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777913055394&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777913055394" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777913055394" value="MAYCON-LUCIMAR" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777913055394" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777913055394">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777913055394&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777913055394&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777913666545">
+        <div class="client-avatar" style="background:#EEEDFE;color:#3C3489">PF</div>
+        <div style="flex:1">
+          <div class="client-name">PIERRE( FP)</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777913666545&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777913666545&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777913666545" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777913666545" value="PIERRE( FP)" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777913666545" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777913666545">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777913666545&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777913666545&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
       <div class="client-item" id="ci-1776976066704">
         <div class="client-avatar" style="background:#E1F5EE;color:#085041">T</div>
         <div style="flex:1">
@@ -2589,6 +2875,78 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777034638458&#39;)">Cancelar</button>
         </div>
       </div>
+    </div><div>
+      <div class="client-item" id="ci-1777913015815">
+        <div class="client-avatar" style="background:#E1F5EE;color:#085041">TF</div>
+        <div style="flex:1">
+          <div class="client-name">TULIO( FARM)</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777913015815&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777913015815&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777913015815" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777913015815" value="TULIO( FARM)" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777913015815" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777913015815">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777913015815&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777913015815&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777912801711">
+        <div class="client-avatar" style="background:#EEEDFE;color:#3C3489">V</div>
+        <div style="flex:1">
+          <div class="client-name">VALOR</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777912801711&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777912801711&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777912801711" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777912801711" value="VALOR" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777912801711" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777912801711">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777912801711&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777912801711&#39;)">Cancelar</button>
+        </div>
+      </div>
     </div></div>
     <div id="empty-clients" class="empty" style="display: none;">Nenhum cliente cadastrado.</div>
   </div>
@@ -2642,6 +3000,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               <option value="">Todos</option>
               <option value="Produto">Produto (NF-e)</option>
               <option value="Serviço">Serviço (NFS-e)</option>
+              <option value="Cupom Fiscal">Cupom Fiscal (NFC-e)</option>
               <option value="Siare">Siare</option>
             </select>
           </div>
@@ -2681,7 +3040,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
 
   <!-- DASHBOARD -->
-  <div class="tab-panel active" id="tab-dashboard">
+  <div class="tab-panel" id="tab-dashboard">
     <!-- Filtros do dashboard -->
     <div class="dash-filter-bar">
       <span class="dash-filter-label">Período</span>
@@ -2707,7 +3066,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info">2 atend. · Este mês</span>
+      <span id="dash-period-label" class="dash-period-info">9 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
@@ -2715,8 +3074,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📋</span>
       <div class="dash-kpi-label">Atendimentos</div>
-      <div class="dash-kpi-val">2</div>
-      <div class="dash-kpi-sub">2 clientes</div>
+      <div class="dash-kpi-val">9</div>
+      <div class="dash-kpi-sub">9 clientes</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">💰</span>
@@ -2727,7 +3086,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🎫</span>
       <div class="dash-kpi-label">Ticket Médio</div>
-      <div class="dash-kpi-val">R$&nbsp;10</div>
+      <div class="dash-kpi-val">R$&nbsp;2</div>
       <div class="dash-kpi-sub">por atendimento</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
@@ -2764,7 +3123,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       
     <circle cx="197.27272727272728" cy="10" r="3" fill="#1B3464"></circle>
       <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
-      <text x="197.27272727272728" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">2</text>
+      <text x="197.27272727272728" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">9</text>
     <circle cx="239.0909090909091" cy="150" r="3" fill="#1B3464"></circle>
       <text x="239.0909090909091" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
       
@@ -2795,9 +3154,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block">
     <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
-    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">2</text>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">9</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#1B3464">■ </tspan>Emissão de notas (2)
+      <tspan fill="#1B3464">■ </tspan>Emissão de notas (9)
     </text>
   </svg></div>
       </div>
@@ -2815,6 +3174,20 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px;transition:width .4s ease"></div>
       </div>
       <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 20,00</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right">Dayane</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
+        <div style="height:100%;width:0%;background:#1B3464;border-radius:4px;transition:width .4s ease"></div>
+      </div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 0,00</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right">Felipe</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
+        <div style="height:100%;width:0%;background:#1B3464;border-radius:4px;transition:width .4s ease"></div>
+      </div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 0,00</div>
     </div></div>
       </div>
       <div class="dash-chart-card">
@@ -2824,7 +3197,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste 3</div>
+        <div class="dash-top-name">PIERRE( FP)</div>
         <div class="dash-top-track">
           <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
         </div>
@@ -2834,7 +3207,47 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">2</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste 2</div>
+        <div class="dash-top-name">MAYCON-LUCIMAR</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">3</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">TULIO( FARM)</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">4</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">DAVI( FRA)</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">5</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">VALOR</div>
+        <div class="dash-top-track">
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+        </div>
+      </div>
+      <div class="dash-top-count">1</div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">6</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">DYOGE</div>
         <div class="dash-top-track">
           <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
         </div>
@@ -2858,7 +3271,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">2</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">9</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
@@ -2909,8 +3322,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📄</span>
       <div class="dash-kpi-label">Total de Notas</div>
-      <div class="dash-kpi-val">3</div>
-      <div class="dash-kpi-sub">2 atendimentos</div>
+      <div class="dash-kpi-val">14</div>
+      <div class="dash-kpi-sub">9 atendimentos</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🏭</span>
@@ -2921,7 +3334,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi dash-kpi">
       <span class="dash-kpi-icon">🛠</span>
       <div class="dash-kpi-label">Nota de Serviço</div>
-      <div class="dash-kpi-val">1</div>
+      <div class="dash-kpi-val">12</div>
       <div class="dash-kpi-sub">NFS-e</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
@@ -2958,13 +3371,48 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
                 <button onclick="clearNfeMes()">Limpar</button>
               </div>
               <div class="nfe-mes-list" id="nfe-mes-list"><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777034638458" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
+      <input type="checkbox" value="1777913666545" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
       <span class="nfe-mes-opt-dot" style="background:#1B3464"></span>
+      <span class="nfe-mes-opt-name">PIERRE( FP)</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777913055394" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
+      <span class="nfe-mes-opt-name">MAYCON-LUCIMAR</span>
+      <span class="nfe-mes-opt-count">2 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777913015815" data-color="#27AE60" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#27AE60"></span>
+      <span class="nfe-mes-opt-name">TULIO( FARM)</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777912835014" data-color="#E74C3C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#E74C3C"></span>
+      <span class="nfe-mes-opt-name">DAVI( FRA)</span>
+      <span class="nfe-mes-opt-count">2 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777912801711" data-color="#8E44AD" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#8E44AD"></span>
+      <span class="nfe-mes-opt-name">VALOR</span>
+      <span class="nfe-mes-opt-count">3 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777912664935" data-color="#2980B9" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#2980B9"></span>
+      <span class="nfe-mes-opt-name">DYOGE</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777911258076" data-color="#E67E22" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#E67E22"></span>
+      <span class="nfe-mes-opt-name">LEONARDO LF</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777034638458" data-color="#16A085" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#16A085"></span>
       <span class="nfe-mes-opt-name">teste 3</span>
       <span class="nfe-mes-opt-count">2 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777029060053" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
+      <input type="checkbox" value="1777029060053" data-color="#C0392B" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#C0392B"></span>
       <span class="nfe-mes-opt-name">teste 2</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label></div>
@@ -2973,7 +3421,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:240px;display:block"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
+      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:240px;display:block"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="39.888888888888886" height="180" rx="2" fill="#1B3464"></rect><rect x="116.88888888888889" y="70" width="39.888888888888886" height="120" rx="2" fill="#C9A84C"></rect><rect x="157.77777777777777" y="70" width="39.888888888888886" height="120" rx="2" fill="#27AE60"></rect><rect x="198.66666666666666" y="70" width="39.888888888888886" height="120" rx="2" fill="#E74C3C"></rect><rect x="239.55555555555554" y="130" width="39.888888888888886" height="60" rx="2" fill="#8E44AD"></rect><rect x="280.44444444444446" y="130" width="39.888888888888886" height="60" rx="2" fill="#2980B9"></rect><rect x="321.3333333333333" y="130" width="39.888888888888886" height="60" rx="2" fill="#E67E22"></rect><rect x="362.2222222222222" y="130" width="39.888888888888886" height="60" rx="2" fill="#16A085"></rect><rect x="403.1111111111111" y="130" width="39.888888888888886" height="60" rx="2" fill="#C0392B"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ VALOR</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ MAYCON-LUC</text><text x="170" y="235" font-size="9" fill="#27AE60" font-family="Open Sans,sans-serif">■ DAVI( FRA)</text><text x="250" y="235" font-size="9" fill="#E74C3C" font-family="Open Sans,sans-serif">■ teste 3</text><text x="330" y="235" font-size="9" fill="#8E44AD" font-family="Open Sans,sans-serif">■ PIERRE( FP</text><text x="410" y="235" font-size="9" fill="#2980B9" font-family="Open Sans,sans-serif">■ TULIO( FAR</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
@@ -2981,16 +3429,65 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
       <div id="dc-nfe-cliente">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">VALOR</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">3 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">MAYCON-LUCIMAR</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">DAVI( FRA)</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">PIERRE( FP)</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">TULIO( FARM)</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">DYOGE</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">LEONARDO LF</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:50%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div></div>
@@ -2999,7 +3496,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></div>
+        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 33.09,37.59 L50.29,51.31 A38,38 0 1,0 80.00,37.00 Z" fill="#C9A84C"></path><path d="M50.29,51.31 L33.09,37.59 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 50.29,51.31 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">14</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (12)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -3007,6 +3504,54 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div id="dc-nfe-ranking" class="dash-top-list" style="margin-top:4px">
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">VALOR</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 3
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">3<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">2</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">MAYCON-LUCIMAR</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 2
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">3</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">DAVI( FRA)</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 2
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">4</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 3</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
@@ -3022,9 +3567,57 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div>
     <div class="dash-top-item">
-      <div class="dash-top-rank ">2</div>
+      <div class="dash-top-rank ">5</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste 2</div>
+        <div class="dash-top-name">PIERRE( FP)</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 1
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">6</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">TULIO( FARM)</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 1
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">7</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">DYOGE</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 1
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">8</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">LEONARDO LF</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
           
             <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
@@ -4943,7 +5536,7 @@ function renderDashNfe(data){
 
   // Gráfico 3: Pizza por tipo de nota (geral)
   const pizzaTipos = Object.entries(tipoCount).sort((a,b)=>b[1]-a[1]);
-  const pizzaCores = { 'Produto':'#1B3464', 'Serviço':'#C9A84C', 'Siare':'#27AE60', 'Não informado':'#8FA3C8' };
+  const pizzaCores = { 'Produto':'#1B3464', 'Serviço':'#C9A84C', 'Cupom Fiscal':'#E05A2B', 'Siare':'#27AE60', 'Não informado':'#8FA3C8' };
   // SVG donut para tipos de nota
   const nfePizzaEl = document.getElementById('dc-nfe-tipo-pizza');
   const nfePTotal = pizzaTipos.reduce((s,[,v])=>s+v,0)||1;
@@ -4989,8 +5582,8 @@ function renderDashNfe(data){
           ${Object.entries(v.tipos).map(([t,q])=>`
             <span style="font-size:9px;font-weight:700;font-family:'Raleway',sans-serif;
               padding:2px 7px;border-radius:20px;
-              background:${ t==='Produto'?'#EEF4FC':t==='Serviço'?'#FEF9EC':'#EAF3DE'};
-              color:${ t==='Produto'?'#1B3464':t==='Serviço'?'#7D5A00':'#1E6B3C'}">
+              background:${ t==='Produto'?'#EEF4FC':t==='Serviço'?'#FEF9EC':t==='Cupom Fiscal'?'#FEF0EB':'#EAF3DE'};
+              color:${ t==='Produto'?'#1B3464':t==='Serviço'?'#7D5A00':t==='Cupom Fiscal'?'#8B2500':'#1E6B3C'}">
               ${t}: ${q}
             </span>`).join('')}
         </div>
