@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)file:///C:/Users/junio/Downloads/Sollertia_Sistema_Atendimentos_v3.html -->
+<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_10.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos certo certo_files/css2" rel="stylesheet">
+<link href="./Sollertia — Sistema de Atendimentos teste2_files/css2" rel="stylesheet">
 <!-- libs carregadas no fim do body para garantir disponibilidade -->
 
 <style>
@@ -2198,7 +2198,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 }
 
 </style>
-<style>@keyframes supa-bar{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}51%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}</style></head>
+<style>@keyframes supa-bar{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}51%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style></head>
 <body><div id="supa-loading" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 3px; background: linear-gradient(90deg, rgb(27, 52, 100), rgb(201, 168, 76)); z-index: 9999; animation: 1.2s ease-in-out 0s infinite normal none running supa-bar; display: none;"></div>
 
 <!-- NAVBAR UNIFICADA -->
@@ -2211,7 +2211,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
   <div style="flex:1"></div>
   <div style="width:16px"></div>
-  <span class="nav-date" id="nav-date">ter., 28 de abr.</span>
+  <span class="nav-date" id="nav-date">seg., 04 de mai.</span>
 </div>
 
 <!-- SISTEMA VIEW -->
@@ -2221,15 +2221,15 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 <!-- CARD PRINCIPAL -->
 <div class="card">
   <div class="tabs">
-    <button class="tab active" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
+    <button class="tab" onclick="switchTab(&#39;novo&#39;)">✚ Novo Atendimento</button>
     <button class="tab" onclick="switchTab(&#39;atendimentos&#39;)">Atendimentos</button>
     <button class="tab" onclick="switchTab(&#39;clientes&#39;)">Clientes</button>
     <button class="tab" onclick="switchTab(&#39;relatorio&#39;)">Relatório</button>
-    <button class="tab" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
+    <button class="tab active" onclick="switchTab(&#39;dashboard&#39;)">📊 Dashboard</button>
   </div>
 
   <!-- NOVO ATENDIMENTO -->
-  <div class="tab-panel active" id="tab-novo">
+  <div class="tab-panel" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
   <div id="edit-bar" style="display:none" class="edit-bar">
     ✏️ <span>Editando registro</span>
@@ -2275,7 +2275,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     </div>
   </div>
 
-  <div class="nfe-block" id="nfe-block" style="display:none">
+  <div class="nfe-block" id="nfe-block" style="display: none;">
     <div class="nfe-label">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="12" height="14" rx="2" stroke="#1B3464" stroke-width="1.3"></rect><path d="M5 5h6M5 8h6M5 11h3" stroke="#1B3464" stroke-width="1.3" stroke-linecap="round"></path></svg>
       Dados da Emissão de Notas
@@ -2332,11 +2332,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">4</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">6</div></div>
     <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">3</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">4</div></div>
-    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$150,00</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">2</div></div>
+    <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$170,00</div></div>
     <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">1</div></div></div>
     <div class="filters-wrap">
       <div class="filter-label">Filtros</div>
@@ -2374,6 +2374,36 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <th>Tipo</th><th>Tempo</th><th>Valor</th><th>Tipo Serviço</th><th>Retrab.</th><th>Notas</th><th></th>
         </tr></thead>
         <tbody id="tbody"><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 3</td>
+      <td class="td-desc">hfhfhh</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Carlos H.</td>
+      <td>—</td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904640241&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777904640241&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">teste 2</td>
+      <td class="td-desc">testtstdf</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Carlos H.</td>
+      <td>—</td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">R$ 20,00</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904562551&#39;)">Editar</button>
+        <button class="btn-danger" onclick="del(&#39;1777904562551&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">27/04/2026</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">teste</td>
       <td class="td-desc">hjjjj</td>
@@ -2485,7 +2515,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="client-avatar" style="background:#E1F5EE;color:#085041">T2</div>
         <div style="flex:1">
           <div class="client-name">teste 2</div>
-          <div class="client-meta"> 1 atend. &nbsp;·&nbsp; R$100,00</div>
+          <div class="client-meta"> 2 atend. &nbsp;·&nbsp; R$120,00</div>
         </div>
         <span class="badge badge-avul" style="flex-shrink:0">Avulso</span>
         <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777029060053&#39;)">✏️ Editar</button>
@@ -2521,7 +2551,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="client-avatar" style="background:#FAEEDA;color:#633806">T3</div>
         <div style="flex:1">
           <div class="client-name">teste 3</div>
-          <div class="client-meta"> 1 atend. </div>
+          <div class="client-meta"> 2 atend. </div>
         </div>
         <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
         <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777034638458&#39;)">✏️ Editar</button>
@@ -2553,7 +2583,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
     </div></div>
-    <div id="empty-clients" class="empty" style="display:none">Nenhum cliente cadastrado.</div>
+    <div id="empty-clients" class="empty" style="display: none;">Nenhum cliente cadastrado.</div>
   </div>
 
   <!-- RELATÓRIO -->
@@ -2644,7 +2674,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
 
   <!-- DASHBOARD -->
-  <div class="tab-panel" id="tab-dashboard">
+  <div class="tab-panel active" id="tab-dashboard">
     <!-- Filtros do dashboard -->
     <div class="dash-filter-bar">
       <span class="dash-filter-label">Período</span>
@@ -2670,7 +2700,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info">4 atend. · Este mês</span>
+      <span id="dash-period-label" class="dash-period-info">2 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
@@ -2678,26 +2708,26 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📋</span>
       <div class="dash-kpi-label">Atendimentos</div>
-      <div class="dash-kpi-val">4</div>
-      <div class="dash-kpi-sub">3 clientes</div>
+      <div class="dash-kpi-val">2</div>
+      <div class="dash-kpi-sub">2 clientes</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">💰</span>
       <div class="dash-kpi-label">Faturamento</div>
-      <div class="dash-kpi-val">R$&nbsp;150,00</div>
+      <div class="dash-kpi-val">R$&nbsp;20,00</div>
       <div class="dash-kpi-sub">no período</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🎫</span>
       <div class="dash-kpi-label">Ticket Médio</div>
-      <div class="dash-kpi-val">R$&nbsp;38</div>
+      <div class="dash-kpi-val">R$&nbsp;10</div>
       <div class="dash-kpi-sub">por atendimento</div>
     </div>
-    <div class="dash-kpi dash-kpi--red">
-      <span class="dash-kpi-icon">⚠️</span>
+    <div class="dash-kpi dash-kpi--green">
+      <span class="dash-kpi-icon">✅</span>
       <div class="dash-kpi-label">Retrabalho</div>
-      <div class="dash-kpi-val">25%</div>
-      <div class="dash-kpi-sub">1 ocorrências</div>
+      <div class="dash-kpi-val">0%</div>
+      <div class="dash-kpi-sub">0 ocorrências</div>
     </div></div>
 
     <!-- Linha: Atend. por mês + Distribuição serviço -->
@@ -2705,14 +2735,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <div class="dash-chart-area" id="dc-linha" style="display:flex;align-items:center;padding:8px 0"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <canvas id="dc-linha"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
     <defs><lineargradient id="lg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"></stop>
       <stop offset="100%" stop-color="#1B3464" stop-opacity="0"></stop>
     </lineargradient></defs>
     <line x1="30" y1="150" x2="490" y2="150" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="115" x2="490" y2="115" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="80" x2="490" y2="80" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="45" x2="490" y2="45" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line>
-    <polygon points="30,150 30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,10 197.27272727272728,150 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150 490,150" fill="url(#lg)"></polygon>
-    <polyline points="30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,10 197.27272727272728,150 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150" fill="none" stroke="#1B3464" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></polyline>
+    <polygon points="30,150 30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,150 197.27272727272728,10 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150 490,150" fill="url(#lg)"></polygon>
+    <polyline points="30,150 71.81818181818181,150 113.63636363636364,150 155.45454545454547,150 197.27272727272728,10 239.0909090909091,150 280.90909090909093,150 322.72727272727275,150 364.54545454545456,150 406.3636363636364,150 448.1818181818182,150 490,150" fill="none" stroke="#1B3464" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></polyline>
     <circle cx="30" cy="150" r="3" fill="#1B3464"></circle>
       <text x="30" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
       
@@ -2722,12 +2752,12 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <circle cx="113.63636363636364" cy="150" r="3" fill="#1B3464"></circle>
       <text x="113.63636363636364" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mar</text>
       
-    <circle cx="155.45454545454547" cy="10" r="3" fill="#1B3464"></circle>
+    <circle cx="155.45454545454547" cy="150" r="3" fill="#1B3464"></circle>
       <text x="155.45454545454547" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
-      <text x="155.45454545454547" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">4</text>
-    <circle cx="197.27272727272728" cy="150" r="3" fill="#1B3464"></circle>
-      <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
       
+    <circle cx="197.27272727272728" cy="10" r="3" fill="#1B3464"></circle>
+      <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
+      <text x="197.27272727272728" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">2</text>
     <circle cx="239.0909090909091" cy="150" r="3" fill="#1B3464"></circle>
       <text x="239.0909090909091" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
       
@@ -2750,21 +2780,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <text x="490" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
       
     
-  </svg></div>
+  </svg></canvas>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <div class="dash-chart-area dash-chart-area--sm" id="dc-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-    <path d="M100.00,48.00 L100.00,20.00 A70,70 0 0,1 170.00,90.00 L142.00,90.00 A42,42 0 0,0 100.00,48.00 Z" fill="#1B3464"></path><path d="M142.00,90.00 L170.00,90.00 A70,70 0 1,1 100.00,20.00 L100.00,48.00 A42,42 0 1,0 142.00,90.00 Z" fill="#C9A84C"></path>
+        <canvas id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+    <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
-    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">4</text>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">2</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#1B3464">■ </tspan>Atualização de guias (1)
-    </text><text x="185" y="38" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#C9A84C">■ </tspan>Emissão de notas (3)
+      <tspan fill="#1B3464">■ </tspan>Emissão de notas (2)
     </text>
-  </svg></div>
+  </svg></canvas>
       </div>
     </div>
 
@@ -2773,14 +2801,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Atendente</div>
         <div class="dash-chart-sub">R$ gerado por colaborador</div>
-        <div class="dash-chart-area" id="dc-fat-atend" style="padding:12px 8px;overflow-y:auto">
+        <canvas id="dc-fat-atend">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
       <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right">Carlos H.</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px;transition:width .4s ease"></div>
       </div>
-      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 150,00</div>
-    </div></div>
+      <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 20,00</div>
+    </div></canvas>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Top Clientes</div>
@@ -2789,29 +2817,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste</div>
-        <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
-        </div>
-      </div>
-      <div class="dash-top-count">2</div>
-    </div>
-    <div class="dash-top-item">
-      <div class="dash-top-rank ">2</div>
-      <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 3</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
     </div>
     <div class="dash-top-item">
-      <div class="dash-top-rank ">3</div>
+      <div class="dash-top-rank ">2</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 2</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -2826,42 +2844,34 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-sub">Meta: abaixo de 10%</div>
         <div class="dash-gauge-wrap">
           <!-- Gauge SVG — o texto fica dentro do próprio SVG para evitar conflito de posicionamento -->
-          <svg id="dc-gauge" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:130px;display:block;margin:0 auto">
-            <!-- trilha cinza -->
-            <path d="M 20,100 A 80,80 0 0,1 180,100" fill="none" stroke="#F0F4FA" stroke-width="16" stroke-linecap="round"></path>
-            <!-- arco colorido — preenchido pelo JS -->
-            <path id="dc-gauge-arc" d="M 20,100 A 80,80 0 0,1 43.431,43.431" fill="none" stroke="#C0392B" stroke-width="16" stroke-linecap="round"></path>
-            <!-- percentual centralizado -->
-            <text id="dc-gauge-num" x="100" y="95" text-anchor="middle" font-family="Raleway,sans-serif" font-size="22" font-weight="800" fill="#C0392B">25%</text>
-            <text x="100" y="112" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="9" fill="#566A8F" letter-spacing="0.06em">RETRABALHO</text>
-          </svg>
+          <canvas id="dc-gauge"></canvas>
           <div class="dash-gauge-counts">
             <div class="dash-gauge-item">
-              <span id="dc-rt-sim" class="dash-gauge-val dash-gauge-val--bad">1</span>
+              <span id="dc-rt-sim" class="dash-gauge-val dash-gauge-val--bad">0</span>
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">3</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">2</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
-          <div id="dc-gauge-status" class="dash-gauge-status" style="background: rgb(253, 237, 237); color: rgb(192, 57, 43); margin-top: 10px; font-family: Raleway, sans-serif; font-size: 10px; font-weight: 700; padding: 4px 14px; border-radius: 20px;">✕ Acima do limite</div>
+          <div id="dc-gauge-status" class="dash-gauge-status" style="background: rgb(232, 245, 238); color: rgb(30, 107, 60); margin-top: 10px; font-family: Raleway, sans-serif; font-size: 10px; font-weight: 700; padding: 4px 14px; border-radius: 20px;">✓ Dentro da meta</div>
         </div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <div class="dash-chart-area" id="dc-fat-mes" style="display:flex;align-items:center;padding:8px 0"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+        <canvas id="dc-fat-mes"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="58.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
       <rect x="83.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="96.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Fev</text>
       <rect x="120.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="133.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mar</text>
-      <rect x="158.125" y="10" width="26.25" height="145" rx="3" fill="#C9A84C"></rect>
+      <rect x="158.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="171.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr</text>
-      <text x="171.25" y="6" text-anchor="middle" font-size="8" fill="#7a5200" font-family="Open Sans,sans-serif">R$0k</text><rect x="195.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <rect x="195.625" y="10" width="26.25" height="145" rx="3" fill="#C9A84C"></rect>
       <text x="208.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
-      <rect x="233.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+      <text x="208.75" y="6" text-anchor="middle" font-size="8" fill="#7a5200" font-family="Open Sans,sans-serif">R$0k</text><rect x="233.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="246.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
       <rect x="270.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="283.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jul</text>
@@ -2875,7 +2885,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <text x="433.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Nov</text>
       <rect x="458.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="471.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
-      </svg></div>
+      </svg></canvas>
       </div>
     </div>
 
@@ -2892,19 +2902,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📄</span>
       <div class="dash-kpi-label">Total de Notas</div>
-      <div class="dash-kpi-val">12</div>
-      <div class="dash-kpi-sub">3 atendimentos</div>
+      <div class="dash-kpi-val">3</div>
+      <div class="dash-kpi-sub">2 atendimentos</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🏭</span>
       <div class="dash-kpi-label">Nota de Produto</div>
-      <div class="dash-kpi-val">12</div>
+      <div class="dash-kpi-val">2</div>
       <div class="dash-kpi-sub">NF-e</div>
     </div>
     <div class="dash-kpi dash-kpi">
       <span class="dash-kpi-icon">🛠</span>
       <div class="dash-kpi-label">Nota de Serviço</div>
-      <div class="dash-kpi-val">0</div>
+      <div class="dash-kpi-val">1</div>
       <div class="dash-kpi-sub">NFS-e</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
@@ -2941,60 +2951,48 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
                 <button onclick="clearNfeMes()">Limpar</button>
               </div>
               <div class="nfe-mes-list" id="nfe-mes-list"><label class="nfe-mes-opt">
-      <input type="checkbox" value="1776976066704" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
+      <input type="checkbox" value="1777034638458" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
       <span class="nfe-mes-opt-dot" style="background:#1B3464"></span>
-      <span class="nfe-mes-opt-name">teste</span>
+      <span class="nfe-mes-opt-name">teste 3</span>
       <span class="nfe-mes-opt-count">2 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777034638458" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
+      <input type="checkbox" value="1777029060053" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
       <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
-      <span class="nfe-mes-opt-name">teste 3</span>
-      <span class="nfe-mes-opt-count">5 notas</span>
-    </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777029060053" data-color="#27AE60" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#27AE60"></span>
       <span class="nfe-mes-opt-name">teste 2</span>
-      <span class="nfe-mes-opt-count">5 notas</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
     </label></div>
             </div>
           </div>
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div class="dash-chart-area" id="dc-nfe-tipo-cliente" style="height:280px;padding:8px 0;display:flex;align-items:center"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="121.66666666666667" height="180" rx="2" fill="#1B3464"></rect><rect x="198.66666666666669" y="10" width="121.66666666666667" height="180" rx="2" fill="#C9A84C"></rect><rect x="321.33333333333337" y="118" width="121.66666666666667" height="72" rx="2" fill="#27AE60"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Abr/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text><text x="170" y="235" font-size="9" fill="#27AE60" font-family="Open Sans,sans-serif">■ teste</text></svg></div>
+      <canvas id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></canvas>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
     <!-- Gráfico menor: Total acumulado por cliente (mantido) -->
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
-      <div id="dc-nfe-cliente" style="padding:10px 0">
+      <canvas id="dc-nfe-cliente">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px"></div>
       </div>
-      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">5 notas</div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:100%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:50%;background:#1B3464;border-radius:4px"></div>
       </div>
-      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">5 notas</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste</div>
-      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:40%;background:#1B3464;border-radius:4px"></div>
-      </div>
-      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
-    </div></div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div></canvas>
     </div>
     <div class="dash-row-2" style="margin-bottom:14px">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div class="dash-chart-area dash-chart-area--sm" id="dc-nfe-tipo-pizza" style="display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80,15 A60,60 0 0,1 80,135 L80,113 A38,38 0 0,0 80,37 Z" fill="#1B3464"></path><path d="M80,135 A60,60 0 0,1 80,15 L80,37 A38,38 0 0,0 80,113 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">12</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (12)</text></svg></div>
+        <canvas id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></canvas>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -3010,11 +3008,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
               padding:2px 7px;border-radius:20px;
               background:#EEF4FC;
               color:#1B3464">
-              Produto: 5
+              Produto: 2
             </span>
         </div>
       </div>
-      <div class="dash-top-count">5<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+      <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div>
     <div class="dash-top-item">
       <div class="dash-top-rank ">2</div>
@@ -3024,35 +3022,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           
             <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
               padding:2px 7px;border-radius:20px;
-              background:#EEF4FC;
-              color:#1B3464">
-              Produto: 5
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 1
             </span>
         </div>
       </div>
-      <div class="dash-top-count">5<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
-    </div>
-    <div class="dash-top-item">
-      <div class="dash-top-rank ">3</div>
-      <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">teste</div>
-        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
-          
-            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
-              padding:2px 7px;border-radius:20px;
-              background:#EEF4FC;
-              color:#1B3464">
-              Produto: 2
-            </span>
-        </div>
-      </div>
-      <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div></div>
       </div>
     </div>
 
     <!-- Estado vazio -->
-    <div id="dash-empty-state" style="display:none;text-align:center;padding:60px 20px">
+    <div id="dash-empty-state" style="display: none; text-align: center; padding: 60px 20px;">
       <div style="font-size:48px;margin-bottom:12px">📊</div>
       <div style="font-family:&#39;Raleway&#39;,sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px">Nenhum dado ainda</div>
       <div style="font-size:13px;color:var(--gray-text)">Registre atendimentos para visualizar os indicadores.</div>
@@ -4585,9 +4567,20 @@ if(_navDate) _navDate.textContent=_dateStr;
 // ─── INIT ─────────────────────────────────────────────────────────
 // ── INIT ──────────────────────────────────────────────────
 window.addEventListener('load', async () => {
-  // Aguarda libs externas (Chart.js, XLSX, jsPDF) carregarem — colocadas no fim do body
+  // Aguarda libs externas (Chart.js, XLSX, jsPDF) carregarem — timeout de 10s para não travar
   await new Promise(resolve => {
-    const check = () => (typeof Chart !== 'undefined' && typeof XLSX !== 'undefined' && window.jspdf) ? resolve() : setTimeout(check, 80);
+    let attempts = 0;
+    const check = () => {
+      attempts++;
+      if(typeof Chart !== 'undefined' && typeof XLSX !== 'undefined' && window.jspdf){
+        resolve();
+      } else if(attempts > 125){ // ~10s de espera máxima
+        console.warn('[Sollertia] Libs externas não carregaram a tempo. Continuando sem elas.');
+        resolve();
+      } else {
+        setTimeout(check, 80);
+      }
+    };
     check();
   });
 
@@ -5249,7 +5242,7 @@ function renderNfeMesChart(nfeData){
 <!-- ═══════════════════════════════════════
      MODAL DE SENHA — DASHBOARD
 ═══════════════════════════════════════ -->
-<div id="dash-lock-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,25,50,.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+<div id="dash-lock-overlay" style="display: none; position: fixed; inset: 0px; z-index: 9999; background: rgba(15, 25, 50, 0.55); backdrop-filter: blur(4px); align-items: center; justify-content: center;">
   <div style="background:#fff;border-radius:16px;padding:40px 36px 32px;max-width:360px;width:90%;box-shadow:0 8px 40px rgba(27,52,100,.18);text-align:center;font-family:&#39;Raleway&#39;,sans-serif;">
     <div style="width:52px;height:52px;background:#EEF4FC;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;">🔒</div>
     <div style="font-size:17px;font-weight:800;color:#1B3464;margin-bottom:6px;">Área Restrita</div>
@@ -5321,8 +5314,9 @@ function _openDashboard(){
 }
 </script>
 
-<script src="./Sollertia — Sistema de Atendimentos certo certo_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos certo certo_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos certo certo_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos certo certo_files/jspdf.plugin.autotable.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste2_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste2_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste2_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste2_files/jspdf.plugin.autotable.min.js.download"></script>
+
 </body></html>
