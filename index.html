@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_11.html -->
+<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_12.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos teste56_files/css2" rel="stylesheet">
+<link href="./Sollertia — Sistema de Atendimentos zzzzz_files/css2" rel="stylesheet">
 <!-- libs carregadas no fim do body para garantir disponibilidade -->
 
 <style>
@@ -2009,6 +2009,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 .delta-down { background: #FDEDED; color: #C0392B; }
 .delta-neu  { background: #F0F4FA; color: #566A8F; }
 
+
+/* ── Altura dos containers SVG do dashboard ── */
+#dc-linha, #dc-fat-mes, #dc-nfe-tipo-cliente { height: 180px; }
+#dc-pizza, #dc-nfe-tipo-pizza { height: 180px; }
+#dc-fat-atend, #dc-nfe-cliente { min-height: 120px; }
+#dc-gauge { height: 160px; }
+
 /* ── Chart cards premium ── */
 .rp-chart-card {
   background: var(--white);
@@ -2735,7 +2742,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <div id="dc-linha"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <div id="dc-linha"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block">
     <defs><lineargradient id="lg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"></stop>
       <stop offset="100%" stop-color="#1B3464" stop-opacity="0"></stop>
@@ -2785,7 +2792,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <div id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <div id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block">
     <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
     <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">2</text>
@@ -2861,7 +2868,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <div id="dc-fat-mes"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+        <div id="dc-fat-mes"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="58.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
       <rect x="83.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="96.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Fev</text>
@@ -2966,7 +2973,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
+      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:240px;display:block"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
@@ -2992,7 +2999,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></div>
+        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -4708,7 +4715,7 @@ function renderDashLinha(data){
   const pts = byMes.map((v,i)=>({ x: PL + i*(cW/11), y: PT + cH - (v/max)*cH }));
   const polyline = pts.map(p=>`${p.x},${p.y}`).join(' ');
   const area = `${PL},${PT+cH} ` + polyline + ` ${PL+cW},${PT+cH}`;
-  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+  const svg = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H}px;display:block">
     <defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"/>
       <stop offset="100%" stop-color="#1B3464" stop-opacity="0"/>
@@ -4759,7 +4766,7 @@ function renderDashPizza(data){
     `<text x="185" y="${20+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
       <tspan fill="${colors[i%colors.length]}">■ </tspan>${label} (${val})
     </text>`).join('');
-  const svg = `<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+  const svg = `<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block">
     ${slices.join('')}
     <circle cx="${cx}" cy="${cy}" r="28" fill="white"/>
     <text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${total}</text>
@@ -4863,7 +4870,7 @@ function renderDashFatMes(data){
   }).join('');
   const gridLines = [0,0.25,0.5,0.75,1].map(p=>`<line x1="${PL}" y1="${PT+cH-p*cH}" x2="${W-PR}" y2="${PT+cH-p*cH}" stroke="#F0F4FA" stroke-width="1"/>`).join('');
   const el = document.getElementById('dc-fat-mes');
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${gridLines}${bars}</svg>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H}px;display:block">${gridLines}${bars}</svg>`;
 }
 
 
@@ -4968,7 +4975,7 @@ function renderDashNfe(data){
 
   const nfePSlices = buildDonutSlices(pizzaTipos, nfePTotal, nfePR, nfePr, nfePcx, nfePcy, t => pizzaCores[t]||'#8FA3C8');
   const nfePLegend=nfePSlices.map((s,i)=>`<text x="155" y="${18+i*18}" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="${s.color}">■ </tspan>${s.tipo} (${s.val})</text>`).join('');
-  if(nfePizzaEl) nfePizzaEl.innerHTML=`<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${nfePSlices.map(s=>s.path).join('')}<circle cx="${nfePcx}" cy="${nfePcy}" r="25" fill="white"/><text x="${nfePcx}" y="${nfePcy+5}" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${nfePTotal}</text>${nfePLegend}</svg>`;
+  if(nfePizzaEl) nfePizzaEl.innerHTML=`<svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block">${nfePSlices.map(s=>s.path).join('')}<circle cx="${nfePcx}" cy="${nfePcy}" r="25" fill="white"/><text x="${nfePcx}" y="${nfePcy+5}" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">${nfePTotal}</text>${nfePLegend}</svg>`;
 
 
   // Ranking detalhado
@@ -5236,7 +5243,7 @@ function renderNfeMesChart(nfeData){
   }).join('');
   const legend=datasets.slice(0,6).map((ds,i)=>`<text x="${10+i*80}" y="${H+15}" font-size="9" fill="${ds.color}" font-family="Open Sans,sans-serif">■ ${ds.name.slice(0,10)}</text>`).join('');
   const gridLines=[0,0.25,0.5,0.75,1].map(p=>`<line x1="${PL}" y1="${PT+cH-p*cH}" x2="${W-PR}" y2="${PT+cH-p*cH}" stroke="#F0F4FA" stroke-width="1"/>`).join('');
-  el.innerHTML=`<svg viewBox="0 0 ${W} ${H+20}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">${gridLines}${bars}${legend}</svg>`;
+  el.innerHTML=`<svg viewBox="0 0 ${W} ${H+20}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:${H+20}px;display:block">${gridLines}${bars}${legend}</svg>`;
 }
 
 </script>
@@ -5317,9 +5324,9 @@ function _openDashboard(){
 }
 </script>
 
-<script src="./Sollertia — Sistema de Atendimentos teste56_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste56_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste56_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste56_files/jspdf.plugin.autotable.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos zzzzz_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos zzzzz_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos zzzzz_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos zzzzz_files/jspdf.plugin.autotable.min.js.download"></script>
 
 </body></html>
