@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_10.html -->
+<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_11.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos teste2_files/css2" rel="stylesheet">
+<link href="./Sollertia — Sistema de Atendimentos teste56_files/css2" rel="stylesheet">
 <!-- libs carregadas no fim do body para garantir disponibilidade -->
 
 <style>
@@ -2735,7 +2735,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Atendimentos por Mês</div>
         <div class="dash-chart-sub">Volume mensal no período</div>
-        <canvas id="dc-linha"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <div id="dc-linha"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
     <defs><lineargradient id="lg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1B3464" stop-opacity="0.15"></stop>
       <stop offset="100%" stop-color="#1B3464" stop-opacity="0"></stop>
@@ -2780,19 +2780,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <text x="490" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
       
     
-  </svg></canvas>
+  </svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
-        <canvas id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+        <div id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
     <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
     <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">2</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
       <tspan fill="#1B3464">■ </tspan>Emissão de notas (2)
     </text>
-  </svg></canvas>
+  </svg></div>
       </div>
     </div>
 
@@ -2801,14 +2801,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Atendente</div>
         <div class="dash-chart-sub">R$ gerado por colaborador</div>
-        <canvas id="dc-fat-atend">
+        <div id="dc-fat-atend">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
       <div style="min-width:90px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right">Carlos H.</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:20px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px;transition:width .4s ease"></div>
       </div>
       <div style="min-width:80px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">R$ 20,00</div>
-    </div></canvas>
+    </div></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Top Clientes</div>
@@ -2844,7 +2844,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-sub">Meta: abaixo de 10%</div>
         <div class="dash-gauge-wrap">
           <!-- Gauge SVG — o texto fica dentro do próprio SVG para evitar conflito de posicionamento -->
-          <canvas id="dc-gauge"></canvas>
+          <div id="dc-gauge"></div>
           <div class="dash-gauge-counts">
             <div class="dash-gauge-item">
               <span id="dc-rt-sim" class="dash-gauge-val dash-gauge-val--bad">0</span>
@@ -2861,7 +2861,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Faturamento por Mês</div>
         <div class="dash-chart-sub">Receita mensal (R$)</div>
-        <canvas id="dc-fat-mes"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
+        <div id="dc-fat-mes"><svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="40" y1="155" x2="490" y2="155" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="118.75" x2="490" y2="118.75" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="82.5" x2="490" y2="82.5" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="46.25" x2="490" y2="46.25" stroke="#F0F4FA" stroke-width="1"></line><line x1="40" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="45.625" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="58.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jan</text>
       <rect x="83.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="96.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Fev</text>
@@ -2885,7 +2885,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <text x="433.75" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Nov</text>
       <rect x="458.125" y="155" width="26.25" height="0" rx="3" fill="#F0F4FA"></rect>
       <text x="471.25" y="174" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Dez</text>
-      </svg></canvas>
+      </svg></div>
       </div>
     </div>
 
@@ -2966,13 +2966,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <canvas id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></canvas>
+      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="183" height="180" rx="2" fill="#1B3464"></rect><rect x="260" y="100" width="183" height="90" rx="2" fill="#C9A84C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ teste 3</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ teste 2</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
     <!-- Gráfico menor: Total acumulado por cliente (mantido) -->
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
-      <canvas id="dc-nfe-cliente">
+      <div id="dc-nfe-cliente">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
@@ -2986,13 +2986,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div style="height:100%;width:50%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
-    </div></canvas>
+    </div></div>
     </div>
     <div class="dash-row-2" style="margin-bottom:14px">
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <canvas id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></canvas>
+        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 28.04,105.00 L47.09,94.00 A38,38 0 1,0 80.00,37.00 Z" fill="#1B3464"></path><path d="M47.09,94.00 L28.04,105.00 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 47.09,94.00 Z" fill="#C9A84C"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">3</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (1)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -4605,8 +4605,11 @@ function destroyDashChart(id){
   // Substituir o canvas por um novo para garantir dimensões corretas
   const old = document.getElementById(id);
   if(old){
-    const fresh = document.createElement('canvas');
+    const fresh = document.createElement('div');
     fresh.id = id;
+    // Preserva classes e estilos do elemento original
+    fresh.className = old.className;
+    fresh.style.cssText = old.style.cssText;
     old.parentNode.replaceChild(fresh, old);
   }
 }
@@ -5314,9 +5317,9 @@ function _openDashboard(){
 }
 </script>
 
-<script src="./Sollertia — Sistema de Atendimentos teste2_files/chart.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste2_files/xlsx.full.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste2_files/jspdf.umd.min.js.download"></script>
-<script src="./Sollertia — Sistema de Atendimentos teste2_files/jspdf.plugin.autotable.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste56_files/chart.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste56_files/xlsx.full.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste56_files/jspdf.umd.min.js.download"></script>
+<script src="./Sollertia — Sistema de Atendimentos teste56_files/jspdf.plugin.autotable.min.js.download"></script>
 
 </body></html>
