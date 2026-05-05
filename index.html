@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_14.html -->
+<!-- saved from url=(0076)file:///C:/Users/junio/Downloads/Sollertia___Sistema_de_Atendimentos_15.html -->
 <html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sollertia — Sistema de Atendimentos</title>
-<link href="./Sollertia — Sistema de Atendimentos_files/css2" rel="stylesheet">
+<link href="./Sollertia — Sistema de Atendimentos ceeerto_files/css2" rel="stylesheet">
 <!-- libs carregadas no fim do body para garantir disponibilidade -->
 
 <style>
@@ -461,32 +461,165 @@ body {
 
 /* ─── EDIT BAR ───────────────────────────────── */
 .edit-bar {
-  background: linear-gradient(135deg, #EEF4FC, #F4F8FF);
-  border: 1.5px solid #B5C9E8;
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
+  background: linear-gradient(135deg, #FFF8EC, #FFFBF0);
+  border: 1.5px solid #E8C96A;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
   font-family: 'Raleway', sans-serif;
   font-size: 12px;
   color: var(--navy);
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 16px;
+  animation: slideDown 0.2s ease;
+  box-shadow: 0 2px 8px rgba(201,168,76,0.15);
 }
+.edit-bar-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, #C9A84C, #E8C96A);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.edit-bar-info { flex: 1; }
+.edit-bar-title {
+  font-size: 12px; font-weight: 800; color: var(--navy);
+  font-family: 'Raleway', sans-serif;
+}
+.edit-bar-sub { font-size: 10px; color: var(--gray-text); margin-top: 1px; }
 .btn-cancel-edit {
   background: transparent;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid #E8C96A;
   border-radius: var(--radius-sm);
-  padding: 4px 12px;
+  padding: 5px 14px;
   font-size: 11px;
   cursor: pointer;
-  color: var(--gray-text);
+  color: #7D5A00;
   font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   transition: var(--transition);
 }
-.btn-cancel-edit:hover { background: var(--off-white); color: var(--navy); }
+.btn-cancel-edit:hover { background: #FFF0C0; color: var(--navy); }
+
+/* ─── LOG MODAL ──────────────────────────────── */
+#log-modal-overlay {
+  position: fixed; inset: 0; z-index: 8000;
+  background: rgba(10,18,40,0.55);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn .18s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+#log-modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 90%; max-width: 680px;
+  max-height: 80vh;
+  display: flex; flex-direction: column;
+  animation: slideDown .2s ease;
+}
+.log-modal-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.log-modal-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px; font-weight: 800; color: var(--navy);
+}
+.log-modal-sub { font-size: 11px; color: var(--gray-text); margin-top: 2px; }
+.btn-close-modal {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--off-white); border: 1px solid var(--border);
+  cursor: pointer; font-size: 16px; color: var(--gray-text);
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.btn-close-modal:hover { background: var(--danger-bg); color: var(--danger); }
+.log-modal-body {
+  padding: 16px 24px;
+  overflow-y: auto; flex: 1;
+}
+.log-empty {
+  text-align: center; padding: 32px 16px;
+  color: var(--gray-mid);
+  font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600;
+}
+.log-entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.log-entry-header {
+  background: var(--off-white);
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.log-entry-icon {
+  width: 28px; height: 28px; border-radius: 7px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0;
+}
+.log-entry-who {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px; font-weight: 700; color: var(--navy);
+}
+.log-entry-when {
+  font-size: 10px; color: var(--gray-text); margin-top: 1px;
+}
+.log-entry-body { padding: 10px 14px; }
+.log-diff { display: flex; flex-direction: column; gap: 6px; }
+.log-diff-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px; align-items: start;
+}
+.log-diff-field {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px; font-weight: 700; color: var(--gray-text);
+  text-transform: uppercase; letter-spacing: .06em;
+}
+.log-diff-old {
+  font-size: 11px; color: var(--danger);
+  background: var(--danger-bg); padding: 3px 8px; border-radius: 4px;
+  text-decoration: line-through; word-break: break-word;
+}
+.log-diff-new {
+  font-size: 11px; color: var(--success);
+  background: var(--success-bg); padding: 3px 8px; border-radius: 4px;
+  font-weight: 600; word-break: break-word;
+}
+.log-diff-same {
+  font-size: 11px; color: var(--gray-text);
+  padding: 3px 8px;
+}
+.log-diff-header {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 9px; font-weight: 800; color: var(--gray-text);
+  text-transform: uppercase; letter-spacing: .08em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 4px;
+}
+.btn-hist {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 10px; font-weight: 600;
+  cursor: pointer; color: var(--navy-mid);
+  font-family: 'Raleway', sans-serif;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-hist:hover { background: var(--off-white); color: var(--navy); border-color: var(--navy-mid); }
 
 /* ─── TABS ───────────────────────────────────── */
 .tabs {
@@ -2205,7 +2338,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
 }
 
 </style>
-<style>@keyframes supa-bar{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}51%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style></head>
+<style>@keyframes supa-bar{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}51%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style><style>@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}</style></head>
 <body><div id="supa-loading" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 3px; background: linear-gradient(90deg, rgb(27, 52, 100), rgb(201, 168, 76)); z-index: 9999; animation: 1.2s ease-in-out 0s infinite normal none running supa-bar; display: none;"></div>
 
 <!-- NAVBAR UNIFICADA -->
@@ -2218,7 +2351,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   </div>
   <div style="flex:1"></div>
   <div style="width:16px"></div>
-  <span class="nav-date" id="nav-date">seg., 04 de mai.</span>
+  <span class="nav-date" id="nav-date">ter., 05 de mai.</span>
 </div>
 
 <!-- SISTEMA VIEW -->
@@ -2238,16 +2371,20 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- NOVO ATENDIMENTO -->
   <div class="tab-panel active" id="tab-novo">
   <div class="section-title" id="form-title">Novo Atendimento</div>
-  <div id="edit-bar" style="display:none" class="edit-bar">
-    ✏️ <span>Editando registro</span>
-    <button class="btn-cancel-edit" onclick="cancelEdit()">Cancelar edição</button>
+  <div id="edit-bar" style="display: none;" class="edit-bar">
+    <div class="edit-bar-icon">✏️</div>
+    <div class="edit-bar-info">
+      <div class="edit-bar-title" id="edit-bar-title">Editando: ROBERTO(A&amp;M)</div>
+      <div class="edit-bar-sub" id="edit-bar-sub">Atendimento de 04/05/2026 · Emissão de notas · Dayane</div>
+    </div>
+    <button class="btn-cancel-edit" onclick="cancelEdit()">✕ Cancelar</button>
   </div>
 
   <div class="form-row">
     <div class="client-field">
       <label id="label-cliente">Cliente *</label>
       <div class="client-input-wrap">
-        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1777912835014">DAVI( FRA)</option><option value="1777912664935">DYOGE</option><option value="1777911258076">LEONARDO LF</option><option value="1777913055394">MAYCON-LUCIMAR</option><option value="1777913666545">PIERRE( FP)</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option><option value="1777034638458">teste 3</option><option value="1777913015815">TULIO( FARM)</option><option value="1777912801711">VALOR</option></select>
+        <select id="f-client" class="client-select" onchange="updateClientLabel()"><option value="">Selecione um cliente...</option><option value="1777912835014">DAVI( FRA)</option><option value="1777926510798">DEBORA APARECIDA</option><option value="1777912664935">DYOGE</option><option value="1777926602696">IVAN-SEI</option><option value="1777911258076">LEONARDO LF</option><option value="1777916470623">MAX MILLER</option><option value="1777913055394">MAYCON-LUCIMAR</option><option value="1777920802198">PAULO AUGUSTO( SIARE - MEI)</option><option value="1777913666545">PIERRE( FP)</option><option value="1777929496755">ROBERTO(A&amp;M)</option><option value="1776976066704">teste</option><option value="1777029060053">teste 2</option><option value="1777034638458">teste 3</option><option value="1777913015815">TULIO( FARM)</option><option value="1777912801711">VALOR</option></select>
         <button class="btn-new-client" onclick="toggleAddClient()">+ Novo</button>
       </div>
       <div id="add-client-inline" style="display:none" class="add-client-inline">
@@ -2282,7 +2419,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     </div>
   </div>
 
-  <div class="nfe-block" id="nfe-block" style="display: block;">
+  <div class="nfe-block" id="nfe-block" style="display: none;">
     <div class="nfe-label">
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="12" height="14" rx="2" stroke="#1B3464" stroke-width="1.3"></rect><path d="M5 5h6M5 8h6M5 11h3" stroke="#1B3464" stroke-width="1.3" stroke-linecap="round"></path></svg>
       Dados da Emissão de Notas
@@ -2340,12 +2477,12 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
   <!-- ATENDIMENTOS -->
   <div class="tab-panel" id="tab-atendimentos">
     <div class="stats" id="stats">
-    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">13</div></div>
-    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">10</div></div>
+    <div class="stat"><div class="stat-label">Atendimentos</div><div class="stat-val">19</div></div>
+    <div class="stat"><div class="stat-label">Clientes</div><div class="stat-val">15</div></div>
     <div class="stat"><div class="stat-label">Tempo Total</div><div class="stat-val" style="font-size:16px">—</div></div>
-    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">9</div></div>
+    <div class="stat"><div class="stat-label">Este Mês</div><div class="stat-val">15</div></div>
     <div class="stat"><div class="stat-label">Faturamento</div><div class="stat-val" style="font-size:13px">R$170,00</div></div>
-    <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">1</div></div></div>
+    <div class="stat"><div class="stat-label">Retrabalhos</div><div class="stat-val">2</div></div></div>
     <div class="filters-wrap">
       <div class="filter-label">Filtros</div>
       <div class="filters-row">
@@ -2383,6 +2520,103 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </tr></thead>
         <tbody id="tbody"><tr>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">ROBERTO(A&amp;M)</td>
+      <td class="td-desc">EMISSÃO DE NOTAS</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">4 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777929525270&#39;)">✏️ Editar</button>
+        <button class="btn-hist" onclick="showLogModal(&#39;1777929525270&#39;)" title="Ver histórico de edições">📋 2</button>
+        <button class="btn-danger" onclick="del(&#39;1777929525270&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">DEBORA APARECIDA</td>
+      <td class="td-desc">ATUALIZAÇÃO DE GUIAS</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EEF4FC;color:#1B3464">Atualização de guias</span></td>
+      <td><span class="badge badge-sim">Sim</span></td>
+      <td>—</td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777926632302&#39;)">✏️ Editar</button>
+        
+        <button class="btn-danger" onclick="del(&#39;1777926632302&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">IVAN-SEI</td>
+      <td class="td-desc">EMISSAO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Felipe</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777926625364&#39;)">✏️ Editar</button>
+        
+        <button class="btn-danger" onclick="del(&#39;1777926625364&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">DAVI( FRA)</td>
+      <td class="td-desc">EMISSÃO DE NOTA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777924409570&#39;)">✏️ Editar</button>
+        
+        <button class="btn-danger" onclick="del(&#39;1777924409570&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">PAULO AUGUSTO( SIARE - MEI)</td>
+      <td class="td-desc">EMISSÃO DE NOTA
+AINDA NÃO ENVIEI A NOTA PARA O CLIENTE DEVIDO ELA AINDA ESTAR EM NO SISTEMA</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
+      <td><span class="badge badge-avul">Avulso</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EEF4FC;color:#1B3464">Atualização de guias</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td>—</td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777920889653&#39;)">✏️ Editar</button>
+        
+        <button class="btn-danger" onclick="del(&#39;1777920889653&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
+      <td style="font-weight:700;font-size:12px;color:var(--navy)">MAX MILLER</td>
+      <td class="td-desc">EMISSAO DE NOTAS-NFC-e</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600">Felipe</td>
+      <td><span class="badge badge-mens">Mensalista</span></td>
+      <td style="white-space:nowrap;font-size:11px">—</td>
+      <td style="font-size:11px;white-space:nowrap;font-weight:600;color:var(--navy)">—</td>
+      <td><span class="badge badge-depto" style="background:#EAF3DE;color:#3B6D11">Emissão de notas</span></td>
+      <td><span class="badge badge-nao">Não</span></td>
+      <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">3 notas</span><span style="font-size:10px;color:var(--gray-text)">Cupom Fiscal</span></div></td>
+      <td><div class="td-actions">
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777916537764&#39;)">✏️ Editar</button>
+        
+        <button class="btn-danger" onclick="del(&#39;1777916537764&#39;)">✕</button>
+      </div></td>
+    </tr><tr>
+      <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">04/05/2026</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">PIERRE( FP)</td>
       <td class="td-desc">EMISSÃO DE NOTAS</td>
       <td style="font-size:11px;white-space:nowrap;font-weight:600">Dayane</td>
@@ -2393,7 +2627,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913691883&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913691883&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777913691883&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2408,7 +2643,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913277689&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913277689&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777913277689&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2423,7 +2659,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913066695&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777913066695&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777913066695&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2438,7 +2675,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912874899&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912874899&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777912874899&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2453,7 +2691,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">3 notas</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912806966&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912806966&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777912806966&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2468,7 +2707,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912713538&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777912713538&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777912713538&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2483,7 +2723,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777911806225&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777911806225&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777911806225&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2498,7 +2739,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904640241&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904640241&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777904640241&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2513,7 +2755,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">1 nota</span><span style="font-size:10px;color:var(--gray-text)">Serviço</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904562551&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777904562551&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777904562551&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2528,7 +2771,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td>—</td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777294386836&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777294386836&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777294386836&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2543,7 +2787,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-sim">Sim</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">2 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777293286290&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777293286290&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777293286290&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2558,7 +2803,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">5 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777034666622&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777034666622&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777034666622&#39;)">✕</button>
       </div></td>
     </tr><tr>
@@ -2573,7 +2819,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <td><span class="badge badge-nao">Não</span></td>
       <td><div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">5 notas</span><span style="font-size:10px;color:var(--gray-text)">Produto</span></div></td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777029134161&#39;)">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit(&#39;1777029134161&#39;)">✏️ Editar</button>
+        
         <button class="btn-danger" onclick="del(&#39;1777029134161&#39;)">✕</button>
       </div></td>
     </tr></tbody>
@@ -2592,7 +2839,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="client-avatar" style="background:#FAEEDA;color:#633806">DF</div>
         <div style="flex:1">
           <div class="client-name">DAVI( FRA)</div>
-          <div class="client-meta"> 1 atend. </div>
+          <div class="client-meta"> 2 atend. </div>
         </div>
         <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
         <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777912835014&#39;)">✏️ Editar</button>
@@ -2621,6 +2868,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="eci-actions">
           <button class="btn-save-client" onclick="saveEditClient(&#39;1777912835014&#39;)">✔ Salvar alterações</button>
           <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777912835014&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777926510798">
+        <div class="client-avatar" style="background:#EEF4FC;color:#1B3464">DA</div>
+        <div style="flex:1">
+          <div class="client-name">DEBORA APARECIDA</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777926510798&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777926510798&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777926510798" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777926510798" value="DEBORA APARECIDA" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777926510798" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777926510798">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777926510798&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777926510798&#39;)">Cancelar</button>
         </div>
       </div>
     </div><div>
@@ -2660,6 +2943,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
     </div><div>
+      <div class="client-item" id="ci-1777926602696">
+        <div class="client-avatar" style="background:#FAEEDA;color:#633806">I</div>
+        <div style="flex:1">
+          <div class="client-name">IVAN-SEI</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777926602696&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777926602696&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777926602696" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777926602696" value="IVAN-SEI" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777926602696" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777926602696">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777926602696&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777926602696&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
       <div class="client-item" id="ci-1777911258076">
         <div class="client-avatar" style="background:#E1F5EE;color:#085041">LL</div>
         <div style="flex:1">
@@ -2693,6 +3012,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="eci-actions">
           <button class="btn-save-client" onclick="saveEditClient(&#39;1777911258076&#39;)">✔ Salvar alterações</button>
           <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777911258076&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777916470623">
+        <div class="client-avatar" style="background:#EEF4FC;color:#1B3464">MM</div>
+        <div style="flex:1">
+          <div class="client-name">MAX MILLER</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777916470623&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777916470623&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777916470623" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777916470623" value="MAX MILLER" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777916470623" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777916470623">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777916470623&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777916470623&#39;)">Cancelar</button>
         </div>
       </div>
     </div><div>
@@ -2732,6 +3087,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
     </div><div>
+      <div class="client-item" id="ci-1777920802198">
+        <div class="client-avatar" style="background:#FAEEDA;color:#633806">PA</div>
+        <div style="flex:1">
+          <div class="client-name">PAULO AUGUSTO( SIARE - MEI)</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-avul" style="flex-shrink:0">Avulso</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777920802198&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777920802198&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777920802198" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777920802198" value="PAULO AUGUSTO( SIARE - MEI)" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777920802198" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777920802198">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista">Mensalista</option>
+              <option value="Avulso" selected="">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777920802198&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777920802198&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
       <div class="client-item" id="ci-1777913666545">
         <div class="client-avatar" style="background:#EEEDFE;color:#3C3489">PF</div>
         <div style="flex:1">
@@ -2765,6 +3156,42 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="eci-actions">
           <button class="btn-save-client" onclick="saveEditClient(&#39;1777913666545&#39;)">✔ Salvar alterações</button>
           <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777913666545&#39;)">Cancelar</button>
+        </div>
+      </div>
+    </div><div>
+      <div class="client-item" id="ci-1777929496755">
+        <div class="client-avatar" style="background:#FAEEDA;color:#633806">R</div>
+        <div style="flex:1">
+          <div class="client-name">ROBERTO(A&amp;M)</div>
+          <div class="client-meta"> 1 atend. </div>
+        </div>
+        <span class="badge badge-mens" style="flex-shrink:0">Mensalista</span>
+        <button class="btn-edit-client" onclick="toggleEditClient(&#39;1777929496755&#39;)">✏️ Editar</button>
+        <button class="btn-del-client" onclick="delClient(&#39;1777929496755&#39;)">Excluir</button>
+      </div>
+      <div id="eci-1777929496755" class="edit-client-inline" style="display:none">
+        <div class="eci-title">✏️ Editar cliente</div>
+        <div class="eci-fields">
+          <div class="eci-field">
+            <label class="eci-label">Nome *</label>
+            <input id="eci-name-1777929496755" value="ROBERTO(A&amp;M)" placeholder="Nome do cliente *">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">CPF / CNPJ</label>
+            <input id="eci-doc-1777929496755" value="" placeholder="CPF / CNPJ (opcional)">
+          </div>
+          <div class="eci-field">
+            <label class="eci-label">Tipo de cliente</label>
+            <select id="eci-tipo-1777929496755">
+              <option value="">Sem tipo</option>
+              <option value="Mensalista" selected="">Mensalista</option>
+              <option value="Avulso">Avulso</option>
+            </select>
+          </div>
+        </div>
+        <div class="eci-actions">
+          <button class="btn-save-client" onclick="saveEditClient(&#39;1777929496755&#39;)">✔ Salvar alterações</button>
+          <button class="btn-cancel-inline" onclick="toggleEditClient(&#39;1777929496755&#39;)">Cancelar</button>
         </div>
       </div>
     </div><div>
@@ -3066,7 +3493,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
 
-      <span id="dash-period-label" class="dash-period-info">9 atend. · Este mês</span>
+      <span id="dash-period-label" class="dash-period-info">15 atend. · Este mês</span>
     </div>
 
     <!-- KPIs rápidos -->
@@ -3074,8 +3501,8 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📋</span>
       <div class="dash-kpi-label">Atendimentos</div>
-      <div class="dash-kpi-val">9</div>
-      <div class="dash-kpi-sub">9 clientes</div>
+      <div class="dash-kpi-val">15</div>
+      <div class="dash-kpi-sub">14 clientes</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">💰</span>
@@ -3086,14 +3513,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🎫</span>
       <div class="dash-kpi-label">Ticket Médio</div>
-      <div class="dash-kpi-val">R$&nbsp;2</div>
+      <div class="dash-kpi-val">R$&nbsp;1</div>
       <div class="dash-kpi-sub">por atendimento</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
       <span class="dash-kpi-icon">✅</span>
       <div class="dash-kpi-label">Retrabalho</div>
-      <div class="dash-kpi-val">0%</div>
-      <div class="dash-kpi-sub">0 ocorrências</div>
+      <div class="dash-kpi-val">7%</div>
+      <div class="dash-kpi-sub">1 ocorrências</div>
     </div></div>
 
     <!-- Linha: Atend. por mês + Distribuição serviço -->
@@ -3123,7 +3550,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       
     <circle cx="197.27272727272728" cy="10" r="3" fill="#1B3464"></circle>
       <text x="197.27272727272728" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai</text>
-      <text x="197.27272727272728" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">9</text>
+      <text x="197.27272727272728" y="3" text-anchor="middle" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">15</text>
     <circle cx="239.0909090909091" cy="150" r="3" fill="#1B3464"></circle>
       <text x="239.0909090909091" y="172" text-anchor="middle" font-size="9" fill="#8FA3C8" font-family="Open Sans,sans-serif">Jun</text>
       
@@ -3152,11 +3579,13 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div class="dash-chart-title">Tipo de Serviço</div>
         <div class="dash-chart-sub">Distribuição por categoria</div>
         <div id="dc-pizza"><svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px;display:block">
-    <path d="M100,20 A70,70 0 0,1 100,160 L100,132 A42,42 0 0,0 100,48 Z" fill="#1B3464"></path><path d="M100,160 A70,70 0 0,1 100,20 L100,48 A42,42 0 0,0 100,132 Z" fill="#1B3464"></path>
+    <path d="M100.00,48.00 L100.00,20.00 A70,70 0 1,1 47.98,43.16 L68.79,61.90 A42,42 0 1,0 100.00,48.00 Z" fill="#1B3464"></path><path d="M68.79,61.90 L47.98,43.16 A70,70 0 0,1 100.00,20.00 L100.00,48.00 A42,42 0 0,0 68.79,61.90 Z" fill="#C9A84C"></path>
     <circle cx="100" cy="90" r="28" fill="white"></circle>
-    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">9</text>
+    <text x="100" y="95" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">15</text>
     <text x="185" y="20" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
-      <tspan fill="#1B3464">■ </tspan>Emissão de notas (9)
+      <tspan fill="#1B3464">■ </tspan>Emissão de notas (13)
+    </text><text x="185" y="38" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif">
+      <tspan fill="#C9A84C">■ </tspan>Atualização de guias (2)
     </text>
   </svg></div>
       </div>
@@ -3197,19 +3626,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">PIERRE( FP)</div>
+        <div class="dash-top-name">DAVI( FRA)</div>
         <div class="dash-top-track">
           <div class="dash-top-fill" style="width:100%;background:#C9A84C"></div>
         </div>
       </div>
-      <div class="dash-top-count">1</div>
+      <div class="dash-top-count">2</div>
     </div>
     <div class="dash-top-item">
       <div class="dash-top-rank ">2</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">MAYCON-LUCIMAR</div>
+        <div class="dash-top-name">ROBERTO(A&amp;M)</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -3217,9 +3646,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">3</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">TULIO( FARM)</div>
+        <div class="dash-top-name">DEBORA APARECIDA</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -3227,9 +3656,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">4</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">DAVI( FRA)</div>
+        <div class="dash-top-name">IVAN-SEI</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -3237,9 +3666,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">5</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">VALOR</div>
+        <div class="dash-top-name">PAULO AUGUSTO( SIARE - MEI)</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -3247,9 +3676,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">6</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">DYOGE</div>
+        <div class="dash-top-name">MAX MILLER</div>
         <div class="dash-top-track">
-          <div class="dash-top-fill" style="width:100%;background:#1B3464"></div>
+          <div class="dash-top-fill" style="width:50%;background:#1B3464"></div>
         </div>
       </div>
       <div class="dash-top-count">1</div>
@@ -3267,11 +3696,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
           <div id="dc-gauge"></div>
           <div class="dash-gauge-counts">
             <div class="dash-gauge-item">
-              <span id="dc-rt-sim" class="dash-gauge-val dash-gauge-val--bad">0</span>
+              <span id="dc-rt-sim" class="dash-gauge-val dash-gauge-val--bad">1</span>
               <span class="dash-gauge-desc">com retrabalho</span>
             </div>
             <div class="dash-gauge-item">
-              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">9</span>
+              <span id="dc-rt-nao" class="dash-gauge-val dash-gauge-val--good">14</span>
               <span class="dash-gauge-desc">sem retrabalho</span>
             </div>
           </div>
@@ -3322,19 +3751,19 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-kpi ">
       <span class="dash-kpi-icon">📄</span>
       <div class="dash-kpi-label">Total de Notas</div>
-      <div class="dash-kpi-val">14</div>
-      <div class="dash-kpi-sub">9 atendimentos</div>
+      <div class="dash-kpi-val">23</div>
+      <div class="dash-kpi-sub">13 atendimentos</div>
     </div>
     <div class="dash-kpi dash-kpi--gold">
       <span class="dash-kpi-icon">🏭</span>
       <div class="dash-kpi-label">Nota de Produto</div>
-      <div class="dash-kpi-val">2</div>
+      <div class="dash-kpi-val">7</div>
       <div class="dash-kpi-sub">NF-e</div>
     </div>
     <div class="dash-kpi dash-kpi">
       <span class="dash-kpi-icon">🛠</span>
       <div class="dash-kpi-label">Nota de Serviço</div>
-      <div class="dash-kpi-val">12</div>
+      <div class="dash-kpi-val">13</div>
       <div class="dash-kpi-sub">NFS-e</div>
     </div>
     <div class="dash-kpi dash-kpi--green">
@@ -3371,48 +3800,63 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
                 <button onclick="clearNfeMes()">Limpar</button>
               </div>
               <div class="nfe-mes-list" id="nfe-mes-list"><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777913666545" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
+      <input type="checkbox" value="1777929496755" data-color="#1B3464" checked="" onchange="onNfeMesCheck(this)">
       <span class="nfe-mes-opt-dot" style="background:#1B3464"></span>
+      <span class="nfe-mes-opt-name">ROBERTO(A&amp;M)</span>
+      <span class="nfe-mes-opt-count">4 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777926602696" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
+      <span class="nfe-mes-opt-name">IVAN-SEI</span>
+      <span class="nfe-mes-opt-count">1 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777912835014" data-color="#27AE60" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#27AE60"></span>
+      <span class="nfe-mes-opt-name">DAVI( FRA)</span>
+      <span class="nfe-mes-opt-count">3 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777916470623" data-color="#E74C3C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#E74C3C"></span>
+      <span class="nfe-mes-opt-name">MAX MILLER</span>
+      <span class="nfe-mes-opt-count">3 notas</span>
+    </label><label class="nfe-mes-opt">
+      <input type="checkbox" value="1777913666545" data-color="#8E44AD" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#8E44AD"></span>
       <span class="nfe-mes-opt-name">PIERRE( FP)</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777913055394" data-color="#C9A84C" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#C9A84C"></span>
+      <input type="checkbox" value="1777913055394" data-color="#2980B9" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#2980B9"></span>
       <span class="nfe-mes-opt-name">MAYCON-LUCIMAR</span>
       <span class="nfe-mes-opt-count">2 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777913015815" data-color="#27AE60" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#27AE60"></span>
+      <input type="checkbox" value="1777913015815" data-color="#E67E22" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#E67E22"></span>
       <span class="nfe-mes-opt-name">TULIO( FARM)</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777912835014" data-color="#E74C3C" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#E74C3C"></span>
-      <span class="nfe-mes-opt-name">DAVI( FRA)</span>
-      <span class="nfe-mes-opt-count">2 notas</span>
-    </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777912801711" data-color="#8E44AD" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#8E44AD"></span>
+      <input type="checkbox" value="1777912801711" data-color="#16A085" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#16A085"></span>
       <span class="nfe-mes-opt-name">VALOR</span>
       <span class="nfe-mes-opt-count">3 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777912664935" data-color="#2980B9" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#2980B9"></span>
+      <input type="checkbox" value="1777912664935" data-color="#C0392B" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#C0392B"></span>
       <span class="nfe-mes-opt-name">DYOGE</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777911258076" data-color="#E67E22" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#E67E22"></span>
+      <input type="checkbox" value="1777911258076" data-color="#2C3E50" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#2C3E50"></span>
       <span class="nfe-mes-opt-name">LEONARDO LF</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777034638458" data-color="#16A085" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#16A085"></span>
+      <input type="checkbox" value="1777034638458" data-color="#F39C12" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#F39C12"></span>
       <span class="nfe-mes-opt-name">teste 3</span>
       <span class="nfe-mes-opt-count">2 notas</span>
     </label><label class="nfe-mes-opt">
-      <input type="checkbox" value="1777029060053" data-color="#C0392B" checked="" onchange="onNfeMesCheck(this)">
-      <span class="nfe-mes-opt-dot" style="background:#C0392B"></span>
+      <input type="checkbox" value="1777029060053" data-color="#1ABC9C" checked="" onchange="onNfeMesCheck(this)">
+      <span class="nfe-mes-opt-dot" style="background:#1ABC9C"></span>
       <span class="nfe-mes-opt-name">teste 2</span>
       <span class="nfe-mes-opt-count">1 notas</span>
     </label></div>
@@ -3421,7 +3865,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         </div>
       </div>
       <!-- Área do gráfico -->
-      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:240px;display:block"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="39.888888888888886" height="180" rx="2" fill="#1B3464"></rect><rect x="116.88888888888889" y="70" width="39.888888888888886" height="120" rx="2" fill="#C9A84C"></rect><rect x="157.77777777777777" y="70" width="39.888888888888886" height="120" rx="2" fill="#27AE60"></rect><rect x="198.66666666666666" y="70" width="39.888888888888886" height="120" rx="2" fill="#E74C3C"></rect><rect x="239.55555555555554" y="130" width="39.888888888888886" height="60" rx="2" fill="#8E44AD"></rect><rect x="280.44444444444446" y="130" width="39.888888888888886" height="60" rx="2" fill="#2980B9"></rect><rect x="321.3333333333333" y="130" width="39.888888888888886" height="60" rx="2" fill="#E67E22"></rect><rect x="362.2222222222222" y="130" width="39.888888888888886" height="60" rx="2" fill="#16A085"></rect><rect x="403.1111111111111" y="130" width="39.888888888888886" height="60" rx="2" fill="#C0392B"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ VALOR</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ MAYCON-LUC</text><text x="170" y="235" font-size="9" fill="#27AE60" font-family="Open Sans,sans-serif">■ DAVI( FRA)</text><text x="250" y="235" font-size="9" fill="#E74C3C" font-family="Open Sans,sans-serif">■ teste 3</text><text x="330" y="235" font-size="9" fill="#8E44AD" font-family="Open Sans,sans-serif">■ PIERRE( FP</text><text x="410" y="235" font-size="9" fill="#2980B9" font-family="Open Sans,sans-serif">■ TULIO( FAR</text></svg></div>
+      <div id="dc-nfe-tipo-cliente"><svg viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:240px;display:block"><line x1="30" y1="190" x2="490" y2="190" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="145" x2="490" y2="145" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="100" x2="490" y2="100" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="55" x2="490" y2="55" stroke="#F0F4FA" stroke-width="1"></line><line x1="30" y1="10" x2="490" y2="10" stroke="#F0F4FA" stroke-width="1"></line><rect x="76" y="10" width="29.666666666666668" height="180" rx="2" fill="#1B3464"></rect><rect x="106.66666666666667" y="55" width="29.666666666666668" height="135" rx="2" fill="#C9A84C"></rect><rect x="137.33333333333334" y="55" width="29.666666666666668" height="135" rx="2" fill="#27AE60"></rect><rect x="168" y="55" width="29.666666666666668" height="135" rx="2" fill="#E74C3C"></rect><rect x="198.66666666666669" y="100" width="29.666666666666668" height="90" rx="2" fill="#8E44AD"></rect><rect x="229.33333333333334" y="100" width="29.666666666666668" height="90" rx="2" fill="#2980B9"></rect><rect x="260" y="145" width="29.666666666666668" height="45" rx="2" fill="#E67E22"></rect><rect x="290.6666666666667" y="145" width="29.666666666666668" height="45" rx="2" fill="#16A085"></rect><rect x="321.33333333333337" y="145" width="29.666666666666668" height="45" rx="2" fill="#C0392B"></rect><rect x="352" y="145" width="29.666666666666668" height="45" rx="2" fill="#2C3E50"></rect><rect x="382.6666666666667" y="145" width="29.666666666666668" height="45" rx="2" fill="#F39C12"></rect><rect x="413.33333333333337" y="145" width="29.666666666666668" height="45" rx="2" fill="#1ABC9C"></rect><text x="260" y="214" text-anchor="middle" font-size="8" fill="#8FA3C8" font-family="Open Sans,sans-serif">Mai/26</text><text x="10" y="235" font-size="9" fill="#1B3464" font-family="Open Sans,sans-serif">■ ROBERTO(A&amp;</text><text x="90" y="235" font-size="9" fill="#C9A84C" font-family="Open Sans,sans-serif">■ DAVI( FRA)</text><text x="170" y="235" font-size="9" fill="#27AE60" font-family="Open Sans,sans-serif">■ MAX MILLER</text><text x="250" y="235" font-size="9" fill="#E74C3C" font-family="Open Sans,sans-serif">■ VALOR</text><text x="330" y="235" font-size="9" fill="#8E44AD" font-family="Open Sans,sans-serif">■ MAYCON-LUC</text><text x="410" y="235" font-size="9" fill="#2980B9" font-family="Open Sans,sans-serif">■ teste 3</text></svg></div>
       <!-- Legenda de clientes gerada dinamicamente -->
       <div id="dc-nfe-mes-legend" class="nfe-mes-legend"></div>
     </div>
@@ -3429,65 +3873,86 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-row-2" style="margin-bottom:14px;display:none">
       <div id="dc-nfe-cliente">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">VALOR</div>
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">ROBERTO(A&amp;M)</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
         <div style="height:100%;width:100%;background:#C9A84C;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">4 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">DAVI( FRA)</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:75%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">3 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">MAX MILLER</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:75%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">3 notas</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">VALOR</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:75%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">3 notas</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">MAYCON-LUCIMAR</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
-      </div>
-      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">DAVI( FRA)</div>
-      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:50%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 3</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:67%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:50%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">2 notas</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">IVAN-SEI</div>
+      <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
+      </div>
+      <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">PIERRE( FP)</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">TULIO( FARM)</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">DYOGE</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">LEONARDO LF</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="min-width:100px;font-size:11px;font-weight:600;color:#566A8F;font-family:&#39;Open Sans&#39;,sans-serif;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">teste 2</div>
       <div style="flex:1;background:#F0F4FA;border-radius:4px;height:18px;overflow:hidden">
-        <div style="height:100%;width:33%;background:#1B3464;border-radius:4px"></div>
+        <div style="height:100%;width:25%;background:#1B3464;border-radius:4px"></div>
       </div>
       <div style="min-width:40px;font-size:11px;font-weight:700;color:#1B3464;font-family:&#39;Raleway&#39;,sans-serif">1 nota</div>
     </div></div>
@@ -3496,7 +3961,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-chart-card">
         <div class="dash-chart-title">Distribuição por Tipo de Nota</div>
         <div class="dash-chart-sub">Proporção geral entre Produto, Serviço e Siare</div>
-        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 33.09,37.59 L50.29,51.31 A38,38 0 1,0 80.00,37.00 Z" fill="#C9A84C"></path><path d="M50.29,51.31 L33.09,37.59 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 50.29,51.31 Z" fill="#1B3464"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">14</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (12)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (2)</text></svg></div>
+        <div id="dc-nfe-tipo-pizza"><svg viewBox="0 0 280 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:160px;display:block"><path d="M80.00,37.00 L80.00,15.00 A60,60 0 1,1 56.10,130.03 L64.86,109.85 A38,38 0 1,0 80.00,37.00 Z" fill="#C9A84C"></path><path d="M64.86,109.85 L56.10,130.03 A60,60 0 0,1 36.15,34.05 L52.23,49.06 A38,38 0 0,0 64.86,109.85 Z" fill="#1B3464"></path><path d="M52.23,49.06 L36.15,34.05 A60,60 0 0,1 80.00,15.00 L80.00,37.00 A38,38 0 0,0 52.23,49.06 Z" fill="#E05A2B"></path><circle cx="80" cy="75" r="25" fill="white"></circle><text x="80" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1B3464" font-family="Raleway,sans-serif">23</text><text x="155" y="18" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#C9A84C">■ </tspan>Serviço (13)</text><text x="155" y="36" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#1B3464">■ </tspan>Produto (7)</text><text x="155" y="54" font-size="10" fill="#566A8F" font-family="Open Sans,sans-serif"><tspan fill="#E05A2B">■ </tspan>Cupom Fiscal (3)</text></svg></div>
       </div>
       <div class="dash-chart-card">
         <div class="dash-chart-title">Ranking de Clientes por Notas</div>
@@ -3504,6 +3969,60 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
         <div id="dc-nfe-ranking" class="dash-top-list" style="margin-top:4px">
     <div class="dash-top-item">
       <div class="dash-top-rank dash-top-rank--1">1</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">ROBERTO(A&amp;M)</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#EEF4FC;
+              color:#1B3464">
+              Produto: 4
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">4<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">2</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">DAVI( FRA)</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#EEF4FC;
+              color:#1B3464">
+              Produto: 1
+            </span>
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF9EC;
+              color:#7D5A00">
+              Serviço: 2
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">3<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">3</div>
+      <div class="dash-top-bar-wrap">
+        <div class="dash-top-name">MAX MILLER</div>
+        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
+          
+            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
+              padding:2px 7px;border-radius:20px;
+              background:#FEF0EB;
+              color:#8B2500">
+              Cupom Fiscal: 3
+            </span>
+        </div>
+      </div>
+      <div class="dash-top-count">3<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
+    </div>
+    <div class="dash-top-item">
+      <div class="dash-top-rank ">4</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">VALOR</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
@@ -3519,7 +4038,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-top-count">3<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div>
     <div class="dash-top-item">
-      <div class="dash-top-rank ">2</div>
+      <div class="dash-top-rank ">5</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">MAYCON-LUCIMAR</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
@@ -3535,23 +4054,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div>
     <div class="dash-top-item">
-      <div class="dash-top-rank ">3</div>
-      <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">DAVI( FRA)</div>
-        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
-          
-            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
-              padding:2px 7px;border-radius:20px;
-              background:#FEF9EC;
-              color:#7D5A00">
-              Serviço: 2
-            </span>
-        </div>
-      </div>
-      <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
-    </div>
-    <div class="dash-top-item">
-      <div class="dash-top-rank ">4</div>
+      <div class="dash-top-rank ">6</div>
       <div class="dash-top-bar-wrap">
         <div class="dash-top-name">teste 3</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
@@ -3567,41 +4070,9 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
       <div class="dash-top-count">2<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
     </div>
     <div class="dash-top-item">
-      <div class="dash-top-rank ">5</div>
-      <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">PIERRE( FP)</div>
-        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
-          
-            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
-              padding:2px 7px;border-radius:20px;
-              background:#FEF9EC;
-              color:#7D5A00">
-              Serviço: 1
-            </span>
-        </div>
-      </div>
-      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
-    </div>
-    <div class="dash-top-item">
-      <div class="dash-top-rank ">6</div>
-      <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">TULIO( FARM)</div>
-        <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
-          
-            <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
-              padding:2px 7px;border-radius:20px;
-              background:#FEF9EC;
-              color:#7D5A00">
-              Serviço: 1
-            </span>
-        </div>
-      </div>
-      <div class="dash-top-count">1<span style="font-size:9px;font-weight:400;color:var(--gray-text);margin-left:2px">notas</span></div>
-    </div>
-    <div class="dash-top-item">
       <div class="dash-top-rank ">7</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">DYOGE</div>
+        <div class="dash-top-name">IVAN-SEI</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
           
             <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
@@ -3617,7 +4088,7 @@ body{font-family:'Open Sans',sans-serif;background:var(--off);color:var(--text);
     <div class="dash-top-item">
       <div class="dash-top-rank ">8</div>
       <div class="dash-top-bar-wrap">
-        <div class="dash-top-name">LEONARDO LF</div>
+        <div class="dash-top-name">PIERRE( FP)</div>
         <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap">
           
             <span style="font-size:9px;font-weight:700;font-family:&#39;Raleway&#39;,sans-serif;
@@ -3844,6 +4315,141 @@ async function deleteClientDB(id){
 
 function saveData(){}
 
+/* ══════════════════════════════════════════════
+   LOG DE EDIÇÕES
+   Persiste no localStorage com chave por record_id
+   Estrutura: { recordId, ts, usuario, antes, depois, diffs }
+══════════════════════════════════════════════ */
+const LOG_KEY = 'solla_edit_logs_v1';
+
+function _getLogsRaw(){
+  try{ return JSON.parse(localStorage.getItem(LOG_KEY)||'[]'); }
+  catch(e){ return []; }
+}
+function _saveLogsRaw(arr){
+  try{ localStorage.setItem(LOG_KEY, JSON.stringify(arr)); }catch(e){}
+}
+
+async function saveEditLog(recordId, before, after, usuario){
+  const FIELD_LABELS = {
+    clientId:    'Cliente',
+    desc:        'Descrição',
+    date:        'Data',
+    time:        'Tempo (min)',
+    cat:         'Tipo de Serviço',
+    atendente:   'Atendente',
+    valor:       'Valor (R$)',
+    retrabalho:  'Retrabalho',
+    nfeQty:      'Qtd Notas',
+    nfeType:     'Tipo de Nota',
+  };
+
+  function fmtVal(key, v){
+    if(v===null||v===undefined||v==='') return '—';
+    if(key==='clientId') return clientName(v);
+    if(key==='valor') return 'R$ '+parseFloat(v).toLocaleString('pt-BR',{minimumFractionDigits:2});
+    if(key==='time'){ const m=parseInt(v)||0; if(!m)return'—'; const h=Math.floor(m/60),mn=m%60; return h+'h'+(mn?' '+mn+'min':''); }
+    if(key==='date') return fmtDate(v);
+    return String(v);
+  }
+
+  const diffs = [];
+  for(const key of Object.keys(FIELD_LABELS)){
+    const vBefore = before[key]??null;
+    const vAfter  = after[key]??null;
+    const strB = String(vBefore??'');
+    const strA = String(vAfter??'');
+    if(strB !== strA){
+      diffs.push({
+        field:  FIELD_LABELS[key],
+        key,
+        antes:  fmtVal(key, vBefore),
+        depois: fmtVal(key, vAfter),
+      });
+    }
+  }
+
+  if(!diffs.length) return; // nada mudou
+
+  const entry = {
+    id: Date.now().toString(),
+    recordId,
+    ts: new Date().toISOString(),
+    usuario: usuario||'—',
+    diffs,
+  };
+
+  const all = _getLogsRaw();
+  all.push(entry);
+  // Manter no máximo 500 logs para não lotar o localStorage
+  if(all.length > 500) all.splice(0, all.length - 500);
+  _saveLogsRaw(all);
+}
+
+function getLogsForRecord(recordId){
+  return _getLogsRaw().filter(l=>l.recordId===recordId).reverse();
+}
+
+function showLogModal(recordId){
+  const r = records.find(x=>x.id===recordId);
+  const logs = getLogsForRecord(recordId);
+  const cName = r ? clientName(r.clientId) : recordId;
+  const dFmt  = r ? fmtDate(r.date) : '';
+
+  let bodyHTML = '';
+  if(!logs.length){
+    bodyHTML = '<div class="log-empty">📋 Nenhuma edição registrada para este atendimento.</div>';
+  } else {
+    bodyHTML = logs.map(log=>{
+      const dt = new Date(log.ts);
+      const dtStr = dt.toLocaleDateString('pt-BR') + ' às ' + dt.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+      const diffsHTML = log.diffs.map(d=>`
+        <div class="log-diff-row">
+          <div class="log-diff-field">${d.field}</div>
+          <div class="log-diff-old">${d.antes}</div>
+          <div class="log-diff-new">${d.depois}</div>
+        </div>`).join('');
+      return `
+        <div class="log-entry">
+          <div class="log-entry-header">
+            <div class="log-entry-icon">✏️</div>
+            <div>
+              <div class="log-entry-who">Editado por ${log.usuario}</div>
+              <div class="log-entry-when">${dtStr} · ${log.diffs.length} campo${log.diffs.length>1?'s':''} alterado${log.diffs.length>1?'s':''}</div>
+            </div>
+          </div>
+          <div class="log-entry-body">
+            <div class="log-diff">
+              <div class="log-diff-header"><span>Campo</span><span>Antes</span><span>Depois</span></div>
+              ${diffsHTML}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  const modalHTML = `
+    <div id="log-modal-overlay" onclick="if(event.target===this)closeLogModal()">
+      <div id="log-modal">
+        <div class="log-modal-header">
+          <div>
+            <div class="log-modal-title">📋 Histórico de Edições</div>
+            <div class="log-modal-sub">${cName}${dFmt?' · '+dFmt:''} · ${logs.length} edição${logs.length!==1?'ões':''}</div>
+          </div>
+          <button class="btn-close-modal" onclick="closeLogModal()">✕</button>
+        </div>
+        <div class="log-modal-body">${bodyHTML}</div>
+      </div>
+    </div>`;
+
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+function closeLogModal(){
+  const el = document.getElementById('log-modal-overlay');
+  if(el) el.remove();
+}
+
 function fmtMoney(el){
   let v=el.value.replace(/\D/g,'');
   if(!v){el.value='';return;}
@@ -3988,7 +4594,7 @@ function render(){
       nfeCell=`<div style="display:flex;flex-direction:column;gap:2px"><span class="badge-nfe">${r.nfeQty} nota${r.nfeQty>1?'s':''}</span>${r.nfeType?`<span style="font-size:10px;color:var(--gray-text)">${r.nfeType}</span>`:''}</div>`;
     const tipoB=r.tipoCliente==='Mensalista'?'<span class="badge badge-mens">Mensalista</span>':r.tipoCliente==='Avulso'?'<span class="badge badge-avul">Avulso</span>':'—';
     const rtB=r.retrabalho==='Sim'?'<span class="badge badge-sim">Sim</span>':r.retrabalho==='Não'?'<span class="badge badge-nao">Não</span>':'—';
-    return `<tr>
+    return `<tr${r.id===editId?' style="background:#FFFBF0;outline:2px solid #E8C96A;"':''}>
       <td style="white-space:nowrap;font-size:11px;color:var(--gray-text)">${fmtDate(r.date)}</td>
       <td style="font-weight:700;font-size:12px;color:var(--navy)">${name}</td>
       <td class="td-desc">${r.desc}</td>
@@ -4000,7 +4606,8 @@ function render(){
       <td>${rtB}</td>
       <td>${nfeCell}</td>
       <td><div class="td-actions">
-        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit('${r.id}')">Editar</button>
+        <button class="btn-ghost" style="padding:4px 10px;font-size:10px" onclick="startEdit('${r.id}')">✏️ Editar</button>
+        ${getLogsForRecord(r.id).length>0?`<button class="btn-hist" onclick="showLogModal('${r.id}')" title="Ver histórico de edições">📋 ${getLogsForRecord(r.id).length}</button>`:''}
         <button class="btn-danger" onclick="del('${r.id}')">✕</button>
       </div></td>
     </tr>`;
@@ -5096,9 +5703,22 @@ async function save(){
   const rec={clientId,desc,date,time,cat,atendente,tipoCliente,valor,retrabalho,nfeQty,nfeType};
   const id=editId||Date.now().toString();
   try{
+    // Se for edição, registrar log antes de salvar
+    if(editId){
+      const oldRec = records.find(x=>x.id===editId);
+      if(oldRec) await saveEditLog(editId, oldRec, rec, atendente);
+    }
     await saveRecord({id,...rec});
-    if(editId){Object.assign(records.find(x=>x.id===editId),{id,...rec});cancelEdit();}
-    else{records.unshift({id,...rec});resetForm();switchTab('atendimentos');}
+    if(editId){
+      Object.assign(records.find(x=>x.id===editId),{id,...rec});
+      showToast('✓ Atendimento atualizado com sucesso!');
+      cancelEdit();
+    } else {
+      records.unshift({id,...rec});
+      showToast('✓ Atendimento registrado!');
+      resetForm();
+      switchTab('atendimentos');
+    }
     render();renderClients();
   }catch(e){}
 }
@@ -5133,8 +5753,14 @@ function startEdit(id){
   toggleNfe();
   if(r.cat==='Emissão de notas'){document.getElementById('f-nfe-qty').value=r.nfeQty||'';document.getElementById('f-nfe-type').value=r.nfeType||'';}
   document.getElementById('form-title').textContent='Editar Atendimento';
+  // Atualizar barra de edição com contexto do registro
+  const cName = clientName(r.clientId);
+  const dFmt = fmtDate(r.date);
+  document.getElementById('edit-bar-title').textContent = 'Editando: ' + cName;
+  document.getElementById('edit-bar-sub').textContent = 'Atendimento de ' + dFmt + ' · ' + (r.cat||'') + ' · ' + (r.atendente||'');
   document.getElementById('edit-bar').style.display='flex';
-  document.getElementById('btn-save').textContent='Salvar Alterações';
+  document.getElementById('btn-save').textContent='💾 Salvar Alterações';
+  switchTab('novo');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -6372,5 +6998,6 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
  */
 !function(t,e){if("object"==typeof exports&&"object"==typeof module)module.exports=e(function(){try{return require("jspdf")}catch(t){}}());else if("function"==typeof define&&define.amd)define(["jspdf"],e);else{var n="object"==typeof exports?e(function(){try{return require("jspdf")}catch(t){}}()):e(t.jspdf);for(var o in n)("object"==typeof exports?exports:t)[o]=n[o]}}("undefined"!=typeof globalThis?globalThis:void 0!==this?this:"undefined"!=typeof window?window:"undefined"!=typeof self?self:global,(function(t){return function(){"use strict";var e={172:function(t,e){var n,o=this&&this.__extends||(n=function(t,e){return n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n])},n(t,e)},function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Class extends value "+String(e)+" is not a constructor or null");function o(){this.constructor=t}n(t,e),t.prototype=null===e?Object.create(e):(o.prototype=e.prototype,new o)});Object.defineProperty(e,"__esModule",{value:!0}),e.CellHookData=e.HookData=void 0;var r=function(t,e,n){this.table=e,this.pageNumber=e.pageNumber,this.pageCount=this.pageNumber,this.settings=e.settings,this.cursor=n,this.doc=t.getDocument()};e.HookData=r;var i=function(t){function e(e,n,o,r,i,l){var a=t.call(this,e,n,l)||this;return a.cell=o,a.row=r,a.column=i,a.section=r.section,a}return o(e,t),e}(r);e.CellHookData=i},340:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0});var o=n(4),r=n(136),i=n(744),l=n(776),a=n(664),s=n(972);e.default=function(t){t.API.autoTable=function(){for(var t,e=[],n=0;n<arguments.length;n++)e[n]=arguments[n];1===e.length?t=e[0]:(console.error("Use of deprecated autoTable initiation"),(t=e[2]||{}).columns=e[0],t.body=e[1]);var o=(0,l.parseInput)(this,t),r=(0,s.createTable)(this,o);return(0,a.drawTable)(this,r),this},t.API.lastAutoTable=!1,t.API.previousAutoTable=!1,t.API.autoTable.previous=!1,t.API.autoTableText=function(t,e,n,o){(0,r.default)(t,e,n,o,this)},t.API.autoTableSetDefaults=function(t){return i.DocHandler.setDefaults(t,this),this},t.autoTableSetDefaults=function(t,e){i.DocHandler.setDefaults(t,e)},t.API.autoTableHtmlToJson=function(t,e){var n;if(void 0===e&&(e=!1),"undefined"==typeof window)return console.error("Cannot run autoTableHtmlToJson in non browser environment"),null;var r=new i.DocHandler(this),l=(0,o.parseHtml)(r,t,window,e,!1),a=l.head,s=l.body;return{columns:(null===(n=a[0])||void 0===n?void 0:n.map((function(t){return t.content})))||[],rows:s,data:s}},t.API.autoTableEndPosY=function(){console.error("Use of deprecated function: autoTableEndPosY. Use doc.lastAutoTable.finalY instead.");var t=this.lastAutoTable;return t&&t.finalY?t.finalY:0},t.API.autoTableAddPageContent=function(e){return console.error("Use of deprecated function: autoTableAddPageContent. Use jsPDF.autoTableSetDefaults({didDrawPage: () => {}}) instead."),t.API.autoTable.globalDefaults||(t.API.autoTable.globalDefaults={}),t.API.autoTable.globalDefaults.addPageContent=e,this},t.API.autoTableAddPage=function(){return console.error("Use of deprecated function: autoTableAddPage. Use doc.addPage()"),this.addPage(),this}}},136:function(t,e){Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(t,e,n,o,r){o=o||{};var i=r.internal.scaleFactor,l=r.internal.getFontSize()/i,a=l*(r.getLineHeightFactor?r.getLineHeightFactor():1.15),s="",u=1;if("middle"!==o.valign&&"bottom"!==o.valign&&"center"!==o.halign&&"right"!==o.halign||(u=(s="string"==typeof t?t.split(/\r\n|\r|\n/g):t).length||1),n+=l*(2-1.15),"middle"===o.valign?n-=u/2*a:"bottom"===o.valign&&(n-=u*a),"center"===o.halign||"right"===o.halign){var d=l;if("center"===o.halign&&(d*=.5),s&&u>=1){for(var h=0;h<s.length;h++)r.text(s[h],e-r.getStringUnitWidth(s[h])*d,n),n+=a;return r}e-=r.getStringUnitWidth(t)*d}return"justify"===o.halign?r.text(t,e,n,{maxWidth:o.maxWidth||100,align:"justify"}):r.text(t,e,n),r}},420:function(t,e){function n(t,e){var n=t>0,o=e||0===e;return n&&o?"DF":n?"S":o?"F":null}function o(t,e){var n,o,r,i;if(t=t||e,Array.isArray(t)){if(t.length>=4)return{top:t[0],right:t[1],bottom:t[2],left:t[3]};if(3===t.length)return{top:t[0],right:t[1],bottom:t[2],left:t[1]};if(2===t.length)return{top:t[0],right:t[1],bottom:t[0],left:t[1]};t=1===t.length?t[0]:e}return"object"==typeof t?("number"==typeof t.vertical&&(t.top=t.vertical,t.bottom=t.vertical),"number"==typeof t.horizontal&&(t.right=t.horizontal,t.left=t.horizontal),{left:null!==(n=t.left)&&void 0!==n?n:e,top:null!==(o=t.top)&&void 0!==o?o:e,right:null!==(r=t.right)&&void 0!==r?r:e,bottom:null!==(i=t.bottom)&&void 0!==i?i:e}):("number"!=typeof t&&(t=e),{top:t,right:t,bottom:t,left:t})}Object.defineProperty(e,"__esModule",{value:!0}),e.getPageAvailableWidth=e.parseSpacing=e.getFillStyle=e.addTableBorder=e.getStringWidth=void 0,e.getStringWidth=function(t,e,n){return n.applyStyles(e,!0),(Array.isArray(t)?t:[t]).map((function(t){return n.getTextWidth(t)})).reduce((function(t,e){return Math.max(t,e)}),0)},e.addTableBorder=function(t,e,o,r){var i=e.settings.tableLineWidth,l=e.settings.tableLineColor;t.applyStyles({lineWidth:i,lineColor:l});var a=n(i,!1);a&&t.rect(o.x,o.y,e.getWidth(t.pageSize().width),r.y-o.y,a)},e.getFillStyle=n,e.parseSpacing=o,e.getPageAvailableWidth=function(t,e){var n=o(e.settings.margin,0);return t.pageSize().width-(n.left+n.right)}},796:function(t,e){var n,o=this&&this.__extends||(n=function(t,e){return n=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,e){t.__proto__=e}||function(t,e){for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n])},n(t,e)},function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Class extends value "+String(e)+" is not a constructor or null");function o(){this.constructor=t}n(t,e),t.prototype=null===e?Object.create(e):(o.prototype=e.prototype,new o)});Object.defineProperty(e,"__esModule",{value:!0}),e.getTheme=e.defaultStyles=e.HtmlRowInput=void 0;var r=function(t){function e(e){var n=t.call(this)||this;return n._element=e,n}return o(e,t),e}(Array);e.HtmlRowInput=r,e.defaultStyles=function(t){return{font:"helvetica",fontStyle:"normal",overflow:"linebreak",fillColor:!1,textColor:20,halign:"left",valign:"top",fontSize:10,cellPadding:5/t,lineColor:200,lineWidth:0,cellWidth:"auto",minCellHeight:0,minCellWidth:0}},e.getTheme=function(t){return{striped:{table:{fillColor:255,textColor:80,fontStyle:"normal"},head:{textColor:255,fillColor:[41,128,185],fontStyle:"bold"},body:{},foot:{textColor:255,fillColor:[41,128,185],fontStyle:"bold"},alternateRow:{fillColor:245}},grid:{table:{fillColor:255,textColor:80,fontStyle:"normal",lineWidth:.1},head:{textColor:255,fillColor:[26,188,156],fontStyle:"bold",lineWidth:0},body:{},foot:{textColor:255,fillColor:[26,188,156],fontStyle:"bold",lineWidth:0},alternateRow:{}},plain:{head:{fontStyle:"bold"},foot:{fontStyle:"bold"}}}[t]}},903:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.parseCss=void 0;var o=n(420);function r(t,e){var n=i(t,e);if(!n)return null;var o=n.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d*))?\)$/);if(!o||!Array.isArray(o))return null;var r=[parseInt(o[1]),parseInt(o[2]),parseInt(o[3])];return 0===parseInt(o[4])||isNaN(r[0])||isNaN(r[1])||isNaN(r[2])?null:r}function i(t,e){var n=e(t);return"rgba(0, 0, 0, 0)"===n||"transparent"===n||"initial"===n||"inherit"===n?null==t.parentElement?null:i(t.parentElement,e):n}e.parseCss=function(t,e,n,i,l){var a={},s=96/72,u=r(e,(function(t){return l.getComputedStyle(t).backgroundColor}));null!=u&&(a.fillColor=u);var d=r(e,(function(t){return l.getComputedStyle(t).color}));null!=d&&(a.textColor=d);var h=function(t,e){var n=[t.paddingTop,t.paddingRight,t.paddingBottom,t.paddingLeft],r=96/(72/e),i=(parseInt(t.lineHeight)-parseInt(t.fontSize))/e/2,l=n.map((function(t){return parseInt(t||"0")/r})),a=(0,o.parseSpacing)(l,0);i>a.top&&(a.top=i);i>a.bottom&&(a.bottom=i);return a}(i,n);h&&(a.cellPadding=h);var c="borderTopColor",f=s*n,g=i.borderTopWidth;if(i.borderBottomWidth===g&&i.borderRightWidth===g&&i.borderLeftWidth===g){var p=(parseFloat(g)||0)/f;p&&(a.lineWidth=p)}else a.lineWidth={top:(parseFloat(i.borderTopWidth)||0)/f,right:(parseFloat(i.borderRightWidth)||0)/f,bottom:(parseFloat(i.borderBottomWidth)||0)/f,left:(parseFloat(i.borderLeftWidth)||0)/f},a.lineWidth.top||(a.lineWidth.right?c="borderRightColor":a.lineWidth.bottom?c="borderBottomColor":a.lineWidth.left&&(c="borderLeftColor"));console.log(a.lineWidth);var y=r(e,(function(t){return l.getComputedStyle(t)[c]}));null!=y&&(a.lineColor=y);var v=["left","right","center","justify"];-1!==v.indexOf(i.textAlign)&&(a.halign=i.textAlign),-1!==(v=["middle","bottom","top"]).indexOf(i.verticalAlign)&&(a.valign=i.verticalAlign);var m=parseInt(i.fontSize||"");isNaN(m)||(a.fontSize=m/s);var b=function(t){var e="";("bold"===t.fontWeight||"bolder"===t.fontWeight||parseInt(t.fontWeight)>=700)&&(e="bold");"italic"!==t.fontStyle&&"oblique"!==t.fontStyle||(e+="italic");return e}(i);b&&(a.fontStyle=b);var w=(i.fontFamily||"").toLowerCase();return-1!==t.indexOf(w)&&(a.font=w),a}},744:function(t,e){Object.defineProperty(e,"__esModule",{value:!0}),e.DocHandler=void 0;var n={},o=function(){function t(t){this.jsPDFDocument=t,this.userStyles={textColor:t.getTextColor?this.jsPDFDocument.getTextColor():0,fontSize:t.internal.getFontSize(),fontStyle:t.internal.getFont().fontStyle,font:t.internal.getFont().fontName,lineWidth:t.getLineWidth?this.jsPDFDocument.getLineWidth():0,lineColor:t.getDrawColor?this.jsPDFDocument.getDrawColor():0}}return t.setDefaults=function(t,e){void 0===e&&(e=null),e?e.__autoTableDocumentDefaults=t:n=t},t.unifyColor=function(t){return Array.isArray(t)?t:"number"==typeof t?[t,t,t]:"string"==typeof t?[t]:null},t.prototype.applyStyles=function(e,n){var o,r,i;void 0===n&&(n=!1),e.fontStyle&&this.jsPDFDocument.setFontStyle&&this.jsPDFDocument.setFontStyle(e.fontStyle);var l=this.jsPDFDocument.internal.getFont(),a=l.fontStyle,s=l.fontName;if(e.font&&(s=e.font),e.fontStyle){a=e.fontStyle;var u=this.getFontList()[s];u&&-1===u.indexOf(a)&&(this.jsPDFDocument.setFontStyle&&this.jsPDFDocument.setFontStyle(u[0]),a=u[0])}if(this.jsPDFDocument.setFont(s,a),e.fontSize&&this.jsPDFDocument.setFontSize(e.fontSize),!n){var d=t.unifyColor(e.fillColor);d&&(o=this.jsPDFDocument).setFillColor.apply(o,d),(d=t.unifyColor(e.textColor))&&(r=this.jsPDFDocument).setTextColor.apply(r,d),(d=t.unifyColor(e.lineColor))&&(i=this.jsPDFDocument).setDrawColor.apply(i,d),"number"==typeof e.lineWidth&&this.jsPDFDocument.setLineWidth(e.lineWidth)}},t.prototype.splitTextToSize=function(t,e,n){return this.jsPDFDocument.splitTextToSize(t,e,n)},t.prototype.rect=function(t,e,n,o,r){return this.jsPDFDocument.rect(t,e,n,o,r)},t.prototype.getLastAutoTable=function(){return this.jsPDFDocument.lastAutoTable||null},t.prototype.getTextWidth=function(t){return this.jsPDFDocument.getTextWidth(t)},t.prototype.getDocument=function(){return this.jsPDFDocument},t.prototype.setPage=function(t){this.jsPDFDocument.setPage(t)},t.prototype.addPage=function(){return this.jsPDFDocument.addPage()},t.prototype.getFontList=function(){return this.jsPDFDocument.getFontList()},t.prototype.getGlobalOptions=function(){return n||{}},t.prototype.getDocumentOptions=function(){return this.jsPDFDocument.__autoTableDocumentDefaults||{}},t.prototype.pageSize=function(){var t=this.jsPDFDocument.internal.pageSize;return null==t.width&&(t={width:t.getWidth(),height:t.getHeight()}),t},t.prototype.scaleFactor=function(){return this.jsPDFDocument.internal.scaleFactor},t.prototype.getLineHeightFactor=function(){var t=this.jsPDFDocument;return t.getLineHeightFactor?t.getLineHeightFactor():1.15},t.prototype.getLineHeight=function(t){return t/this.scaleFactor()*this.getLineHeightFactor()},t.prototype.pageNumber=function(){var t=this.jsPDFDocument.internal.getCurrentPageInfo();return t?t.pageNumber:this.jsPDFDocument.internal.getNumberOfPages()},t}();e.DocHandler=o},4:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.parseHtml=void 0;var o=n(903),r=n(796);function i(t,e,n,i,a,s){for(var u=new r.HtmlRowInput(i),d=0;d<i.cells.length;d++){var h=i.cells[d],c=n.getComputedStyle(h);if(a||"none"!==c.display){var f=void 0;s&&(f=(0,o.parseCss)(t,h,e,c,n)),u.push({rowSpan:h.rowSpan,colSpan:h.colSpan,styles:f,_element:h,content:l(h)})}}var g=n.getComputedStyle(i);if(u.length>0&&(a||"none"!==g.display))return u}function l(t){var e=t.cloneNode(!0);return e.innerHTML=e.innerHTML.replace(/\n/g,"").replace(/ +/g," "),e.innerHTML=e.innerHTML.split(/<br.*?>/).map((function(t){return t.trim()})).join("\n"),e.innerText||e.textContent||""}e.parseHtml=function(t,e,n,o,r){var l,a,s;void 0===o&&(o=!1),void 0===r&&(r=!1),s="string"==typeof e?n.document.querySelector(e):e;var u=Object.keys(t.getFontList()),d=t.scaleFactor(),h=[],c=[],f=[];if(!s)return console.error("Html table could not be found with input: ",e),{head:h,body:c,foot:f};for(var g=0;g<s.rows.length;g++){var p=s.rows[g],y=null===(a=null===(l=null==p?void 0:p.parentElement)||void 0===l?void 0:l.tagName)||void 0===a?void 0:a.toLowerCase(),v=i(u,d,n,p,o,r);v&&("thead"===y?h.push(v):"tfoot"===y?f.push(v):c.push(v))}return{head:h,body:c,foot:f}}},776:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.parseInput=void 0;var o=n(4),r=n(356),i=n(420),l=n(744),a=n(792);e.parseInput=function(t,e){var n=new l.DocHandler(t),s=n.getDocumentOptions(),u=n.getGlobalOptions();(0,a.default)(n,u,s,e);var d,h=(0,r.assign)({},u,s,e);"undefined"!=typeof window&&(d=window);var c=function(t,e,n){for(var o={styles:{},headStyles:{},bodyStyles:{},footStyles:{},alternateRowStyles:{},columnStyles:{}},i=function(i){if("columnStyles"===i){var l=t[i],a=e[i],s=n[i];o.columnStyles=(0,r.assign)({},l,a,s)}else{var u=[t,e,n].map((function(t){return t[i]||{}}));o[i]=(0,r.assign)({},u[0],u[1],u[2])}},l=0,a=Object.keys(o);l<a.length;l++){i(a[l])}return o}(u,s,e),f=function(t,e,n){for(var o={didParseCell:[],willDrawCell:[],didDrawCell:[],willDrawPage:[],didDrawPage:[]},r=0,i=[t,e,n];r<i.length;r++){var l=i[r];l.didParseCell&&o.didParseCell.push(l.didParseCell),l.willDrawCell&&o.willDrawCell.push(l.willDrawCell),l.didDrawCell&&o.didDrawCell.push(l.didDrawCell),l.willDrawPage&&o.willDrawPage.push(l.willDrawPage),l.didDrawPage&&o.didDrawPage.push(l.didDrawPage)}return o}(u,s,e),g=function(t,e){var n,o,r,l,a,s,u,d,h,c,f,g,p,y,v=(0,i.parseSpacing)(e.margin,40/t.scaleFactor()),m=null!==(n=function(t,e){var n=t.getLastAutoTable(),o=t.scaleFactor(),r=t.pageNumber(),i=!1;if(n&&n.startPageNumber){i=n.startPageNumber+n.pageNumber-1===r}if("number"==typeof e)return e;if((null==e||!1===e)&&i&&null!=(null==n?void 0:n.finalY))return n.finalY+20/o;return null}(t,e.startY))&&void 0!==n?n:v.top;p=!0===e.showFoot?"everyPage":!1===e.showFoot?"never":null!==(o=e.showFoot)&&void 0!==o?o:"everyPage";y=!0===e.showHead?"everyPage":!1===e.showHead?"never":null!==(r=e.showHead)&&void 0!==r?r:"everyPage";var b=null!==(l=e.useCss)&&void 0!==l&&l,w=e.theme||(b?"plain":"striped"),P=!!e.horizontalPageBreak,S=null!==(a=e.horizontalPageBreakRepeat)&&void 0!==a?a:null;return{includeHiddenHtml:null!==(s=e.includeHiddenHtml)&&void 0!==s&&s,useCss:b,theme:w,startY:m,margin:v,pageBreak:null!==(u=e.pageBreak)&&void 0!==u?u:"auto",rowPageBreak:null!==(d=e.rowPageBreak)&&void 0!==d?d:"auto",tableWidth:null!==(h=e.tableWidth)&&void 0!==h?h:"auto",showHead:y,showFoot:p,tableLineWidth:null!==(c=e.tableLineWidth)&&void 0!==c?c:0,tableLineColor:null!==(f=e.tableLineColor)&&void 0!==f?f:200,horizontalPageBreak:P,horizontalPageBreakRepeat:S,horizontalPageBreakBehaviour:null!==(g=e.horizontalPageBreakBehaviour)&&void 0!==g?g:"afterAllRows"}}(n,h),p=function(t,e,n){var r=e.head||[],i=e.body||[],l=e.foot||[];if(e.html){var a=e.includeHiddenHtml;if(n){var s=(0,o.parseHtml)(t,e.html,n,a,e.useCss)||{};r=s.head||r,i=s.body||r,l=s.foot||r}else console.error("Cannot parse html in non browser environment")}var u=e.columns||function(t,e,n){var o=t[0]||e[0]||n[0]||[],r=[];return Object.keys(o).filter((function(t){return"_element"!==t})).forEach((function(t){var e,n=1;"object"!=typeof(e=Array.isArray(o)?o[parseInt(t)]:o[t])||Array.isArray(e)||(n=(null==e?void 0:e.colSpan)||1);for(var i=0;i<n;i++){var l={dataKey:Array.isArray(o)?r.length:t+(i>0?"_".concat(i):"")};r.push(l)}})),r}(r,i,l);return{columns:u,head:r,body:i,foot:l}}(n,h,d);return{id:e.tableId,content:p,hooks:f,styles:c,settings:g}}},792:function(t,e){function n(t){t.rowHeight?(console.error("Use of deprecated style rowHeight. It is renamed to minCellHeight."),t.minCellHeight||(t.minCellHeight=t.rowHeight)):t.columnWidth&&(console.error("Use of deprecated style columnWidth. It is renamed to cellWidth."),t.cellWidth||(t.cellWidth=t.columnWidth))}Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(t,e,o,r){for(var i=function(e){e&&"object"!=typeof e&&console.error("The options parameter should be of type object, is: "+typeof e),void 0!==e.extendWidth&&(e.tableWidth=e.extendWidth?"auto":"wrap",console.error("Use of deprecated option: extendWidth, use tableWidth instead.")),void 0!==e.margins&&(void 0===e.margin&&(e.margin=e.margins),console.error("Use of deprecated option: margins, use margin instead.")),e.startY&&"number"!=typeof e.startY&&(console.error("Invalid value for startY option",e.startY),delete e.startY),!e.didDrawPage&&(e.afterPageContent||e.beforePageContent||e.afterPageAdd)&&(console.error("The afterPageContent, beforePageContent and afterPageAdd hooks are deprecated. Use didDrawPage instead"),e.didDrawPage=function(n){t.applyStyles(t.userStyles),e.beforePageContent&&e.beforePageContent(n),t.applyStyles(t.userStyles),e.afterPageContent&&e.afterPageContent(n),t.applyStyles(t.userStyles),e.afterPageAdd&&n.pageNumber>1&&n.afterPageAdd(n),t.applyStyles(t.userStyles)}),["createdHeaderCell","drawHeaderRow","drawRow","drawHeaderCell"].forEach((function(t){e[t]&&console.error('The "'.concat(t,'" hook has changed in version 3.0, check the changelog for how to migrate.'))})),[["showFoot","showFooter"],["showHead","showHeader"],["didDrawPage","addPageContent"],["didParseCell","createdCell"],["headStyles","headerStyles"]].forEach((function(t){var n=t[0],o=t[1];e[o]&&(console.error("Use of deprecated option ".concat(o,". Use ").concat(n," instead")),e[n]=e[o])})),[["padding","cellPadding"],["lineHeight","rowHeight"],"fontSize","overflow"].forEach((function(t){var n="string"==typeof t?t:t[0],o="string"==typeof t?t:t[1];void 0!==e[n]&&(void 0===e.styles[o]&&(e.styles[o]=e[n]),console.error("Use of deprecated option: "+n+", use the style "+o+" instead."))}));for(var o=0,r=["styles","bodyStyles","headStyles","footStyles"];o<r.length;o++){n(e[r[o]]||{})}for(var i=e.columnStyles||{},l=0,a=Object.keys(i);l<a.length;l++){n(i[a[l]]||{})}},l=0,a=[e,o,r];l<a.length;l++){i(a[l])}}},260:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.Column=e.Cell=e.Row=e.Table=void 0;var o=n(796),r=n(172),i=n(420),l=function(){function t(t,e){this.pageNumber=1,this.pageCount=1,this.id=t.id,this.settings=t.settings,this.styles=t.styles,this.hooks=t.hooks,this.columns=e.columns,this.head=e.head,this.body=e.body,this.foot=e.foot}return t.prototype.getHeadHeight=function(t){return this.head.reduce((function(e,n){return e+n.getMaxCellHeight(t)}),0)},t.prototype.getFootHeight=function(t){return this.foot.reduce((function(e,n){return e+n.getMaxCellHeight(t)}),0)},t.prototype.allRows=function(){return this.head.concat(this.body).concat(this.foot)},t.prototype.callCellHooks=function(t,e,n,o,i,l){for(var a=0,s=e;a<s.length;a++){var u=!1===(0,s[a])(new r.CellHookData(t,this,n,o,i,l));if(n.text=Array.isArray(n.text)?n.text:[n.text],u)return!1}return!0},t.prototype.callEndPageHooks=function(t,e){t.applyStyles(t.userStyles);for(var n=0,o=this.hooks.didDrawPage;n<o.length;n++){(0,o[n])(new r.HookData(t,this,e))}},t.prototype.callWillDrawPageHooks=function(t,e){for(var n=0,o=this.hooks.willDrawPage;n<o.length;n++){(0,o[n])(new r.HookData(t,this,e))}},t.prototype.getWidth=function(t){if("number"==typeof this.settings.tableWidth)return this.settings.tableWidth;if("wrap"===this.settings.tableWidth)return this.columns.reduce((function(t,e){return t+e.wrappedWidth}),0);var e=this.settings.margin;return t-e.left-e.right},t}();e.Table=l;var a=function(){function t(t,e,n,r,i){void 0===i&&(i=!1),this.height=0,this.raw=t,t instanceof o.HtmlRowInput&&(this.raw=t._element,this.element=t._element),this.index=e,this.section=n,this.cells=r,this.spansMultiplePages=i}return t.prototype.getMaxCellHeight=function(t){var e=this;return t.reduce((function(t,n){var o;return Math.max(t,(null===(o=e.cells[n.index])||void 0===o?void 0:o.height)||0)}),0)},t.prototype.hasRowSpan=function(t){var e=this;return t.filter((function(t){var n=e.cells[t.index];return!!n&&n.rowSpan>1})).length>0},t.prototype.canEntireRowFit=function(t,e){return this.getMaxCellHeight(e)<=t},t.prototype.getMinimumRowHeight=function(t,e){var n=this;return t.reduce((function(t,o){var r=n.cells[o.index];if(!r)return 0;var i=e.getLineHeight(r.styles.fontSize),l=r.padding("vertical")+i;return l>t?l:t}),0)},t}();e.Row=a;var s=function(){function t(t,e,n){var o,r;this.contentHeight=0,this.contentWidth=0,this.wrappedWidth=0,this.minReadableWidth=0,this.minWidth=0,this.width=0,this.height=0,this.x=0,this.y=0,this.styles=e,this.section=n,this.raw=t;var i=t;null==t||"object"!=typeof t||Array.isArray(t)?(this.rowSpan=1,this.colSpan=1):(this.rowSpan=t.rowSpan||1,this.colSpan=t.colSpan||1,i=null!==(r=null!==(o=t.content)&&void 0!==o?o:t.title)&&void 0!==r?r:t,t._element&&(this.raw=t._element));var l=null!=i?""+i:"";this.text=l.split(/\r\n|\r|\n/g)}return t.prototype.getTextPos=function(){var t,e;if("top"===this.styles.valign)t=this.y+this.padding("top");else if("bottom"===this.styles.valign)t=this.y+this.height-this.padding("bottom");else{var n=this.height-this.padding("vertical");t=this.y+n/2+this.padding("top")}if("right"===this.styles.halign)e=this.x+this.width-this.padding("right");else if("center"===this.styles.halign){var o=this.width-this.padding("horizontal");e=this.x+o/2+this.padding("left")}else e=this.x+this.padding("left");return{x:e,y:t}},t.prototype.getContentHeight=function(t,e){void 0===e&&(e=1.15);var n=(Array.isArray(this.text)?this.text.length:1)*(this.styles.fontSize/t*e)+this.padding("vertical");return Math.max(n,this.styles.minCellHeight)},t.prototype.padding=function(t){var e=(0,i.parseSpacing)(this.styles.cellPadding,0);return"vertical"===t?e.top+e.bottom:"horizontal"===t?e.left+e.right:e[t]},t}();e.Cell=s;var u=function(){function t(t,e,n){this.wrappedWidth=0,this.minReadableWidth=0,this.minWidth=0,this.width=0,this.dataKey=t,this.raw=e,this.index=n}return t.prototype.getMaxCustomCellWidth=function(t){for(var e=0,n=0,o=t.allRows();n<o.length;n++){var r=o[n].cells[this.index];r&&"number"==typeof r.styles.cellWidth&&(e=Math.max(e,r.styles.cellWidth))}return e},t}();e.Column=u},356:function(t,e){Object.defineProperty(e,"__esModule",{value:!0}),e.assign=void 0,e.assign=function(t,e,n,o,r){if(null==t)throw new TypeError("Cannot convert undefined or null to object");for(var i=Object(t),l=1;l<arguments.length;l++){var a=arguments[l];if(null!=a)for(var s in a)Object.prototype.hasOwnProperty.call(a,s)&&(i[s]=a[s])}return i}},972:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.createTable=void 0;var o=n(744),r=n(260),i=n(324),l=n(796),a=n(356);function s(t,e,n,o,i,l){var a={};return e.map((function(e,s){for(var u=0,h={},c=0,f=0,g=0,p=n;g<p.length;g++){var y=p[g];if(null==a[y.index]||0===a[y.index].left)if(0===f){var v=void 0,m={};"object"!=typeof(v=Array.isArray(e)?e[y.index-c-u]:e[y.dataKey])||Array.isArray(v)||(m=(null==v?void 0:v.styles)||{});var b=d(t,y,s,i,o,l,m),w=new r.Cell(v,b,t);h[y.dataKey]=w,h[y.index]=w,f=w.colSpan-1,a[y.index]={left:w.rowSpan-1,times:f}}else f--,c++;else a[y.index].left--,f=a[y.index].times,u++}return new r.Row(e,s,t,h)}))}function u(t,e){var n={};return t.forEach((function(t){if(null!=t.raw){var o=function(t,e){if("head"===t){if("object"==typeof e)return e.header||e.title||null;if("string"==typeof e||"number"==typeof e)return e}else if("foot"===t&&"object"==typeof e)return e.footer;return null}(e,t.raw);null!=o&&(n[t.dataKey]=o)}})),Object.keys(n).length>0?n:null}function d(t,e,n,o,r,i,s){var u,d=(0,l.getTheme)(o);"head"===t?u=r.headStyles:"body"===t?u=r.bodyStyles:"foot"===t&&(u=r.footStyles);var h=(0,a.assign)({},d.table,d[t],r.styles,u),c=r.columnStyles[e.dataKey]||r.columnStyles[e.index]||{},f="body"===t?c:{},g="body"===t&&n%2==0?(0,a.assign)({},d.alternateRow,r.alternateRowStyles):{},p=(0,l.defaultStyles)(i),y=(0,a.assign)({},p,h,g,f);return(0,a.assign)(y,s)}e.createTable=function(t,e){var n=new o.DocHandler(t),l=function(t,e){var n=t.content,o=function(t){return t.map((function(t,e){var n,o,i;return i="object"==typeof t&&null!==(o=null!==(n=t.dataKey)&&void 0!==n?n:t.key)&&void 0!==o?o:e,new r.Column(i,t,e)}))}(n.columns);if(0===n.head.length){(i=u(o,"head"))&&n.head.push(i)}if(0===n.foot.length){var i;(i=u(o,"foot"))&&n.foot.push(i)}var l=t.settings.theme,a=t.styles;return{columns:o,head:s("head",n.head,o,a,l,e),body:s("body",n.body,o,a,l,e),foot:s("foot",n.foot,o,a,l,e)}}(e,n.scaleFactor()),a=new r.Table(e,l);return(0,i.calculateWidths)(n,a),n.applyStyles(n.userStyles),a}},664:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.addPage=e.drawTable=void 0;var o=n(420),r=n(260),i=n(744),l=n(356),a=n(136),s=n(224);function u(t,e,n,o){var r=e.settings;t.applyStyles(t.userStyles),"firstPage"!==r.showHead&&"everyPage"!==r.showHead||e.head.forEach((function(r){return g(t,e,r,n,o)}))}function d(t,e,n,o,r,i){t.applyStyles(t.userStyles),i=null!=i?i:e.body.length;var l=Math.min(n+i,e.body.length),a=-1;return e.body.slice(n,l).forEach((function(i,l){var s=n+l===e.body.length-1,u=y(t,e,s,o);i.canEntireRowFit(u,r)&&(g(t,e,i,o,r),a=n+l)})),a}function h(t,e,n,o){var r=e.settings;t.applyStyles(t.userStyles),"lastPage"!==r.showFoot&&"everyPage"!==r.showFoot||e.foot.forEach((function(r){return g(t,e,r,n,o)}))}function c(t,e,n){var o=n.getLineHeight(t.styles.fontSize),r=t.padding("vertical"),i=Math.floor((e-r)/o);return Math.max(0,i)}function f(t,e,n,o,i,a,s){var u=y(t,e,o,a);if(n.canEntireRowFit(u,s))g(t,e,n,a,s);else if(function(t,e,n,o){var r=t.pageSize().height,i=o.settings.margin,l=r-(i.top+i.bottom);"body"===e.section&&(l-=o.getHeadHeight(o.columns)+o.getFootHeight(o.columns));var a=e.getMinimumRowHeight(o.columns,t),s=a<n;if(a>l)return console.error("Will not be able to print row ".concat(e.index," correctly since it's minimum height is larger than page height")),!0;if(!s)return!1;var u=e.hasRowSpan(o.columns);return e.getMaxCellHeight(o.columns)>l?(u&&console.error("The content of row ".concat(e.index," will not be drawn correctly since drawing rows with a height larger than the page height and has cells with rowspans is not supported.")),!0):!u&&"avoid"!==o.settings.rowPageBreak}(t,n,u,e)){var d=function(t,e,n,o){var i={};t.spansMultiplePages=!0,t.height=0;for(var a=0,s=0,u=n.columns;s<u.length;s++){var d=u[s];if(b=t.cells[d.index]){Array.isArray(b.text)||(b.text=[b.text]);var h=new r.Cell(b.raw,b.styles,b.section);(h=(0,l.assign)(h,b)).text=[];var f=c(b,e,o);b.text.length>f&&(h.text=b.text.splice(f,b.text.length));var g=o.scaleFactor(),p=o.getLineHeightFactor();b.contentHeight=b.getContentHeight(g,p),b.contentHeight>=e&&(b.contentHeight=e,h.styles.minCellHeight-=e),b.contentHeight>t.height&&(t.height=b.contentHeight),h.contentHeight=h.getContentHeight(g,p),h.contentHeight>a&&(a=h.contentHeight),i[d.index]=h}}var y=new r.Row(t.raw,-1,t.section,i,!0);y.height=a;for(var v=0,m=n.columns;v<m.length;v++){var b;d=m[v],(h=y.cells[d.index])&&(h.height=y.height),(b=t.cells[d.index])&&(b.height=t.height)}return y}(n,u,e,t);g(t,e,n,a,s),v(t,e,i,a,s),f(t,e,d,o,i,a,s)}else v(t,e,i,a,s),f(t,e,n,o,i,a,s)}function g(t,e,n,o,r){o.x=e.settings.margin.left;for(var i=0,l=r;i<l.length;i++){var s=l[i],u=n.cells[s.index];if(u)if(t.applyStyles(u.styles),u.x=o.x,u.y=o.y,!1!==e.callCellHooks(t,e.hooks.willDrawCell,u,n,s,o)){p(t,u,o);var d=u.getTextPos();(0,a.default)(u.text,d.x,d.y,{halign:u.styles.halign,valign:u.styles.valign,maxWidth:Math.ceil(u.width-u.padding("left")-u.padding("right"))},t.getDocument()),e.callCellHooks(t,e.hooks.didDrawCell,u,n,s,o),o.x+=s.width}else o.x+=s.width;else o.x+=s.width}o.y+=n.height}function p(t,e,n){var r=e.styles;if(t.getDocument().setFillColor(t.getDocument().getFillColor()),"number"==typeof r.lineWidth){var i=(0,o.getFillStyle)(r.lineWidth,r.fillColor);i&&t.rect(e.x,n.y,e.width,e.height,i)}else"object"==typeof r.lineWidth&&(r.fillColor&&t.rect(e.x,n.y,e.width,e.height,"F"),function(t,e,n,o){var r,i,l,a;o.top&&(r=n.x,i=n.y,l=n.x+e.width,a=n.y,o.right&&(l+=.5*o.right),o.left&&(r-=.5*o.left),s(o.top,r,i,l,a));o.bottom&&(r=n.x,i=n.y+e.height,l=n.x+e.width,a=n.y+e.height,o.right&&(l+=.5*o.right),o.left&&(r-=.5*o.left),s(o.bottom,r,i,l,a));o.left&&(r=n.x,i=n.y,l=n.x,a=n.y+e.height,o.top&&(i-=.5*o.top),o.bottom&&(a+=.5*o.bottom),s(o.left,r,i,l,a));o.right&&(r=n.x+e.width,i=n.y,l=n.x+e.width,a=n.y+e.height,o.top&&(i-=.5*o.top),o.bottom&&(a+=.5*o.bottom),s(o.right,r,i,l,a));function s(e,n,o,r,i){t.getDocument().setLineWidth(e),t.getDocument().line(n,o,r,i,"S")}}(t,e,n,r.lineWidth))}function y(t,e,n,o){var r=e.settings.margin.bottom,i=e.settings.showFoot;return("everyPage"===i||"lastPage"===i&&n)&&(r+=e.getFootHeight(e.columns)),t.pageSize().height-o.y-r}function v(t,e,n,r,i,l){void 0===i&&(i=[]),void 0===l&&(l=!1),t.applyStyles(t.userStyles),"everyPage"!==e.settings.showFoot||l||e.foot.forEach((function(n){return g(t,e,n,r,i)})),e.callEndPageHooks(t,r);var a=e.settings.margin;(0,o.addTableBorder)(t,e,n,r),m(t),e.pageNumber++,e.pageCount++,r.x=a.left,r.y=a.top,n.y=a.top,e.callWillDrawPageHooks(t,r),"everyPage"===e.settings.showHead&&(e.head.forEach((function(n){return g(t,e,n,r,i)})),t.applyStyles(t.userStyles))}function m(t){var e=t.pageNumber();return t.setPage(e+1),t.pageNumber()===e&&(t.addPage(),!0)}e.drawTable=function(t,e){var n=e.settings,r=n.startY,a=n.margin,c={x:a.left,y:r},p=e.getHeadHeight(e.columns)+e.getFootHeight(e.columns),y=r+a.bottom+p;"avoid"===n.pageBreak&&(y+=e.body.reduce((function(t,e){return t+e.height}),0));var b=new i.DocHandler(t);("always"===n.pageBreak||null!=n.startY&&y>b.pageSize().height)&&(m(b),c.y=a.top),e.callWillDrawPageHooks(b,c);var w=(0,l.assign)({},c);e.startPageNumber=b.pageNumber(),n.horizontalPageBreak?function(t,e,n,o){var r=(0,s.calculateAllColumnsCanFitInPage)(t,e),i=e.settings;if("afterAllRows"===i.horizontalPageBreakBehaviour)r.forEach((function(r,i){t.applyStyles(t.userStyles),i>0?v(t,e,n,o,r.columns,!0):u(t,e,o,r.columns),function(t,e,n,o,r){t.applyStyles(t.userStyles),e.body.forEach((function(i,l){var a=l===e.body.length-1;f(t,e,i,a,n,o,r)}))}(t,e,n,o,r.columns),h(t,e,o,r.columns)}));else for(var l=-1,a=r[0],c=function(){var i=l;if(a){t.applyStyles(t.userStyles);var s=a.columns;l>=0?v(t,e,n,o,s,!0):u(t,e,o,s),i=d(t,e,l+1,o,s),h(t,e,o,s)}var c=i-l;r.slice(1).forEach((function(r){t.applyStyles(t.userStyles),v(t,e,n,o,r.columns,!0),d(t,e,l+1,o,r.columns,c),h(t,e,o,r.columns)})),l=i};l<e.body.length-1;)c()}(b,e,w,c):(b.applyStyles(b.userStyles),"firstPage"!==n.showHead&&"everyPage"!==n.showHead||e.head.forEach((function(t){return g(b,e,t,c,e.columns)})),b.applyStyles(b.userStyles),e.body.forEach((function(t,n){var o=n===e.body.length-1;f(b,e,t,o,w,c,e.columns)})),b.applyStyles(b.userStyles),"lastPage"!==n.showFoot&&"everyPage"!==n.showFoot||e.foot.forEach((function(t){return g(b,e,t,c,e.columns)}))),(0,o.addTableBorder)(b,e,w,c),e.callEndPageHooks(b,c),e.finalY=c.y,t.lastAutoTable=e,t.previousAutoTable=e,t.autoTable&&(t.autoTable.previous=e),b.applyStyles(b.userStyles)},e.addPage=v},224:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.calculateAllColumnsCanFitInPage=void 0;var o=n(420);function r(t,e,n){var r;void 0===n&&(n={});var i=(0,o.getPageAvailableWidth)(t,e),l=new Map,a=[],s=[],u=[];e.settings.horizontalPageBreakRepeat,Array.isArray(e.settings.horizontalPageBreakRepeat)?u=e.settings.horizontalPageBreakRepeat:"string"!=typeof e.settings.horizontalPageBreakRepeat&&"number"!=typeof e.settings.horizontalPageBreakRepeat||(u=[e.settings.horizontalPageBreakRepeat]),u.forEach((function(t){var n=e.columns.find((function(e){return e.dataKey===t||e.index===t}));n&&!l.has(n.index)&&(l.set(n.index,!0),a.push(n.index),s.push(e.columns[n.index]),i-=n.wrappedWidth)}));for(var d=!0,h=null!==(r=null==n?void 0:n.start)&&void 0!==r?r:0;h<e.columns.length;)if(l.has(h))h++;else{var c=e.columns[h].wrappedWidth;if(!(d||i>=c))break;d=!1,a.push(h),s.push(e.columns[h]),i-=c,h++}return{colIndexes:a,columns:s,lastIndex:h-1}}e.calculateAllColumnsCanFitInPage=function(t,e){for(var n=[],o=0;o<e.columns.length;o++){var i=r(t,e,{start:o});i.columns.length&&(n.push(i),o=i.lastIndex)}return n}},324:function(t,e,n){Object.defineProperty(e,"__esModule",{value:!0}),e.ellipsize=e.resizeColumns=e.calculateWidths=void 0;var o=n(420);function r(t,e,n){for(var o=e,i=t.reduce((function(t,e){return t+e.wrappedWidth}),0),l=0;l<t.length;l++){var a=t[l],s=o*(a.wrappedWidth/i),u=a.width+s,d=n(a),h=u<d?d:u;e-=h-a.width,a.width=h}if(e=Math.round(1e10*e)/1e10){var c=t.filter((function(t){return!(e<0)||t.width>n(t)}));c.length&&(e=r(c,e,n))}return e}function i(t,e,n,r,i){return t.map((function(t){return function(t,e,n,r,i){var l=1e4*r.scaleFactor();if(e=Math.ceil(e*l)/l,e>=(0,o.getStringWidth)(t,n,r))return t;for(;e<(0,o.getStringWidth)(t+i,n,r)&&!(t.length<=1);)t=t.substring(0,t.length-1);return t.trim()+i}(t,e,n,r,i)}))}e.calculateWidths=function(t,e){!function(t,e){var n=t.scaleFactor(),r=e.settings.horizontalPageBreak,i=(0,o.getPageAvailableWidth)(t,e);e.allRows().forEach((function(l){for(var a=0,s=e.columns;a<s.length;a++){var u=s[a],d=l.cells[u.index];if(d){var h=e.hooks.didParseCell;e.callCellHooks(t,h,d,l,u,null);var c=d.padding("horizontal");d.contentWidth=(0,o.getStringWidth)(d.text,d.styles,t)+c;var f=(0,o.getStringWidth)(d.text.join(" ").split(/\s+/),d.styles,t);if(d.minReadableWidth=f+d.padding("horizontal"),"number"==typeof d.styles.cellWidth)d.minWidth=d.styles.cellWidth,d.wrappedWidth=d.styles.cellWidth;else if("wrap"===d.styles.cellWidth||!0===r)d.contentWidth>i?(d.minWidth=i,d.wrappedWidth=i):(d.minWidth=d.contentWidth,d.wrappedWidth=d.contentWidth);else{var g=10/n;d.minWidth=d.styles.minCellWidth||g,d.wrappedWidth=d.contentWidth,d.minWidth>d.wrappedWidth&&(d.wrappedWidth=d.minWidth)}}}})),e.allRows().forEach((function(t){for(var n=0,o=e.columns;n<o.length;n++){var r=o[n],i=t.cells[r.index];if(i&&1===i.colSpan)r.wrappedWidth=Math.max(r.wrappedWidth,i.wrappedWidth),r.minWidth=Math.max(r.minWidth,i.minWidth),r.minReadableWidth=Math.max(r.minReadableWidth,i.minReadableWidth);else{var l=e.styles.columnStyles[r.dataKey]||e.styles.columnStyles[r.index]||{},a=l.cellWidth||l.minCellWidth;a&&"number"==typeof a&&(r.minWidth=a,r.wrappedWidth=a)}i&&(i.colSpan>1&&!r.minWidth&&(r.minWidth=i.minWidth),i.colSpan>1&&!r.wrappedWidth&&(r.wrappedWidth=i.minWidth))}}))}(t,e);var n=[],l=0;e.columns.forEach((function(t){var o=t.getMaxCustomCellWidth(e);o?t.width=o:(t.width=t.wrappedWidth,n.push(t)),l+=t.width}));var a=e.getWidth(t.pageSize().width)-l;a&&(a=r(n,a,(function(t){return Math.max(t.minReadableWidth,t.minWidth)}))),a&&(a=r(n,a,(function(t){return t.minWidth}))),a=Math.abs(a),!e.settings.horizontalPageBreak&&a>.1/t.scaleFactor()&&(a=a<1?a:Math.round(a),console.warn("Of the table content, ".concat(a," units width could not fit page"))),function(t){for(var e=t.allRows(),n=0;n<e.length;n++)for(var o=e[n],r=null,i=0,l=0,a=0;a<t.columns.length;a++){var s=t.columns[a];if((l-=1)>1&&t.columns[a+1])i+=s.width,delete o.cells[s.index];else if(r){var u=r;delete o.cells[s.index],r=null,u.width=s.width+i}else{if(!(u=o.cells[s.index]))continue;if(l=u.colSpan,i=0,u.colSpan>1){r=u,i+=s.width;continue}u.width=s.width+i}}}(e),function(t,e){for(var n={count:0,height:0},o=0,r=t.allRows();o<r.length;o++){for(var l=r[o],a=0,s=t.columns;a<s.length;a++){var u=s[a],d=l.cells[u.index];if(d){e.applyStyles(d.styles,!0);var h=d.width-d.padding("horizontal");if("linebreak"===d.styles.overflow)d.text=e.splitTextToSize(d.text,h+1/e.scaleFactor(),{fontSize:d.styles.fontSize});else if("ellipsize"===d.styles.overflow)d.text=i(d.text,h,d.styles,e,"...");else if("hidden"===d.styles.overflow)d.text=i(d.text,h,d.styles,e,"");else if("function"==typeof d.styles.overflow){var c=d.styles.overflow(d.text,h);d.text="string"==typeof c?[c]:c}d.contentHeight=d.getContentHeight(e.scaleFactor(),e.getLineHeightFactor());var f=d.contentHeight/d.rowSpan;d.rowSpan>1&&n.count*n.height<f*d.rowSpan?n={height:f,count:d.rowSpan}:n&&n.count>0&&n.height>f&&(f=n.height),f>l.height&&(l.height=f)}}n.count--}}(e,t),function(t){for(var e={},n=1,o=t.allRows(),r=0;r<o.length;r++)for(var i=o[r],l=0,a=t.columns;l<a.length;l++){var s=a[l],u=e[s.index];if(n>1)n--,delete i.cells[s.index];else if(u)u.cell.height+=i.height,n=u.cell.colSpan,delete i.cells[s.index],u.left--,u.left<=1&&delete e[s.index];else{var d=i.cells[s.index];if(!d)continue;if(d.height=i.height,d.rowSpan>1){var h=o.length-r,c=d.rowSpan>h?h:d.rowSpan;e[s.index]={cell:d,left:c,row:i}}}}}(e)},e.resizeColumns=r,e.ellipsize=i},964:function(e){if(void 0===t){var n=new Error("Cannot find module 'undefined'");throw n.code="MODULE_NOT_FOUND",n}e.exports=t}},n={};function o(t){var r=n[t];if(void 0!==r)return r.exports;var i=n[t]={exports:{}};return e[t].call(i.exports,i,i.exports,o),i.exports}var r={};return function(){var t=r;Object.defineProperty(t,"__esModule",{value:!0}),t.Cell=t.Column=t.Row=t.Table=t.CellHookData=t.__drawTable=t.__createTable=t.applyPlugin=void 0;var e=o(340),n=o(776),i=o(664),l=o(972),a=o(260);Object.defineProperty(t,"Table",{enumerable:!0,get:function(){return a.Table}});var s=o(172);Object.defineProperty(t,"CellHookData",{enumerable:!0,get:function(){return s.CellHookData}});var u=o(260);function d(t){(0,e.default)(t)}Object.defineProperty(t,"Cell",{enumerable:!0,get:function(){return u.Cell}}),Object.defineProperty(t,"Column",{enumerable:!0,get:function(){return u.Column}}),Object.defineProperty(t,"Row",{enumerable:!0,get:function(){return u.Row}}),t.applyPlugin=d,t.__createTable=function(t,e){var o=(0,n.parseInput)(t,e);return(0,l.createTable)(t,o)},t.__drawTable=function(t,e){(0,i.drawTable)(t,e)};try{var h=o(964);h.jsPDF&&(h=h.jsPDF),d(h)}catch(t){}t.default=function(t,e){var o=(0,n.parseInput)(t,e),r=(0,l.createTable)(t,o);(0,i.drawTable)(t,r)}}(),r}()}));
 </script>
+
 
 </body></html>
